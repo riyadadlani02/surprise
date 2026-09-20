@@ -1,0 +1,1556 @@
+{
+ "scenario": "habits",
+ "title": "One person · which slot will they take?",
+ "kind": "people",
+ "predictor": "rules",
+ "ticks": 300,
+ "predictions": 600,
+ "accuracy": 0.8533333333333334,
+ "brier": 0.09906404777012794,
+ "thirds": [
+  {
+   "slice": 0,
+   "rate": 0.06,
+   "accuracy": 0.84,
+   "brier": 0.11557371540244295
+  },
+  {
+   "slice": 1,
+   "rate": 0,
+   "accuracy": 0.82,
+   "brier": 0.11149164629478657
+  },
+  {
+   "slice": 2,
+   "rate": 0,
+   "accuracy": 0.9,
+   "brier": 0.07012678161315386
+  }
+ ],
+ "calibration": [
+  {
+   "lo": 0,
+   "hi": 0.2,
+   "n": 362,
+   "sumProb": 18.26474754196609,
+   "hits": 4,
+   "meanProb": 0.05045510370708865,
+   "hitRate": 0.011049723756906077
+  },
+  {
+   "lo": 0.2,
+   "hi": 0.4,
+   "n": 101,
+   "sumProb": 29.149360704057155,
+   "hits": 31,
+   "meanProb": 0.2886075317233382,
+   "hitRate": 0.3069306930693069
+  },
+  {
+   "lo": 0.4,
+   "hi": 0.6,
+   "n": 61,
+   "sumProb": 28.657142857142844,
+   "hits": 18,
+   "meanProb": 0.46978922716627614,
+   "hitRate": 0.29508196721311475
+  },
+  {
+   "lo": 0.6,
+   "hi": 0.8,
+   "n": 45,
+   "sumProb": 30.380365467865477,
+   "hits": 19,
+   "meanProb": 0.6751192326192328,
+   "hitRate": 0.4222222222222222
+  },
+  {
+   "lo": 0.8,
+   "hi": 1,
+   "n": 31,
+   "sumProb": 26.22580752580753,
+   "hits": 24,
+   "meanProb": 0.8459937911550816,
+   "hitRate": 0.7741935483870968
+  }
+ ],
+ "accuracyByStage": [
+  {
+   "stage": "free",
+   "n": 600,
+   "correct": 512,
+   "accuracy": 0.8533333333333334
+  }
+ ],
+ "concepts": [
+  "weather",
+  "energy",
+  "history"
+ ],
+ "rules": 33,
+ "revisions": 95,
+ "accommodations": 85,
+ "accommodationValue": [
+  {
+   "version": 7,
+   "tick": 5,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 12,
+   "tick": 8,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 13,
+   "tick": 9,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 14,
+   "tick": 15,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 15,
+   "tick": 18,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 16,
+   "tick": 19,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 17,
+   "tick": 22,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 18,
+   "tick": 23,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 19,
+   "tick": 25,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 20,
+   "tick": 27,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 21,
+   "tick": 28,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 22,
+   "tick": 29,
+   "before": 0.6666666666666666,
+   "after": 1,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 23,
+   "tick": 35,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 24,
+   "tick": 37,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 25,
+   "tick": 39,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 26,
+   "tick": 40,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 27,
+   "tick": 42,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 28,
+   "tick": 43,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 29,
+   "tick": 44,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 30,
+   "tick": 46,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 31,
+   "tick": 47,
+   "before": 0.6666666666666666,
+   "after": 1,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 32,
+   "tick": 52,
+   "before": 1,
+   "after": 1,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 33,
+   "tick": 64,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 34,
+   "tick": 65,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 35,
+   "tick": 91,
+   "before": 1,
+   "after": 0.5,
+   "delta": -0.5,
+   "n": 6
+  },
+  {
+   "version": 36,
+   "tick": 92,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 37,
+   "tick": 93,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 38,
+   "tick": 94,
+   "before": 0.5,
+   "after": 1,
+   "delta": 0.5,
+   "n": 6
+  },
+  {
+   "version": 39,
+   "tick": 99,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 40,
+   "tick": 101,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 41,
+   "tick": 106,
+   "before": 1,
+   "after": 0.6666666666666666,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 42,
+   "tick": 107,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 43,
+   "tick": 109,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 44,
+   "tick": 110,
+   "before": 0.6666666666666666,
+   "after": 1,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 45,
+   "tick": 119,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 46,
+   "tick": 122,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 47,
+   "tick": 123,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 48,
+   "tick": 129,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 49,
+   "tick": 130,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 50,
+   "tick": 133,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 51,
+   "tick": 139,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 52,
+   "tick": 142,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 53,
+   "tick": 143,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 54,
+   "tick": 152,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 55,
+   "tick": 154,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 56,
+   "tick": 156,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 57,
+   "tick": 158,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 58,
+   "tick": 160,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 59,
+   "tick": 162,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 60,
+   "tick": 170,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 61,
+   "tick": 172,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 62,
+   "tick": 174,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 63,
+   "tick": 177,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 64,
+   "tick": 180,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 65,
+   "tick": 181,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 66,
+   "tick": 183,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 67,
+   "tick": 184,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 68,
+   "tick": 186,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 69,
+   "tick": 187,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 70,
+   "tick": 189,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 71,
+   "tick": 192,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 72,
+   "tick": 193,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 73,
+   "tick": 196,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 74,
+   "tick": 198,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 75,
+   "tick": 199,
+   "before": 0.6666666666666666,
+   "after": 1,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 76,
+   "tick": 204,
+   "before": 1,
+   "after": 1,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 77,
+   "tick": 210,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 78,
+   "tick": 212,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 79,
+   "tick": 215,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 80,
+   "tick": 218,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 81,
+   "tick": 220,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 82,
+   "tick": 226,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 83,
+   "tick": 229,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 84,
+   "tick": 239,
+   "before": 1,
+   "after": 1,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 85,
+   "tick": 246,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 86,
+   "tick": 249,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 87,
+   "tick": 252,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 88,
+   "tick": 254,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 89,
+   "tick": 261,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 90,
+   "tick": 262,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 91,
+   "tick": 266,
+   "before": 1,
+   "after": 1,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 92,
+   "tick": 270,
+   "before": 1,
+   "after": 1,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 93,
+   "tick": 274,
+   "before": 1,
+   "after": 1,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 94,
+   "tick": 283,
+   "before": 1,
+   "after": 1,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 95,
+   "tick": 289,
+   "before": 1,
+   "after": 1,
+   "delta": 0,
+   "n": 6
+  }
+ ],
+ "escalationRate": 0.02,
+ "warnings": 0,
+ "durationMs": 269,
+ "surprises": [
+  {
+   "tick": 5,
+   "action": "propose_morning",
+   "question": "Will they say yes to \"propose morning\"?",
+   "prob": 0.3333333333333333,
+   "truth": true,
+   "explanation": "Expected \"Will they say yes to \"propose morning\"?\" = no (p=0.33) but saw yes. Splitting on weather(sun); the agent could not see it, so the concept weather is now active."
+  },
+  {
+   "tick": 8,
+   "action": "send_reminder",
+   "question": "Will they be annoyed?",
+   "prob": 0.3333333333333333,
+   "truth": true,
+   "explanation": "Expected \"Will they be annoyed?\" = no (p=0.33) but saw yes. Splitting on energy(low); the agent could not see it, so the concept energy is now active."
+  },
+  {
+   "tick": 9,
+   "action": "propose_evening",
+   "question": "Will they say yes to \"propose evening\"?",
+   "prob": 0.6666666666666666,
+   "truth": false,
+   "explanation": "Expected \"Will they say yes to \"propose evening\"?\" = yes (p=0.67) but saw no. Splitting on day(weekday)."
+  },
+  {
+   "tick": 15,
+   "action": "send_reminder",
+   "question": "Will they be annoyed?",
+   "prob": 0.5,
+   "truth": true,
+   "explanation": "Expected \"Will they be annoyed?\" = no (p=0.50) but saw yes. Splitting on day(weekday)."
+  },
+  {
+   "tick": 18,
+   "action": "propose_lunch",
+   "question": "Will they say yes to \"propose lunch\"?",
+   "prob": 0.2,
+   "truth": true,
+   "explanation": "Expected \"Will they say yes to \"propose lunch\"?\" = no (p=0.20) but saw yes. Unlike the last time this rule was right, day(weekday) holds now."
+  },
+  {
+   "tick": 19,
+   "action": "send_reminder",
+   "question": "Will they be annoyed?",
+   "prob": 0.6666666666666666,
+   "truth": false,
+   "explanation": "Expected \"Will they be annoyed?\" = yes (p=0.67) but saw no. Splitting on day(weekday)."
+  },
+  {
+   "tick": 22,
+   "action": "propose_evening",
+   "question": "Will they say yes to \"propose evening\"?",
+   "prob": 0.4,
+   "truth": true,
+   "explanation": "Expected \"Will they say yes to \"propose evening\"?\" = no (p=0.40) but saw yes. Unlike the last time this rule was right, last_slot(lunch) holds now."
+  },
+  {
+   "tick": 23,
+   "action": "propose_morning",
+   "question": "Will they say yes to \"propose morning\"?",
+   "prob": 0.6666666666666666,
+   "truth": false,
+   "explanation": "Expected \"Will they say yes to \"propose morning\"?\" = yes (p=0.67) but saw no. Splitting on day(weekday)."
+  },
+  {
+   "tick": 25,
+   "action": "propose_evening",
+   "question": "Will they say yes to \"propose evening\"?",
+   "prob": 0.25,
+   "truth": true,
+   "explanation": "Expected \"Will they say yes to \"propose evening\"?\" = no (p=0.25) but saw yes. Unlike the last time this rule was right, last_slot(evening) holds now."
+  },
+  {
+   "tick": 27,
+   "action": "propose_morning",
+   "question": "Will they say yes to \"propose morning\"?",
+   "prob": 0.5,
+   "truth": true,
+   "explanation": "Expected \"Will they say yes to \"propose morning\"?\" = no (p=0.50) but saw yes. Splitting on day(weekday)."
+  },
+  {
+   "tick": 28,
+   "action": "propose_lunch",
+   "question": "Will they say yes to \"propose lunch\"?",
+   "prob": 0.75,
+   "truth": false,
+   "explanation": "Expected \"Will they say yes to \"propose lunch\"?\" = yes (p=0.75) but saw no. Unlike the last time this rule was right, weather(rain) holds now."
+  },
+  {
+   "tick": 29,
+   "action": "propose_evening",
+   "question": "Will they say yes to \"propose evening\"?",
+   "prob": 0.3333333333333333,
+   "truth": true,
+   "explanation": "Expected \"Will they say yes to \"propose evening\"?\" = no (p=0.33) but saw yes. Unlike the last time this rule was right, last_slot(morning) holds now."
+  }
+ ],
+ "rulesSample": [
+  {
+   "action": "skip_today",
+   "requires": [],
+   "question": "accepts",
+   "yes": 0,
+   "no": 59,
+   "source": "assimilate"
+  },
+  {
+   "action": "skip_today",
+   "requires": [],
+   "question": "annoyed",
+   "yes": 0,
+   "no": 59,
+   "source": "assimilate"
+  },
+  {
+   "action": "propose_evening",
+   "requires": [],
+   "question": "accepts",
+   "yes": 2,
+   "no": 3,
+   "source": "assimilate"
+  },
+  {
+   "action": "propose_evening",
+   "requires": [],
+   "question": "annoyed",
+   "yes": 0,
+   "no": 63,
+   "source": "assimilate"
+  },
+  {
+   "action": "propose_morning",
+   "requires": [],
+   "question": "accepts",
+   "yes": 1,
+   "no": 4,
+   "source": "assimilate"
+  },
+  {
+   "action": "propose_morning",
+   "requires": [],
+   "question": "annoyed",
+   "yes": 0,
+   "no": 66,
+   "source": "assimilate"
+  },
+  {
+   "action": "send_reminder",
+   "requires": [],
+   "question": "accepts",
+   "yes": 0,
+   "no": 50,
+   "source": "assimilate"
+  },
+  {
+   "action": "send_reminder",
+   "requires": [],
+   "question": "annoyed",
+   "yes": 2,
+   "no": 2,
+   "source": "assimilate"
+  },
+  {
+   "action": "propose_lunch",
+   "requires": [],
+   "question": "accepts",
+   "yes": 3,
+   "no": 10,
+   "source": "assimilate"
+  },
+  {
+   "action": "propose_lunch",
+   "requires": [],
+   "question": "annoyed",
+   "yes": 0,
+   "no": 62,
+   "source": "assimilate"
+  },
+  {
+   "action": "send_reminder",
+   "requires": [
+    "energy(low)"
+   ],
+   "question": "annoyed",
+   "yes": 12,
+   "no": 2,
+   "source": "accommodate"
+  },
+  {
+   "action": "propose_lunch",
+   "requires": [
+    "weather(rain)"
+   ],
+   "question": "accepts",
+   "yes": 1,
+   "no": 9,
+   "source": "accommodate"
+  },
+  {
+   "action": "propose_evening",
+   "requires": [
+    "declined(recently)"
+   ],
+   "question": "accepts",
+   "yes": 0,
+   "no": 1,
+   "source": "accommodate"
+  },
+  {
+   "action": "send_reminder",
+   "requires": [
+    "weather(rain)"
+   ],
+   "question": "annoyed",
+   "yes": 6,
+   "no": 0,
+   "source": "accommodate"
+  },
+  {
+   "action": "propose_evening",
+   "requires": [
+    "weather(rain)"
+   ],
+   "question": "accepts",
+   "yes": 10,
+   "no": 5,
+   "source": "accommodate"
+  },
+  {
+   "action": "propose_morning",
+   "requires": [
+    "day(weekend)"
+   ],
+   "question": "accepts",
+   "yes": 0,
+   "no": 9,
+   "source": "accommodate"
+  },
+  {
+   "action": "propose_lunch",
+   "requires": [
+    "last_slot(evening)"
+   ],
+   "question": "accepts",
+   "yes": 7,
+   "no": 18,
+   "source": "accommodate"
+  },
+  {
+   "action": "send_reminder",
+   "requires": [
+    "last_slot(lunch)"
+   ],
+   "question": "annoyed",
+   "yes": 3,
+   "no": 1,
+   "source": "accommodate"
+  },
+  {
+   "action": "propose_morning",
+   "requires": [
+    "last_slot(evening)"
+   ],
+   "question": "accepts",
+   "yes": 1,
+   "no": 2,
+   "source": "accommodate"
+  },
+  {
+   "action": "send_reminder",
+   "requires": [
+    "day(weekend)"
+   ],
+   "question": "annoyed",
+   "yes": 1,
+   "no": 2,
+   "source": "accommodate"
+  },
+  {
+   "action": "propose_morning",
+   "requires": [
+    "last_slot(morning)"
+   ],
+   "question": "accepts",
+   "yes": 2,
+   "no": 8,
+   "source": "accommodate"
+  },
+  {
+   "action": "propose_evening",
+   "requires": [
+    "last_slot(morning)"
+   ],
+   "question": "accepts",
+   "yes": 1,
+   "no": 11,
+   "source": "accommodate"
+  },
+  {
+   "action": "propose_morning",
+   "requires": [
+    "day(weekday)"
+   ],
+   "question": "accepts",
+   "yes": 0,
+   "no": 4,
+   "source": "accommodate"
+  },
+  {
+   "action": "propose_evening",
+   "requires": [
+    "day(weekday)"
+   ],
+   "question": "accepts",
+   "yes": 0,
+   "no": 8,
+   "source": "accommodate"
+  },
+  {
+   "action": "send_reminder",
+   "requires": [
+    "declined(recently)"
+   ],
+   "question": "annoyed",
+   "yes": 2,
+   "no": 0,
+   "source": "accommodate"
+  },
+  {
+   "action": "propose_morning",
+   "requires": [
+    "declined(recently)"
+   ],
+   "question": "accepts",
+   "yes": 0,
+   "no": 1,
+   "source": "accommodate"
+  },
+  {
+   "action": "send_reminder",
+   "requires": [
+    "day(weekday)"
+   ],
+   "question": "annoyed",
+   "yes": 8,
+   "no": 0,
+   "source": "accommodate"
+  },
+  {
+   "action": "propose_morning",
+   "requires": [
+    "energy(high)"
+   ],
+   "question": "accepts",
+   "yes": 6,
+   "no": 1,
+   "source": "accommodate"
+  },
+  {
+   "action": "propose_lunch",
+   "requires": [
+    "energy(high)"
+   ],
+   "question": "accepts",
+   "yes": 0,
+   "no": 3,
+   "source": "accommodate"
+  },
+  {
+   "action": "propose_lunch",
+   "requires": [
+    "day(weekday)"
+   ],
+   "question": "accepts",
+   "yes": 7,
+   "no": 0,
+   "source": "accommodate"
+  },
+  {
+   "action": "propose_evening",
+   "requires": [
+    "day(weekend)"
+   ],
+   "question": "accepts",
+   "yes": 2,
+   "no": 0,
+   "source": "accommodate"
+  },
+  {
+   "action": "send_reminder",
+   "requires": [
+    "last_slot(evening)"
+   ],
+   "question": "annoyed",
+   "yes": 0,
+   "no": 1,
+   "source": "accommodate"
+  },
+  {
+   "action": "propose_morning",
+   "requires": [
+    "last_slot(lunch)"
+   ],
+   "question": "accepts",
+   "yes": 0,
+   "no": 1,
+   "source": "accommodate"
+  }
+ ],
+ "history": [
+  {
+   "version": 1,
+   "trigger": "skip_today → Will they say yes to \"skip today\"?",
+   "explanation": "No rule covered \"accepts\" after skip_today; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 2,
+   "trigger": "skip_today → Will they be annoyed?",
+   "explanation": "No rule covered \"annoyed\" after skip_today; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 3,
+   "trigger": "propose_evening → Will they say yes to \"propose evening\"?",
+   "explanation": "No rule covered \"accepts\" after propose_evening; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 4,
+   "trigger": "propose_evening → Will they be annoyed?",
+   "explanation": "No rule covered \"annoyed\" after propose_evening; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 5,
+   "trigger": "propose_morning → Will they say yes to \"propose morning\"?",
+   "explanation": "No rule covered \"accepts\" after propose_morning; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 6,
+   "trigger": "propose_morning → Will they be annoyed?",
+   "explanation": "No rule covered \"annoyed\" after propose_morning; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 7,
+   "trigger": "surprise: propose_morning → Will they say yes to \"propose morning\"?",
+   "explanation": "Expected \"Will they say yes to \"propose morning\"?\" = no (p=0.33) but saw yes. Splitting on weather(sun); the agent could not see it, so the concept weather is now active.",
+   "conceptsAdded": [
+    "weather"
+   ]
+  },
+  {
+   "version": 8,
+   "trigger": "send_reminder → Will they say yes to \"send reminder\"?",
+   "explanation": "No rule covered \"accepts\" after send_reminder; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 9,
+   "trigger": "send_reminder → Will they be annoyed?",
+   "explanation": "No rule covered \"annoyed\" after send_reminder; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 10,
+   "trigger": "propose_lunch → Will they say yes to \"propose lunch\"?",
+   "explanation": "No rule covered \"accepts\" after propose_lunch; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 11,
+   "trigger": "propose_lunch → Will they be annoyed?",
+   "explanation": "No rule covered \"annoyed\" after propose_lunch; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 12,
+   "trigger": "surprise: send_reminder → Will they be annoyed?",
+   "explanation": "Expected \"Will they be annoyed?\" = no (p=0.33) but saw yes. Splitting on energy(low); the agent could not see it, so the concept energy is now active.",
+   "conceptsAdded": [
+    "energy"
+   ]
+  },
+  {
+   "version": 13,
+   "trigger": "surprise: propose_evening → Will they say yes to \"propose evening\"?",
+   "explanation": "Expected \"Will they say yes to \"propose evening\"?\" = yes (p=0.67) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 14,
+   "trigger": "surprise: send_reminder → Will they be annoyed?",
+   "explanation": "Expected \"Will they be annoyed?\" = no (p=0.50) but saw yes. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 15,
+   "trigger": "surprise: propose_lunch → Will they say yes to \"propose lunch\"?",
+   "explanation": "Expected \"Will they say yes to \"propose lunch\"?\" = no (p=0.20) but saw yes. Unlike the last time this rule was right, day(weekday) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 16,
+   "trigger": "surprise: send_reminder → Will they be annoyed?",
+   "explanation": "Expected \"Will they be annoyed?\" = yes (p=0.67) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 17,
+   "trigger": "surprise: propose_evening → Will they say yes to \"propose evening\"?",
+   "explanation": "Expected \"Will they say yes to \"propose evening\"?\" = no (p=0.40) but saw yes. Unlike the last time this rule was right, last_slot(lunch) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 18,
+   "trigger": "surprise: propose_morning → Will they say yes to \"propose morning\"?",
+   "explanation": "Expected \"Will they say yes to \"propose morning\"?\" = yes (p=0.67) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 19,
+   "trigger": "surprise: propose_evening → Will they say yes to \"propose evening\"?",
+   "explanation": "Expected \"Will they say yes to \"propose evening\"?\" = no (p=0.25) but saw yes. Unlike the last time this rule was right, last_slot(evening) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 20,
+   "trigger": "surprise: propose_morning → Will they say yes to \"propose morning\"?",
+   "explanation": "Expected \"Will they say yes to \"propose morning\"?\" = no (p=0.50) but saw yes. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 21,
+   "trigger": "surprise: propose_lunch → Will they say yes to \"propose lunch\"?",
+   "explanation": "Expected \"Will they say yes to \"propose lunch\"?\" = yes (p=0.75) but saw no. Unlike the last time this rule was right, weather(rain) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 22,
+   "trigger": "surprise: propose_evening → Will they say yes to \"propose evening\"?",
+   "explanation": "Expected \"Will they say yes to \"propose evening\"?\" = no (p=0.33) but saw yes. Unlike the last time this rule was right, last_slot(morning) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 23,
+   "trigger": "surprise: propose_evening → Will they say yes to \"propose evening\"?",
+   "explanation": "Expected \"Will they say yes to \"propose evening\"?\" = yes (p=0.67) but saw no. Splitting on declined(recently); the agent could not see it, so the concept history is now active.",
+   "conceptsAdded": [
+    "history"
+   ]
+  },
+  {
+   "version": 24,
+   "trigger": "surprise: send_reminder → Will they be annoyed?",
+   "explanation": "Expected \"Will they be annoyed?\" = no (p=0.33) but saw yes. Unlike the last time this rule was right, weather(rain) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 25,
+   "trigger": "surprise: propose_evening → Will they say yes to \"propose evening\"?",
+   "explanation": "Expected \"Will they say yes to \"propose evening\"?\" = no (p=0.38) but saw yes. Unlike the last time this rule was right, weather(rain) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 26,
+   "trigger": "surprise: propose_morning → Will they say yes to \"propose morning\"?",
+   "explanation": "Expected \"Will they say yes to \"propose morning\"?\" = yes (p=0.60) but saw no. Splitting on day(weekend).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 27,
+   "trigger": "surprise: propose_lunch → Will they say yes to \"propose lunch\"?",
+   "explanation": "Expected \"Will they say yes to \"propose lunch\"?\" = yes (p=0.60) but saw no. Unlike the last time this rule was right, last_slot(evening) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 28,
+   "trigger": "surprise: send_reminder → Will they be annoyed?",
+   "explanation": "Expected \"Will they be annoyed?\" = no (p=0.43) but saw yes. Unlike the last time this rule was right, energy(high) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 29,
+   "trigger": "surprise: propose_lunch → Will they say yes to \"propose lunch\"?",
+   "explanation": "Expected \"Will they say yes to \"propose lunch\"?\" = no (p=0.50) but saw yes. Unlike the last time this rule was right, last_slot(evening) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 30,
+   "trigger": "surprise: propose_evening → Will they say yes to \"propose evening\"?",
+   "explanation": "Expected \"Will they say yes to \"propose evening\"?\" = yes (p=0.67) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 31,
+   "trigger": "surprise: propose_evening → Will they say yes to \"propose evening\"?",
+   "explanation": "Expected \"Will they say yes to \"propose evening\"?\" = no (p=0.50) but saw yes. Splitting on day(weekend).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 32,
+   "trigger": "surprise: propose_lunch → Will they say yes to \"propose lunch\"?",
+   "explanation": "Expected \"Will they say yes to \"propose lunch\"?\" = yes (p=0.57) but saw no. Unlike the last time this rule was right, last_slot(evening) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 33,
+   "trigger": "surprise: propose_evening → Will they say yes to \"propose evening\"?",
+   "explanation": "Expected \"Will they say yes to \"propose evening\"?\" = no (p=0.29) but saw yes. Unlike the last time this rule was right, weather(rain) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 34,
+   "trigger": "surprise: propose_evening → Will they say yes to \"propose evening\"?",
+   "explanation": "Expected \"Will they say yes to \"propose evening\"?\" = no (p=0.38) but saw yes. Unlike the last time this rule was right, weather(rain) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 35,
+   "trigger": "surprise: send_reminder → Will they be annoyed?",
+   "explanation": "Expected \"Will they be annoyed?\" = yes (p=0.80) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 36,
+   "trigger": "surprise: propose_lunch → Will they say yes to \"propose lunch\"?",
+   "explanation": "Expected \"Will they say yes to \"propose lunch\"?\" = no (p=0.12) but saw yes. Unlike the last time this rule was right, energy(low) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 37,
+   "trigger": "surprise: send_reminder → Will they be annoyed?",
+   "explanation": "Expected \"Will they be annoyed?\" = yes (p=0.67) but saw no. Unlike the last time this rule was right, last_slot(lunch) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 38,
+   "trigger": "surprise: propose_morning → Will they say yes to \"propose morning\"?",
+   "explanation": "Expected \"Will they say yes to \"propose morning\"?\" = no (p=0.27) but saw yes. Unlike the last time this rule was right, last_slot(lunch) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 39,
+   "trigger": "surprise: propose_evening → Will they say yes to \"propose evening\"?",
+   "explanation": "Expected \"Will they say yes to \"propose evening\"?\" = yes (p=0.67) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 40,
+   "trigger": "surprise: propose_lunch → Will they say yes to \"propose lunch\"?",
+   "explanation": "Expected \"Will they say yes to \"propose lunch\"?\" = yes (p=0.67) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 41,
+   "trigger": "surprise: propose_morning → Will they say yes to \"propose morning\"?",
+   "explanation": "Expected \"Will they say yes to \"propose morning\"?\" = no (p=0.29) but saw yes. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 42,
+   "trigger": "surprise: propose_morning → Will they say yes to \"propose morning\"?",
+   "explanation": "Expected \"Will they say yes to \"propose morning\"?\" = no (p=0.33) but saw yes. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 43,
+   "trigger": "surprise: propose_evening → Will they say yes to \"propose evening\"?",
+   "explanation": "Expected \"Will they say yes to \"propose evening\"?\" = no (p=0.40) but saw yes. Unlike the last time this rule was right, day(weekday) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 44,
+   "trigger": "surprise: propose_morning → Will they say yes to \"propose morning\"?",
+   "explanation": "Expected \"Will they say yes to \"propose morning\"?\" = no (p=0.35) but saw yes. Unlike the last time this rule was right, last_slot(evening) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 45,
+   "trigger": "surprise: send_reminder → Will they be annoyed?",
+   "explanation": "Expected \"Will they be annoyed?\" = yes (p=0.57) but saw no. Unlike the last time this rule was right, last_slot(morning) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 46,
+   "trigger": "surprise: propose_evening → Will they say yes to \"propose evening\"?",
+   "explanation": "Expected \"Will they say yes to \"propose evening\"?\" = no (p=0.38) but saw yes. Splitting on day(weekend).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 47,
+   "trigger": "surprise: send_reminder → Will they be annoyed?",
+   "explanation": "Expected \"Will they be annoyed?\" = yes (p=0.60) but saw no. Splitting on day(weekend).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 48,
+   "trigger": "surprise: propose_morning → Will they say yes to \"propose morning\"?",
+   "explanation": "Expected \"Will they say yes to \"propose morning\"?\" = no (p=0.35) but saw yes. Unlike the last time this rule was right, energy(high) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 49,
+   "trigger": "surprise: propose_morning → Will they say yes to \"propose morning\"?",
+   "explanation": "Expected \"Will they say yes to \"propose morning\"?\" = no (p=0.38) but saw yes. Unlike the last time this rule was right, last_slot(morning) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 50,
+   "trigger": "surprise: propose_evening → Will they say yes to \"propose evening\"?",
+   "explanation": "Expected \"Will they say yes to \"propose evening\"?\" = no (p=0.25) but saw yes. Unlike the last time this rule was right, last_slot(morning) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 51,
+   "trigger": "surprise: propose_evening → Will they say yes to \"propose evening\"?",
+   "explanation": "Expected \"Will they say yes to \"propose evening\"?\" = no (p=0.33) but saw yes. Unlike the last time this rule was right, weather(rain) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 52,
+   "trigger": "surprise: propose_morning → Will they say yes to \"propose morning\"?",
+   "explanation": "Expected \"Will they say yes to \"propose morning\"?\" = yes (p=0.67) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 53,
+   "trigger": "surprise: propose_evening → Will they say yes to \"propose evening\"?",
+   "explanation": "Expected \"Will they say yes to \"propose evening\"?\" = no (p=0.40) but saw yes. Unlike the last time this rule was right, weather(rain) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 54,
+   "trigger": "surprise: propose_lunch → Will they say yes to \"propose lunch\"?",
+   "explanation": "Expected \"Will they say yes to \"propose lunch\"?\" = no (p=0.15) but saw yes. Unlike the last time this rule was right, day(weekday) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 55,
+   "trigger": "surprise: propose_morning → Will they say yes to \"propose morning\"?",
+   "explanation": "Expected \"Will they say yes to \"propose morning\"?\" = yes (p=0.67) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 56,
+   "trigger": "surprise: propose_lunch → Will they say yes to \"propose lunch\"?",
+   "explanation": "Expected \"Will they say yes to \"propose lunch\"?\" = no (p=0.40) but saw yes. Unlike the last time this rule was right, day(weekday) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 57,
+   "trigger": "surprise: propose_evening → Will they say yes to \"propose evening\"?",
+   "explanation": "Expected \"Will they say yes to \"propose evening\"?\" = yes (p=0.67) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 58,
+   "trigger": "surprise: send_reminder → Will they be annoyed?",
+   "explanation": "Expected \"Will they be annoyed?\" = no (p=0.25) but saw yes. Unlike the last time this rule was right, declined(recently) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 59,
+   "trigger": "surprise: propose_morning → Will they say yes to \"propose morning\"?",
+   "explanation": "Expected \"Will they say yes to \"propose morning\"?\" = yes (p=0.83) but saw no. Unlike the last time this rule was right, last_slot(morning) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 60,
+   "trigger": "surprise: propose_morning → Will they say yes to \"propose morning\"?",
+   "explanation": "Expected \"Will they say yes to \"propose morning\"?\" = yes (p=0.75) but saw no. Unlike the last time this rule was right, day(weekend) holds now.",
+   "conceptsAdded": []
+  }
+ ]
+}

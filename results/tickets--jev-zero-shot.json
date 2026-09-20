@@ -1,0 +1,1620 @@
+{
+ "scenario": "tickets",
+ "title": "Team · will the ticket close by Friday?",
+ "kind": "organisation",
+ "predictor": "jev-zero-shot",
+ "ticks": 300,
+ "predictions": 600,
+ "accuracy": 0.8316666666666667,
+ "brier": 0.1584780000000003,
+ "thirds": [
+  {
+   "slice": 0,
+   "rate": 0.155,
+   "accuracy": 0.81,
+   "brier": 0.16896699999999998
+  },
+  {
+   "slice": 1,
+   "rate": 0.145,
+   "accuracy": 0.83,
+   "brier": 0.16089199999999992
+  },
+  {
+   "slice": 2,
+   "rate": 0.095,
+   "accuracy": 0.855,
+   "brier": 0.14557499999999993
+  }
+ ],
+ "calibration": [
+  {
+   "lo": 0,
+   "hi": 0.2,
+   "n": 152,
+   "sumProb": 21.500000000000004,
+   "hits": 41,
+   "meanProb": 0.14144736842105265,
+   "hitRate": 0.26973684210526316
+  },
+  {
+   "lo": 0.2,
+   "hi": 0.4,
+   "n": 326,
+   "sumProb": 96.98000000000003,
+   "hits": 42,
+   "meanProb": 0.2974846625766872,
+   "hitRate": 0.12883435582822086
+  },
+  {
+   "lo": 0.4,
+   "hi": 0.6,
+   "n": 22,
+   "sumProb": 10.56,
+   "hits": 14,
+   "meanProb": 0.48000000000000004,
+   "hitRate": 0.6363636363636364
+  },
+  {
+   "lo": 0.6,
+   "hi": 0.8,
+   "n": 70,
+   "sumProb": 48.77000000000001,
+   "hits": 62,
+   "meanProb": 0.6967142857142858,
+   "hitRate": 0.8857142857142857
+  },
+  {
+   "lo": 0.8,
+   "hi": 1,
+   "n": 30,
+   "sumProb": 25.749999999999996,
+   "hits": 28,
+   "meanProb": 0.8583333333333332,
+   "hitRate": 0.9333333333333333
+  }
+ ],
+ "accuracyByStage": [
+  {
+   "stage": "free",
+   "n": 600,
+   "correct": 499,
+   "accuracy": 0.8316666666666667
+  }
+ ],
+ "concepts": [
+  "capacity",
+  "dependencies"
+ ],
+ "rules": 58,
+ "revisions": 100,
+ "accommodations": 84,
+ "accommodationValue": [
+  {
+   "version": 2,
+   "tick": 1,
+   "before": 0,
+   "after": 0.8333333333333334,
+   "delta": 0.8333333333333334,
+   "n": 0
+  },
+  {
+   "version": 6,
+   "tick": 2,
+   "before": 0.5,
+   "after": 0.8333333333333334,
+   "delta": 0.33333333333333337,
+   "n": 2
+  },
+  {
+   "version": 7,
+   "tick": 5,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 10,
+   "tick": 6,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 11,
+   "tick": 7,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 14,
+   "tick": 9,
+   "before": 0.6666666666666666,
+   "after": 1,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 17,
+   "tick": 15,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 20,
+   "tick": 18,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 21,
+   "tick": 23,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 22,
+   "tick": 24,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 23,
+   "tick": 27,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 24,
+   "tick": 27,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 25,
+   "tick": 28,
+   "before": 0.6666666666666666,
+   "after": 1,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 26,
+   "tick": 40,
+   "before": 1,
+   "after": 0.6666666666666666,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 27,
+   "tick": 47,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 28,
+   "tick": 48,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 29,
+   "tick": 51,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 30,
+   "tick": 51,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 31,
+   "tick": 52,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 32,
+   "tick": 53,
+   "before": 0.5,
+   "after": 1,
+   "delta": 0.5,
+   "n": 6
+  },
+  {
+   "version": 33,
+   "tick": 69,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 34,
+   "tick": 72,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 35,
+   "tick": 73,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 36,
+   "tick": 76,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 38,
+   "tick": 83,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 39,
+   "tick": 87,
+   "before": 0.8333333333333334,
+   "after": 0.5,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 41,
+   "tick": 88,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 42,
+   "tick": 89,
+   "before": 0.5,
+   "after": 0.8333333333333334,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 44,
+   "tick": 90,
+   "before": 0.5,
+   "after": 1,
+   "delta": 0.5,
+   "n": 6
+  },
+  {
+   "version": 45,
+   "tick": 95,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 46,
+   "tick": 98,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 47,
+   "tick": 102,
+   "before": 1,
+   "after": 0.6666666666666666,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 48,
+   "tick": 105,
+   "before": 0.6666666666666666,
+   "after": 1,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 49,
+   "tick": 109,
+   "before": 1,
+   "after": 1,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 50,
+   "tick": 115,
+   "before": 1,
+   "after": 0.6666666666666666,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 51,
+   "tick": 117,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 52,
+   "tick": 118,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 53,
+   "tick": 119,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 54,
+   "tick": 122,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 55,
+   "tick": 126,
+   "before": 1,
+   "after": 0.6666666666666666,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 57,
+   "tick": 129,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 58,
+   "tick": 130,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 59,
+   "tick": 131,
+   "before": 0.5,
+   "after": 1,
+   "delta": 0.5,
+   "n": 6
+  },
+  {
+   "version": 60,
+   "tick": 137,
+   "before": 1,
+   "after": 1,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 61,
+   "tick": 141,
+   "before": 1,
+   "after": 1,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 62,
+   "tick": 148,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 63,
+   "tick": 149,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 64,
+   "tick": 157,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 65,
+   "tick": 161,
+   "before": 1,
+   "after": 0.6666666666666666,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 66,
+   "tick": 162,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 67,
+   "tick": 163,
+   "before": 0.6666666666666666,
+   "after": 1,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 68,
+   "tick": 173,
+   "before": 1,
+   "after": 0.6666666666666666,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 69,
+   "tick": 183,
+   "before": 1,
+   "after": 1,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 70,
+   "tick": 189,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 71,
+   "tick": 193,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 72,
+   "tick": 194,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 73,
+   "tick": 200,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 74,
+   "tick": 200,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 75,
+   "tick": 201,
+   "before": 0.6666666666666666,
+   "after": 1,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 76,
+   "tick": 205,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 77,
+   "tick": 205,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 78,
+   "tick": 206,
+   "before": 0.6666666666666666,
+   "after": 1,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 79,
+   "tick": 210,
+   "before": 1,
+   "after": 1,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 80,
+   "tick": 214,
+   "before": 1,
+   "after": 1,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 81,
+   "tick": 219,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 82,
+   "tick": 220,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 83,
+   "tick": 227,
+   "before": 1,
+   "after": 1,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 84,
+   "tick": 234,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 85,
+   "tick": 235,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 86,
+   "tick": 241,
+   "before": 1,
+   "after": 0.6666666666666666,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 87,
+   "tick": 242,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 88,
+   "tick": 243,
+   "before": 0.6666666666666666,
+   "after": 1,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 89,
+   "tick": 247,
+   "before": 1,
+   "after": 1,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 90,
+   "tick": 252,
+   "before": 1,
+   "after": 1,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 91,
+   "tick": 256,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 92,
+   "tick": 259,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 93,
+   "tick": 269,
+   "before": 1,
+   "after": 0.6666666666666666,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 94,
+   "tick": 284,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 95,
+   "tick": 285,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 96,
+   "tick": 286,
+   "before": 0.5,
+   "after": 1,
+   "delta": 0.5,
+   "n": 6
+  },
+  {
+   "version": 97,
+   "tick": 290,
+   "before": 1,
+   "after": 1,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 98,
+   "tick": 295,
+   "before": 1,
+   "after": 0.6666666666666666,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 99,
+   "tick": 296,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 100,
+   "tick": 297,
+   "before": 0.6666666666666666,
+   "after": 1,
+   "delta": 0.33333333333333337,
+   "n": 6
+  }
+ ],
+ "escalationRate": 0.13166666666666665,
+ "jev": {
+  "calls": 300,
+  "ms": 115704.82240200003,
+  "inputTokens": 105325,
+  "outputTokens": 12600,
+  "errors": 0,
+  "msPerCall": 385.6827413400001,
+  "costUsd": 0.00442365
+ },
+ "warnings": 0,
+ "durationMs": 115850,
+ "surprises": [
+  {
+   "tick": 1,
+   "action": "assign_busy_engineer",
+   "question": "After \"assign busy engineer\", will the ticket be closed by Friday?",
+   "prob": 0.21,
+   "truth": true,
+   "explanation": "No rule covered \"still_at_risk\" after assign_busy_engineer; started one from this observation."
+  },
+  {
+   "tick": 2,
+   "action": "split",
+   "question": "Will the ticket still be unassigned or blocked?",
+   "prob": 0.17,
+   "truth": true,
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.17) but saw yes. Splitting on priority(low)."
+  },
+  {
+   "tick": 5,
+   "action": "assign_busy_engineer",
+   "question": "After \"assign busy engineer\", will the ticket be closed by Friday?",
+   "prob": 0.3,
+   "truth": true,
+   "explanation": "Expected \"After \"assign busy engineer\", will the ticket be closed by Friday?\" = no (p=0.30) but saw yes. Splitting on priority(low)."
+  },
+  {
+   "tick": 6,
+   "action": "wait",
+   "question": "Will the ticket still be unassigned or blocked?",
+   "prob": 0.17,
+   "truth": true,
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.17) but saw yes. Splitting on priority(medium)."
+  },
+  {
+   "tick": 7,
+   "action": "wait",
+   "question": "Will the ticket still be unassigned or blocked?",
+   "prob": 0.22,
+   "truth": true,
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.22) but saw yes. Splitting on blocked(ticket); the agent could not see it, so the concept dependencies is now active."
+  },
+  {
+   "tick": 9,
+   "action": "unblock",
+   "question": "Will the ticket still be unassigned or blocked?",
+   "prob": 0.16,
+   "truth": true,
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.16) but saw yes. Splitting on priority(high)."
+  },
+  {
+   "tick": 15,
+   "action": "unblock",
+   "question": "Will the ticket still be unassigned or blocked?",
+   "prob": 0.17,
+   "truth": true,
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.17) but saw yes. Splitting on priority(medium)."
+  },
+  {
+   "tick": 18,
+   "action": "assign_busy_engineer",
+   "question": "Will the ticket still be unassigned or blocked?",
+   "prob": 0.18,
+   "truth": true,
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.18) but saw yes. Unlike the last time this rule was right, priority(high) holds now."
+  },
+  {
+   "tick": 23,
+   "action": "assign_busy_engineer",
+   "question": "After \"assign busy engineer\", will the ticket be closed by Friday?",
+   "prob": 0.29,
+   "truth": true,
+   "explanation": "Expected \"After \"assign busy engineer\", will the ticket be closed by Friday?\" = no (p=0.29) but saw yes. Splitting on priority(low)."
+  },
+  {
+   "tick": 24,
+   "action": "wait",
+   "question": "Will the ticket still be unassigned or blocked?",
+   "prob": 0.19,
+   "truth": true,
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.19) but saw yes. Unlike the last time this rule was right, priority(high) holds now."
+  },
+  {
+   "tick": 27,
+   "action": "split",
+   "question": "After \"split\", will the ticket be closed by Friday?",
+   "prob": 0.25,
+   "truth": true,
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = yes (p=0.76) but saw no. Splitting on priority(low)."
+  },
+  {
+   "tick": 28,
+   "action": "wait",
+   "question": "Will the ticket still be unassigned or blocked?",
+   "prob": 0.15,
+   "truth": true,
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.15) but saw yes. Splitting on priority(medium)."
+  }
+ ],
+ "rulesSample": [
+  {
+   "action": "assign_busy_engineer",
+   "requires": [],
+   "question": "closed_by_friday",
+   "yes": 3,
+   "no": 16,
+   "source": "assimilate"
+  },
+  {
+   "action": "assign_busy_engineer",
+   "requires": [
+    "load(busy)"
+   ],
+   "question": "closed_by_friday",
+   "yes": 2,
+   "no": 27,
+   "source": "accommodate"
+  },
+  {
+   "action": "split",
+   "requires": [],
+   "question": "closed_by_friday",
+   "yes": 3,
+   "no": 10,
+   "source": "assimilate"
+  },
+  {
+   "action": "wait",
+   "requires": [],
+   "question": "closed_by_friday",
+   "yes": 1,
+   "no": 56,
+   "source": "assimilate"
+  },
+  {
+   "action": "wait",
+   "requires": [
+    "blocked(ticket)"
+   ],
+   "question": "still_at_risk",
+   "yes": 9,
+   "no": 0,
+   "source": "accommodate"
+  },
+  {
+   "action": "unblock",
+   "requires": [],
+   "question": "closed_by_friday",
+   "yes": 6,
+   "no": 31,
+   "source": "assimilate"
+  },
+  {
+   "action": "unblock",
+   "requires": [],
+   "question": "still_at_risk",
+   "yes": 2,
+   "no": 11,
+   "source": "assimilate"
+  },
+  {
+   "action": "assign_free_engineer",
+   "requires": [],
+   "question": "closed_by_friday",
+   "yes": 3,
+   "no": 11,
+   "source": "assimilate"
+  },
+  {
+   "action": "escalate",
+   "requires": [],
+   "question": "closed_by_friday",
+   "yes": 2,
+   "no": 22,
+   "source": "assimilate"
+  },
+  {
+   "action": "escalate",
+   "requires": [],
+   "question": "still_at_risk",
+   "yes": 2,
+   "no": 3,
+   "source": "assimilate"
+  },
+  {
+   "action": "wait",
+   "requires": [
+    "priority(high)"
+   ],
+   "question": "still_at_risk",
+   "yes": 20,
+   "no": 8,
+   "source": "accommodate"
+  },
+  {
+   "action": "split",
+   "requires": [
+    "priority(low)"
+   ],
+   "question": "closed_by_friday",
+   "yes": 5,
+   "no": 0,
+   "source": "accommodate"
+  },
+  {
+   "action": "escalate",
+   "requires": [
+    "size(M)"
+   ],
+   "question": "still_at_risk",
+   "yes": 7,
+   "no": 3,
+   "source": "accommodate"
+  },
+  {
+   "action": "assign_free_engineer",
+   "requires": [
+    "size(M)"
+   ],
+   "question": "closed_by_friday",
+   "yes": 1,
+   "no": 2,
+   "source": "accommodate"
+  },
+  {
+   "action": "split",
+   "requires": [
+    "size(S)"
+   ],
+   "question": "closed_by_friday",
+   "yes": 1,
+   "no": 5,
+   "source": "accommodate"
+  },
+  {
+   "action": "split",
+   "requires": [
+    "size(S)"
+   ],
+   "question": "still_at_risk",
+   "yes": 13,
+   "no": 1,
+   "source": "accommodate"
+  },
+  {
+   "action": "assign_free_engineer",
+   "requires": [
+    "assigned(yes)"
+   ],
+   "question": "closed_by_friday",
+   "yes": 9,
+   "no": 21,
+   "source": "accommodate"
+  },
+  {
+   "action": "assign_free_engineer",
+   "requires": [
+    "priority(medium)"
+   ],
+   "question": "still_at_risk",
+   "yes": 5,
+   "no": 1,
+   "source": "accommodate"
+  },
+  {
+   "action": "escalate",
+   "requires": [
+    "priority(low)"
+   ],
+   "question": "still_at_risk",
+   "yes": 2,
+   "no": 2,
+   "source": "accommodate"
+  },
+  {
+   "action": "escalate",
+   "requires": [
+    "priority(high)"
+   ],
+   "question": "closed_by_friday",
+   "yes": 3,
+   "no": 20,
+   "source": "accommodate"
+  },
+  {
+   "action": "escalate",
+   "requires": [
+    "priority(high)"
+   ],
+   "question": "still_at_risk",
+   "yes": 4,
+   "no": 1,
+   "source": "accommodate"
+  },
+  {
+   "action": "wait",
+   "requires": [
+    "size(L)"
+   ],
+   "question": "still_at_risk",
+   "yes": 1,
+   "no": 2,
+   "source": "accommodate"
+  },
+  {
+   "action": "assign_free_engineer",
+   "requires": [],
+   "question": "still_at_risk",
+   "yes": 3,
+   "no": 5,
+   "source": "assimilate"
+  },
+  {
+   "action": "assign_free_engineer",
+   "requires": [
+    "priority(low)"
+   ],
+   "question": "still_at_risk",
+   "yes": 1,
+   "no": 5,
+   "source": "accommodate"
+  },
+  {
+   "action": "assign_busy_engineer",
+   "requires": [
+    "priority(low)"
+   ],
+   "question": "closed_by_friday",
+   "yes": 1,
+   "no": 4,
+   "source": "accommodate"
+  },
+  {
+   "action": "assign_busy_engineer",
+   "requires": [],
+   "question": "still_at_risk",
+   "yes": 2,
+   "no": 4,
+   "source": "assimilate"
+  },
+  {
+   "action": "split",
+   "requires": [
+    "priority(medium)"
+   ],
+   "question": "still_at_risk",
+   "yes": 3,
+   "no": 2,
+   "source": "accommodate"
+  },
+  {
+   "action": "assign_free_engineer",
+   "requires": [
+    "priority(low)"
+   ],
+   "question": "closed_by_friday",
+   "yes": 2,
+   "no": 1,
+   "source": "accommodate"
+  },
+  {
+   "action": "wait",
+   "requires": [],
+   "question": "still_at_risk",
+   "yes": 1,
+   "no": 0,
+   "source": "assimilate"
+  },
+  {
+   "action": "wait",
+   "requires": [
+    "priority(low)"
+   ],
+   "question": "still_at_risk",
+   "yes": 4,
+   "no": 2,
+   "source": "accommodate"
+  },
+  {
+   "action": "unblock",
+   "requires": [
+    "size(S)"
+   ],
+   "question": "closed_by_friday",
+   "yes": 1,
+   "no": 3,
+   "source": "accommodate"
+  },
+  {
+   "action": "split",
+   "requires": [
+    "assigned(yes)"
+   ],
+   "question": "closed_by_friday",
+   "yes": 1,
+   "no": 26,
+   "source": "accommodate"
+  },
+  {
+   "action": "escalate",
+   "requires": [
+    "load(free)"
+   ],
+   "question": "still_at_risk",
+   "yes": 1,
+   "no": 0,
+   "source": "accommodate"
+  },
+  {
+   "action": "assign_busy_engineer",
+   "requires": [
+    "days_left(one)"
+   ],
+   "question": "still_at_risk",
+   "yes": 2,
+   "no": 2,
+   "source": "accommodate"
+  },
+  {
+   "action": "split",
+   "requires": [],
+   "question": "still_at_risk",
+   "yes": 2,
+   "no": 3,
+   "source": "assimilate"
+  },
+  {
+   "action": "assign_free_engineer",
+   "requires": [
+    "days_left(one)"
+   ],
+   "question": "closed_by_friday",
+   "yes": 1,
+   "no": 1,
+   "source": "accommodate"
+  },
+  {
+   "action": "escalate",
+   "requires": [
+    "days_left(one)"
+   ],
+   "question": "still_at_risk",
+   "yes": 1,
+   "no": 0,
+   "source": "accommodate"
+  },
+  {
+   "action": "assign_busy_engineer",
+   "requires": [
+    "priority(high)"
+   ],
+   "question": "still_at_risk",
+   "yes": 4,
+   "no": 17,
+   "source": "accommodate"
+  },
+  {
+   "action": "assign_free_engineer",
+   "requires": [
+    "priority(high)"
+   ],
+   "question": "closed_by_friday",
+   "yes": 5,
+   "no": 3,
+   "source": "accommodate"
+  },
+  {
+   "action": "wait",
+   "requires": [
+    "size(S)"
+   ],
+   "question": "still_at_risk",
+   "yes": 2,
+   "no": 0,
+   "source": "accommodate"
+  }
+ ],
+ "history": [
+  {
+   "version": 1,
+   "trigger": "assign_busy_engineer → After \"assign busy engineer\", will the ticket be closed by Friday?",
+   "explanation": "No rule covered \"closed_by_friday\" after assign_busy_engineer; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 2,
+   "trigger": "surprise: assign_busy_engineer → After \"assign busy engineer\", will the ticket be closed by Friday?",
+   "explanation": "Expected \"After \"assign busy engineer\", will the ticket be closed by Friday?\" = no (p=0.21) but saw yes. Splitting on load(busy); the agent could not see it, so the concept capacity is now active.",
+   "conceptsAdded": [
+    "capacity"
+   ]
+  },
+  {
+   "version": 3,
+   "trigger": "assign_busy_engineer → Will the ticket still be unassigned or blocked?",
+   "explanation": "No rule covered \"still_at_risk\" after assign_busy_engineer; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 4,
+   "trigger": "split → After \"split\", will the ticket be closed by Friday?",
+   "explanation": "No rule covered \"closed_by_friday\" after split; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 5,
+   "trigger": "split → Will the ticket still be unassigned or blocked?",
+   "explanation": "No rule covered \"still_at_risk\" after split; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 6,
+   "trigger": "surprise: split → Will the ticket still be unassigned or blocked?",
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.17) but saw yes. Splitting on priority(low).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 7,
+   "trigger": "surprise: assign_busy_engineer → After \"assign busy engineer\", will the ticket be closed by Friday?",
+   "explanation": "Expected \"After \"assign busy engineer\", will the ticket be closed by Friday?\" = no (p=0.30) but saw yes. Splitting on priority(low).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 8,
+   "trigger": "wait → After \"wait\", will the ticket be closed by Friday?",
+   "explanation": "No rule covered \"closed_by_friday\" after wait; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 9,
+   "trigger": "wait → Will the ticket still be unassigned or blocked?",
+   "explanation": "No rule covered \"still_at_risk\" after wait; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 10,
+   "trigger": "surprise: wait → Will the ticket still be unassigned or blocked?",
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.17) but saw yes. Splitting on priority(medium).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 11,
+   "trigger": "surprise: wait → Will the ticket still be unassigned or blocked?",
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.22) but saw yes. Splitting on blocked(ticket); the agent could not see it, so the concept dependencies is now active.",
+   "conceptsAdded": [
+    "dependencies"
+   ]
+  },
+  {
+   "version": 12,
+   "trigger": "unblock → After \"unblock\", will the ticket be closed by Friday?",
+   "explanation": "No rule covered \"closed_by_friday\" after unblock; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 13,
+   "trigger": "unblock → Will the ticket still be unassigned or blocked?",
+   "explanation": "No rule covered \"still_at_risk\" after unblock; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 14,
+   "trigger": "surprise: unblock → Will the ticket still be unassigned or blocked?",
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.16) but saw yes. Splitting on priority(high).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 15,
+   "trigger": "assign_free_engineer → After \"assign free engineer\", will the ticket be closed by Friday?",
+   "explanation": "No rule covered \"closed_by_friday\" after assign_free_engineer; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 16,
+   "trigger": "assign_free_engineer → Will the ticket still be unassigned or blocked?",
+   "explanation": "No rule covered \"still_at_risk\" after assign_free_engineer; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 17,
+   "trigger": "surprise: unblock → Will the ticket still be unassigned or blocked?",
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.17) but saw yes. Splitting on priority(medium).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 18,
+   "trigger": "escalate → After \"escalate\", will the ticket be closed by Friday?",
+   "explanation": "No rule covered \"closed_by_friday\" after escalate; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 19,
+   "trigger": "escalate → Will the ticket still be unassigned or blocked?",
+   "explanation": "No rule covered \"still_at_risk\" after escalate; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 20,
+   "trigger": "surprise: assign_busy_engineer → Will the ticket still be unassigned or blocked?",
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.18) but saw yes. Unlike the last time this rule was right, priority(high) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 21,
+   "trigger": "surprise: assign_busy_engineer → After \"assign busy engineer\", will the ticket be closed by Friday?",
+   "explanation": "Expected \"After \"assign busy engineer\", will the ticket be closed by Friday?\" = no (p=0.29) but saw yes. Splitting on priority(low).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 22,
+   "trigger": "surprise: wait → Will the ticket still be unassigned or blocked?",
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.19) but saw yes. Unlike the last time this rule was right, priority(high) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 23,
+   "trigger": "surprise: split → After \"split\", will the ticket be closed by Friday?",
+   "explanation": "Expected \"After \"split\", will the ticket be closed by Friday?\" = no (p=0.25) but saw yes. Splitting on priority(low).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 24,
+   "trigger": "surprise: split → Will the ticket still be unassigned or blocked?",
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = yes (p=0.76) but saw no. Splitting on priority(low).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 25,
+   "trigger": "surprise: wait → Will the ticket still be unassigned or blocked?",
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.15) but saw yes. Splitting on priority(medium).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 26,
+   "trigger": "surprise: escalate → Will the ticket still be unassigned or blocked?",
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.11) but saw yes. Unlike the last time this rule was right, size(M) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 27,
+   "trigger": "surprise: assign_free_engineer → After \"assign free engineer\", will the ticket be closed by Friday?",
+   "explanation": "Expected \"After \"assign free engineer\", will the ticket be closed by Friday?\" = no (p=0.32) but saw yes. Unlike the last time this rule was right, size(M) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 28,
+   "trigger": "surprise: escalate → Will the ticket still be unassigned or blocked?",
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.12) but saw yes. Unlike the last time this rule was right, assigned(yes) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 29,
+   "trigger": "surprise: split → After \"split\", will the ticket be closed by Friday?",
+   "explanation": "Expected \"After \"split\", will the ticket be closed by Friday?\" = no (p=0.30) but saw yes. Unlike the last time this rule was right, size(S) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 30,
+   "trigger": "surprise: split → Will the ticket still be unassigned or blocked?",
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = yes (p=0.71) but saw no. Unlike the last time this rule was right, size(S) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 31,
+   "trigger": "surprise: assign_free_engineer → After \"assign free engineer\", will the ticket be closed by Friday?",
+   "explanation": "Expected \"After \"assign free engineer\", will the ticket be closed by Friday?\" = no (p=0.31) but saw yes. Unlike the last time this rule was right, assigned(yes) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 32,
+   "trigger": "surprise: assign_free_engineer → Will the ticket still be unassigned or blocked?",
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.10) but saw yes. Unlike the last time this rule was right, priority(medium) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 33,
+   "trigger": "surprise: escalate → Will the ticket still be unassigned or blocked?",
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = yes (p=0.74) but saw no. Splitting on priority(low).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 34,
+   "trigger": "surprise: escalate → After \"escalate\", will the ticket be closed by Friday?",
+   "explanation": "Expected \"After \"escalate\", will the ticket be closed by Friday?\" = no (p=0.29) but saw yes. Unlike the last time this rule was right, priority(high) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 35,
+   "trigger": "surprise: escalate → Will the ticket still be unassigned or blocked?",
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.10) but saw yes. Splitting on priority(high).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 36,
+   "trigger": "surprise: wait → Will the ticket still be unassigned or blocked?",
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = yes (p=0.87) but saw no. Unlike the last time this rule was right, size(L) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 37,
+   "trigger": "assign_free_engineer → Will the ticket still be unassigned or blocked?",
+   "explanation": "No rule covered \"still_at_risk\" after assign_free_engineer; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 38,
+   "trigger": "surprise: assign_free_engineer → Will the ticket still be unassigned or blocked?",
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.28) but saw yes. Splitting on priority(low).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 39,
+   "trigger": "surprise: assign_busy_engineer → After \"assign busy engineer\", will the ticket be closed by Friday?",
+   "explanation": "Expected \"After \"assign busy engineer\", will the ticket be closed by Friday?\" = no (p=0.26) but saw yes. Unlike the last time this rule was right, priority(low) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 40,
+   "trigger": "assign_busy_engineer → Will the ticket still be unassigned or blocked?",
+   "explanation": "No rule covered \"still_at_risk\" after assign_busy_engineer; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 41,
+   "trigger": "surprise: split → Will the ticket still be unassigned or blocked?",
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.15) but saw yes. Unlike the last time this rule was right, priority(medium) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 42,
+   "trigger": "surprise: assign_free_engineer → After \"assign free engineer\", will the ticket be closed by Friday?",
+   "explanation": "Expected \"After \"assign free engineer\", will the ticket be closed by Friday?\" = no (p=0.31) but saw yes. Unlike the last time this rule was right, priority(low) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 43,
+   "trigger": "wait → Will the ticket still be unassigned or blocked?",
+   "explanation": "No rule covered \"still_at_risk\" after wait; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 44,
+   "trigger": "surprise: wait → Will the ticket still be unassigned or blocked?",
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.14) but saw yes. Splitting on priority(low).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 45,
+   "trigger": "surprise: unblock → Will the ticket still be unassigned or blocked?",
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.14) but saw yes. Unlike the last time this rule was right, days_left(one) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 46,
+   "trigger": "surprise: split → After \"split\", will the ticket be closed by Friday?",
+   "explanation": "Expected \"After \"split\", will the ticket be closed by Friday?\" = no (p=0.33) but saw yes. Splitting on priority(low).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 47,
+   "trigger": "surprise: assign_free_engineer → Will the ticket still be unassigned or blocked?",
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.16) but saw yes. Splitting on priority(high).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 48,
+   "trigger": "surprise: unblock → Will the ticket still be unassigned or blocked?",
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.15) but saw yes. Unlike the last time this rule was right, days_left(one) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 49,
+   "trigger": "surprise: assign_busy_engineer → Will the ticket still be unassigned or blocked?",
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.15) but saw yes. Unlike the last time this rule was right, assigned(yes) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 50,
+   "trigger": "surprise: unblock → Will the ticket still be unassigned or blocked?",
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.33) but saw yes. Unlike the last time this rule was right, days_left(few) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 51,
+   "trigger": "surprise: unblock → After \"unblock\", will the ticket be closed by Friday?",
+   "explanation": "Expected \"After \"unblock\", will the ticket be closed by Friday?\" = no (p=0.31) but saw yes. Unlike the last time this rule was right, size(S) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 52,
+   "trigger": "surprise: split → After \"split\", will the ticket be closed by Friday?",
+   "explanation": "Expected \"After \"split\", will the ticket be closed by Friday?\" = no (p=0.26) but saw yes. Unlike the last time this rule was right, assigned(yes) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 53,
+   "trigger": "surprise: escalate → Will the ticket still be unassigned or blocked?",
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.12) but saw yes. Unlike the last time this rule was right, load(free) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 54,
+   "trigger": "surprise: assign_free_engineer → Will the ticket still be unassigned or blocked?",
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.10) but saw yes. Unlike the last time this rule was right, assigned(yes) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 55,
+   "trigger": "surprise: assign_busy_engineer → Will the ticket still be unassigned or blocked?",
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.18) but saw yes. Unlike the last time this rule was right, days_left(one) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 56,
+   "trigger": "split → Will the ticket still be unassigned or blocked?",
+   "explanation": "No rule covered \"still_at_risk\" after split; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 57,
+   "trigger": "surprise: assign_free_engineer → After \"assign free engineer\", will the ticket be closed by Friday?",
+   "explanation": "Expected \"After \"assign free engineer\", will the ticket be closed by Friday?\" = no (p=0.28) but saw yes. Unlike the last time this rule was right, days_left(one) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 58,
+   "trigger": "surprise: split → After \"split\", will the ticket be closed by Friday?",
+   "explanation": "Expected \"After \"split\", will the ticket be closed by Friday?\" = no (p=0.32) but saw yes. Splitting on priority(low).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 59,
+   "trigger": "surprise: escalate → Will the ticket still be unassigned or blocked?",
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.11) but saw yes. Unlike the last time this rule was right, priority(high) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 60,
+   "trigger": "surprise: escalate → Will the ticket still be unassigned or blocked?",
+   "explanation": "Expected \"Will the ticket still be unassigned or blocked?\" = no (p=0.10) but saw yes. Unlike the last time this rule was right, days_left(one) holds now.",
+   "conceptsAdded": []
+  }
+ ]
+}

@@ -1,0 +1,1982 @@
+{
+ "scenario": "checkout",
+ "title": "Web shop · undocumented checkout flow",
+ "kind": "software",
+ "predictor": "jev-zero-shot",
+ "ticks": 300,
+ "predictions": 900,
+ "accuracy": 0.7722222222222223,
+ "brier": 0.15060366666666666,
+ "thirds": [
+  {
+   "slice": 0,
+   "rate": 0.17666666666666667,
+   "accuracy": 0.7966666666666666,
+   "brier": 0.13773900000000006
+  },
+  {
+   "slice": 1,
+   "rate": 0.16333333333333333,
+   "accuracy": 0.7933333333333333,
+   "brier": 0.14530300000000015
+  },
+  {
+   "slice": 2,
+   "rate": 0.16666666666666666,
+   "accuracy": 0.7266666666666667,
+   "brier": 0.1687690000000001
+  }
+ ],
+ "calibration": [
+  {
+   "lo": 0,
+   "hi": 0.2,
+   "n": 335,
+   "sumProb": 22.569999999999993,
+   "hits": 20,
+   "meanProb": 0.06737313432835819,
+   "hitRate": 0.05970149253731343
+  },
+  {
+   "lo": 0.2,
+   "hi": 0.4,
+   "n": 285,
+   "sumProb": 80.66999999999996,
+   "hits": 61,
+   "meanProb": 0.2830526315789472,
+   "hitRate": 0.21403508771929824
+  },
+  {
+   "lo": 0.4,
+   "hi": 0.6,
+   "n": 98,
+   "sumProb": 48.52000000000001,
+   "hits": 42,
+   "meanProb": 0.49510204081632664,
+   "hitRate": 0.42857142857142855
+  },
+  {
+   "lo": 0.6,
+   "hi": 0.8,
+   "n": 102,
+   "sumProb": 71.9,
+   "hits": 68,
+   "meanProb": 0.7049019607843138,
+   "hitRate": 0.6666666666666666
+  },
+  {
+   "lo": 0.8,
+   "hi": 1,
+   "n": 80,
+   "sumProb": 67.49,
+   "hits": 50,
+   "meanProb": 0.843625,
+   "hitRate": 0.625
+  }
+ ],
+ "accuracyByStage": [
+  {
+   "stage": "free",
+   "n": 900,
+   "correct": 695,
+   "accuracy": 0.7722222222222223
+  }
+ ],
+ "concepts": [
+  "session",
+  "validation"
+ ],
+ "rules": 74,
+ "revisions": 167,
+ "accommodations": 131,
+ "accommodationValue": [
+  {
+   "version": 5,
+   "tick": 2,
+   "before": 0.6666666666666666,
+   "after": 0.5,
+   "delta": -0.16666666666666663,
+   "n": 3
+  },
+  {
+   "version": 9,
+   "tick": 3,
+   "before": 0.5,
+   "after": 0.6666666666666666,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 11,
+   "tick": 3,
+   "before": 0.5,
+   "after": 0.6666666666666666,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 15,
+   "tick": 4,
+   "before": 0.3333333333333333,
+   "after": 0.6666666666666666,
+   "delta": 0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 18,
+   "tick": 5,
+   "before": 0.5,
+   "after": 0.8333333333333334,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 21,
+   "tick": 6,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 25,
+   "tick": 10,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 26,
+   "tick": 11,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 28,
+   "tick": 14,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 36,
+   "tick": 24,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 41,
+   "tick": 27,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 42,
+   "tick": 30,
+   "before": 1,
+   "after": 1,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 43,
+   "tick": 35,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 44,
+   "tick": 38,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 45,
+   "tick": 43,
+   "before": 1,
+   "after": 0.6666666666666666,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 46,
+   "tick": 44,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 47,
+   "tick": 45,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 48,
+   "tick": 50,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 49,
+   "tick": 53,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 50,
+   "tick": 58,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 51,
+   "tick": 59,
+   "before": 0.5,
+   "after": 0.8333333333333334,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 52,
+   "tick": 61,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 53,
+   "tick": 62,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 55,
+   "tick": 68,
+   "before": 1,
+   "after": 1,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 56,
+   "tick": 71,
+   "before": 1,
+   "after": 0.5,
+   "delta": -0.5,
+   "n": 6
+  },
+  {
+   "version": 57,
+   "tick": 73,
+   "before": 0.6666666666666666,
+   "after": 1,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 58,
+   "tick": 76,
+   "before": 1,
+   "after": 0.6666666666666666,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 59,
+   "tick": 78,
+   "before": 0.3333333333333333,
+   "after": 1,
+   "delta": 0.6666666666666667,
+   "n": 6
+  },
+  {
+   "version": 63,
+   "tick": 85,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 64,
+   "tick": 86,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 65,
+   "tick": 89,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 66,
+   "tick": 91,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 67,
+   "tick": 93,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 68,
+   "tick": 94,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 69,
+   "tick": 100,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 70,
+   "tick": 106,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 71,
+   "tick": 107,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 72,
+   "tick": 110,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 73,
+   "tick": 110,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 74,
+   "tick": 112,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 75,
+   "tick": 114,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 76,
+   "tick": 115,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 77,
+   "tick": 118,
+   "before": 1,
+   "after": 1,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 78,
+   "tick": 122,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 79,
+   "tick": 127,
+   "before": 1,
+   "after": 0.6666666666666666,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 80,
+   "tick": 127,
+   "before": 1,
+   "after": 0.6666666666666666,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 81,
+   "tick": 128,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 82,
+   "tick": 130,
+   "before": 0.6666666666666666,
+   "after": 0.5,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 83,
+   "tick": 131,
+   "before": 0.6666666666666666,
+   "after": 0.5,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 84,
+   "tick": 133,
+   "before": 0.5,
+   "after": 1,
+   "delta": 0.5,
+   "n": 6
+  },
+  {
+   "version": 85,
+   "tick": 139,
+   "before": 1,
+   "after": 1,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 86,
+   "tick": 142,
+   "before": 1,
+   "after": 0.6666666666666666,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 87,
+   "tick": 144,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 89,
+   "tick": 147,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 90,
+   "tick": 149,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 91,
+   "tick": 154,
+   "before": 1,
+   "after": 0.5,
+   "delta": -0.5,
+   "n": 6
+  },
+  {
+   "version": 92,
+   "tick": 155,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 93,
+   "tick": 156,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 94,
+   "tick": 158,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 95,
+   "tick": 160,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 96,
+   "tick": 161,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 97,
+   "tick": 161,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 98,
+   "tick": 164,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 99,
+   "tick": 166,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 100,
+   "tick": 166,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 101,
+   "tick": 175,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 103,
+   "tick": 176,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 104,
+   "tick": 179,
+   "before": 1,
+   "after": 1,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 105,
+   "tick": 185,
+   "before": 1,
+   "after": 0.6666666666666666,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 106,
+   "tick": 186,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 107,
+   "tick": 194,
+   "before": 0.8333333333333334,
+   "after": 0.5,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 108,
+   "tick": 194,
+   "before": 0.8333333333333334,
+   "after": 0.5,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 109,
+   "tick": 195,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 110,
+   "tick": 196,
+   "before": 0.3333333333333333,
+   "after": 0.5,
+   "delta": 0.16666666666666669,
+   "n": 6
+  },
+  {
+   "version": 111,
+   "tick": 197,
+   "before": 0.5,
+   "after": 0.6666666666666666,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 112,
+   "tick": 198,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 113,
+   "tick": 198,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 114,
+   "tick": 201,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 115,
+   "tick": 210,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 116,
+   "tick": 210,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 117,
+   "tick": 210,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 118,
+   "tick": 211,
+   "before": 0.3333333333333333,
+   "after": 0.8333333333333334,
+   "delta": 0.5,
+   "n": 6
+  },
+  {
+   "version": 119,
+   "tick": 214,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 120,
+   "tick": 214,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 121,
+   "tick": 215,
+   "before": 0.5,
+   "after": 1,
+   "delta": 0.5,
+   "n": 6
+  },
+  {
+   "version": 122,
+   "tick": 218,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 123,
+   "tick": 218,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 124,
+   "tick": 220,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 125,
+   "tick": 222,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 126,
+   "tick": 228,
+   "before": 1,
+   "after": 0.3333333333333333,
+   "delta": -0.6666666666666667,
+   "n": 6
+  },
+  {
+   "version": 127,
+   "tick": 229,
+   "before": 0.5,
+   "after": 0.3333333333333333,
+   "delta": -0.16666666666666669,
+   "n": 6
+  },
+  {
+   "version": 128,
+   "tick": 230,
+   "before": 0.3333333333333333,
+   "after": 0.8333333333333334,
+   "delta": 0.5,
+   "n": 6
+  },
+  {
+   "version": 129,
+   "tick": 231,
+   "before": 0.3333333333333333,
+   "after": 1,
+   "delta": 0.6666666666666667,
+   "n": 6
+  },
+  {
+   "version": 130,
+   "tick": 234,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 131,
+   "tick": 235,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 132,
+   "tick": 238,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 133,
+   "tick": 238,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 134,
+   "tick": 238,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 135,
+   "tick": 239,
+   "before": 0.5,
+   "after": 0.6666666666666666,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 136,
+   "tick": 241,
+   "before": 0.8333333333333334,
+   "after": 0.5,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 137,
+   "tick": 242,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 138,
+   "tick": 242,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 139,
+   "tick": 242,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 140,
+   "tick": 244,
+   "before": 0.5,
+   "after": 1,
+   "delta": 0.5,
+   "n": 6
+  },
+  {
+   "version": 141,
+   "tick": 244,
+   "before": 0.5,
+   "after": 1,
+   "delta": 0.5,
+   "n": 6
+  },
+  {
+   "version": 142,
+   "tick": 248,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 143,
+   "tick": 249,
+   "before": 0.6666666666666666,
+   "after": 1,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 144,
+   "tick": 253,
+   "before": 1,
+   "after": 0.3333333333333333,
+   "delta": -0.6666666666666667,
+   "n": 6
+  },
+  {
+   "version": 145,
+   "tick": 254,
+   "before": 0.5,
+   "after": 0.6666666666666666,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 146,
+   "tick": 255,
+   "before": 0,
+   "after": 0.6666666666666666,
+   "delta": 0.6666666666666666,
+   "n": 6
+  },
+  {
+   "version": 147,
+   "tick": 256,
+   "before": 0.3333333333333333,
+   "after": 0.6666666666666666,
+   "delta": 0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 148,
+   "tick": 259,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 149,
+   "tick": 260,
+   "before": 0.5,
+   "after": 0.8333333333333334,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 150,
+   "tick": 261,
+   "before": 0.5,
+   "after": 1,
+   "delta": 0.5,
+   "n": 6
+  },
+  {
+   "version": 151,
+   "tick": 267,
+   "before": 1,
+   "after": 1,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 152,
+   "tick": 270,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 153,
+   "tick": 273,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 154,
+   "tick": 276,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 155,
+   "tick": 278,
+   "before": 0.8333333333333334,
+   "after": 0.5,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 156,
+   "tick": 279,
+   "before": 0.8333333333333334,
+   "after": 0.5,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 157,
+   "tick": 281,
+   "before": 0.5,
+   "after": 0.5,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 158,
+   "tick": 282,
+   "before": 0.5,
+   "after": 0.3333333333333333,
+   "delta": -0.16666666666666669,
+   "n": 6
+  },
+  {
+   "version": 159,
+   "tick": 284,
+   "before": 0.5,
+   "after": 0.6666666666666666,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 160,
+   "tick": 285,
+   "before": 0.3333333333333333,
+   "after": 0.6666666666666666,
+   "delta": 0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 161,
+   "tick": 286,
+   "before": 0.3333333333333333,
+   "after": 0.6666666666666666,
+   "delta": 0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 162,
+   "tick": 288,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 163,
+   "tick": 289,
+   "before": 0.6666666666666666,
+   "after": 1,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 164,
+   "tick": 293,
+   "before": 1,
+   "after": 1,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 165,
+   "tick": 296,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 166,
+   "tick": 299,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 3
+  },
+  {
+   "version": 167,
+   "tick": 299,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 3
+  }
+ ],
+ "escalationRate": 0.1688888888888889,
+ "jev": {
+  "calls": 300,
+  "ms": 116904.085624,
+  "inputTokens": 113595,
+  "outputTokens": 17400,
+  "errors": 0,
+  "msPerCall": 389.6802854133333,
+  "costUsd": 0.004770990000000001
+ },
+ "warnings": 0,
+ "durationMs": 117075,
+ "surprises": [
+  {
+   "tick": 2,
+   "action": "log_in",
+   "question": "Will \"log in\" take us to a different page?",
+   "prob": 0.7,
+   "truth": false,
+   "explanation": "No rule covered \"order_completes\" after log_in; started one from this observation."
+  },
+  {
+   "tick": 3,
+   "action": "add_to_cart",
+   "question": "Will \"add to cart\" take us to a different page?",
+   "prob": 0.34,
+   "truth": true,
+   "explanation": "No rule covered \"order_completes\" after add_to_cart; started one from this observation."
+  },
+  {
+   "tick": 4,
+   "action": "apply_coupon",
+   "question": "Will \"apply coupon\" show an error?",
+   "prob": 0.75,
+   "truth": false,
+   "explanation": "No rule covered \"order_completes\" after apply_coupon; started one from this observation."
+  },
+  {
+   "tick": 5,
+   "action": "pay",
+   "question": "Will \"pay\" take us to a different page?",
+   "prob": 0.75,
+   "truth": false,
+   "explanation": "No rule covered \"order_completes\" after pay; started one from this observation."
+  },
+  {
+   "tick": 6,
+   "action": "add_to_cart",
+   "question": "Will \"add to cart\" show an error?",
+   "prob": 0.7,
+   "truth": false,
+   "explanation": "Expected \"Will \"add to cart\" show an error?\" = yes (p=0.70) but saw no. Splitting on page(cart)."
+  },
+  {
+   "tick": 10,
+   "action": "pay",
+   "question": "Will \"pay\" take us to a different page?",
+   "prob": 0.75,
+   "truth": false,
+   "explanation": "Expected \"Will \"pay\" take us to a different page?\" = yes (p=0.75) but saw no. Splitting on page(cart)."
+  },
+  {
+   "tick": 11,
+   "action": "go_to_checkout",
+   "question": "Will \"go to checkout\" show an error?",
+   "prob": 0.75,
+   "truth": false,
+   "explanation": "Expected \"Will \"go to checkout\" show an error?\" = yes (p=0.75) but saw no. Splitting on page(cart)."
+  },
+  {
+   "tick": 14,
+   "action": "fill_address {\"valid\":\"yes\"}",
+   "question": "Will \"fill address\" take us to a different page?",
+   "prob": 0.26,
+   "truth": true,
+   "explanation": "No rule covered \"order_completes\" after fill_address; started one from this observation."
+  },
+  {
+   "tick": 24,
+   "action": "fill_payment {\"valid\":\"yes\"}",
+   "question": "Will \"fill payment\" show an error?",
+   "prob": 0.17,
+   "truth": true,
+   "explanation": "No rule covered \"order_completes\" after fill_payment; started one from this observation."
+  },
+  {
+   "tick": 27,
+   "action": "pay",
+   "question": "Will \"pay\" take us to a different page?",
+   "prob": 0.72,
+   "truth": false,
+   "explanation": "Expected \"Will \"pay\" take us to a different page?\" = yes (p=0.72) but saw no. Splitting on page(cart)."
+  },
+  {
+   "tick": 30,
+   "action": "add_to_cart",
+   "question": "Will \"add to cart\" take us to a different page?",
+   "prob": 0.34,
+   "truth": true,
+   "explanation": "Expected \"Will \"add to cart\" take us to a different page?\" = no (p=0.34) but saw yes. Splitting on page(product)."
+  },
+  {
+   "tick": 35,
+   "action": "pay",
+   "question": "Will \"pay\" take us to a different page?",
+   "prob": 0.74,
+   "truth": false,
+   "explanation": "Expected \"Will \"pay\" take us to a different page?\" = yes (p=0.74) but saw no. Splitting on page(cart)."
+  }
+ ],
+ "rulesSample": [
+  {
+   "action": "go_to_checkout",
+   "requires": [],
+   "question": "page_changes",
+   "yes": 23,
+   "no": 3,
+   "source": "assimilate"
+  },
+  {
+   "action": "go_to_checkout",
+   "requires": [],
+   "question": "error_shows",
+   "yes": 2,
+   "no": 8,
+   "source": "assimilate"
+  },
+  {
+   "action": "go_to_checkout",
+   "requires": [],
+   "question": "order_completes",
+   "yes": 0,
+   "no": 37,
+   "source": "assimilate"
+  },
+  {
+   "action": "log_in",
+   "requires": [],
+   "question": "page_changes",
+   "yes": 0,
+   "no": 1,
+   "source": "assimilate"
+  },
+  {
+   "action": "log_in",
+   "requires": [
+    "signed_in(user)"
+   ],
+   "question": "page_changes",
+   "yes": 0,
+   "no": 34,
+   "source": "accommodate"
+  },
+  {
+   "action": "log_in",
+   "requires": [],
+   "question": "error_shows",
+   "yes": 19,
+   "no": 0,
+   "source": "assimilate"
+  },
+  {
+   "action": "log_in",
+   "requires": [],
+   "question": "order_completes",
+   "yes": 0,
+   "no": 35,
+   "source": "assimilate"
+  },
+  {
+   "action": "add_to_cart",
+   "requires": [
+    "address(blank)"
+   ],
+   "question": "page_changes",
+   "yes": 0,
+   "no": 2,
+   "source": "accommodate"
+  },
+  {
+   "action": "add_to_cart",
+   "requires": [],
+   "question": "error_shows",
+   "yes": 0,
+   "no": 21,
+   "source": "assimilate"
+  },
+  {
+   "action": "add_to_cart",
+   "requires": [
+    "address(blank)"
+   ],
+   "question": "error_shows",
+   "yes": 0,
+   "no": 2,
+   "source": "accommodate"
+  },
+  {
+   "action": "add_to_cart",
+   "requires": [],
+   "question": "order_completes",
+   "yes": 0,
+   "no": 38,
+   "source": "assimilate"
+  },
+  {
+   "action": "apply_coupon",
+   "requires": [],
+   "question": "page_changes",
+   "yes": 0,
+   "no": 44,
+   "source": "assimilate"
+  },
+  {
+   "action": "apply_coupon",
+   "requires": [],
+   "question": "error_shows",
+   "yes": 25,
+   "no": 1,
+   "source": "assimilate"
+  },
+  {
+   "action": "apply_coupon",
+   "requires": [
+    "page(cart)"
+   ],
+   "question": "error_shows",
+   "yes": 18,
+   "no": 1,
+   "source": "accommodate"
+  },
+  {
+   "action": "apply_coupon",
+   "requires": [],
+   "question": "order_completes",
+   "yes": 0,
+   "no": 44,
+   "source": "assimilate"
+  },
+  {
+   "action": "pay",
+   "requires": [],
+   "question": "page_changes",
+   "yes": 0,
+   "no": 5,
+   "source": "assimilate"
+  },
+  {
+   "action": "pay",
+   "requires": [
+    "page(cart)"
+   ],
+   "question": "page_changes",
+   "yes": 0,
+   "no": 19,
+   "source": "accommodate"
+  },
+  {
+   "action": "pay",
+   "requires": [],
+   "question": "error_shows",
+   "yes": 18,
+   "no": 1,
+   "source": "assimilate"
+  },
+  {
+   "action": "pay",
+   "requires": [],
+   "question": "order_completes",
+   "yes": 1,
+   "no": 18,
+   "source": "assimilate"
+  },
+  {
+   "action": "add_to_cart",
+   "requires": [
+    "page(cart)"
+   ],
+   "question": "error_shows",
+   "yes": 0,
+   "no": 17,
+   "source": "accommodate"
+  },
+  {
+   "action": "remove_item",
+   "requires": [],
+   "question": "page_changes",
+   "yes": 0,
+   "no": 29,
+   "source": "assimilate"
+  },
+  {
+   "action": "remove_item",
+   "requires": [],
+   "question": "error_shows",
+   "yes": 2,
+   "no": 27,
+   "source": "assimilate"
+  },
+  {
+   "action": "remove_item",
+   "requires": [],
+   "question": "order_completes",
+   "yes": 0,
+   "no": 29,
+   "source": "assimilate"
+  },
+  {
+   "action": "go_to_checkout",
+   "requires": [
+    "page(cart)"
+   ],
+   "question": "error_shows",
+   "yes": 1,
+   "no": 14,
+   "source": "accommodate"
+  },
+  {
+   "action": "fill_address",
+   "requires": [
+    "param(valid,yes)"
+   ],
+   "question": "order_completes",
+   "yes": 0,
+   "no": 18,
+   "source": "assimilate"
+  },
+  {
+   "action": "fill_address",
+   "requires": [
+    "param(valid,no)"
+   ],
+   "question": "page_changes",
+   "yes": 0,
+   "no": 12,
+   "source": "assimilate"
+  },
+  {
+   "action": "fill_address",
+   "requires": [
+    "param(valid,no)"
+   ],
+   "question": "error_shows",
+   "yes": 12,
+   "no": 0,
+   "source": "assimilate"
+  },
+  {
+   "action": "fill_address",
+   "requires": [
+    "param(valid,no)"
+   ],
+   "question": "order_completes",
+   "yes": 0,
+   "no": 12,
+   "source": "assimilate"
+  },
+  {
+   "action": "fill_payment",
+   "requires": [
+    "param(valid,yes)"
+   ],
+   "question": "page_changes",
+   "yes": 0,
+   "no": 21,
+   "source": "assimilate"
+  },
+  {
+   "action": "fill_payment",
+   "requires": [
+    "param(valid,yes)"
+   ],
+   "question": "error_shows",
+   "yes": 19,
+   "no": 5,
+   "source": "assimilate"
+  },
+  {
+   "action": "fill_payment",
+   "requires": [
+    "param(valid,yes)"
+   ],
+   "question": "order_completes",
+   "yes": 0,
+   "no": 21,
+   "source": "assimilate"
+  },
+  {
+   "action": "back",
+   "requires": [],
+   "question": "page_changes",
+   "yes": 24,
+   "no": 1,
+   "source": "assimilate"
+  },
+  {
+   "action": "back",
+   "requires": [],
+   "question": "error_shows",
+   "yes": 1,
+   "no": 24,
+   "source": "assimilate"
+  },
+  {
+   "action": "back",
+   "requires": [],
+   "question": "order_completes",
+   "yes": 0,
+   "no": 30,
+   "source": "assimilate"
+  },
+  {
+   "action": "add_to_cart",
+   "requires": [
+    "page(product)"
+   ],
+   "question": "page_changes",
+   "yes": 16,
+   "no": 0,
+   "source": "accommodate"
+  },
+  {
+   "action": "pay",
+   "requires": [
+    "page(address)"
+   ],
+   "question": "page_changes",
+   "yes": 0,
+   "no": 7,
+   "source": "accommodate"
+  },
+  {
+   "action": "go_to_checkout",
+   "requires": [
+    "cart(empty)"
+   ],
+   "question": "page_changes",
+   "yes": 0,
+   "no": 1,
+   "source": "accommodate"
+  },
+  {
+   "action": "go_to_checkout",
+   "requires": [
+    "cart(one_item)"
+   ],
+   "question": "error_shows",
+   "yes": 0,
+   "no": 1,
+   "source": "accommodate"
+  },
+  {
+   "action": "fill_address",
+   "requires": [
+    "page(address)",
+    "param(valid,yes)"
+   ],
+   "question": "page_changes",
+   "yes": 7,
+   "no": 0,
+   "source": "accommodate"
+  },
+  {
+   "action": "fill_address",
+   "requires": [
+    "page(payment)",
+    "param(valid,yes)"
+   ],
+   "question": "error_shows",
+   "yes": 1,
+   "no": 0,
+   "source": "accommodate"
+  }
+ ],
+ "history": [
+  {
+   "version": 1,
+   "trigger": "go_to_checkout → Will \"go to checkout\" take us to a different page?",
+   "explanation": "No rule covered \"page_changes\" after go_to_checkout; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 2,
+   "trigger": "go_to_checkout → Will \"go to checkout\" show an error?",
+   "explanation": "No rule covered \"error_shows\" after go_to_checkout; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 3,
+   "trigger": "go_to_checkout → Will \"go to checkout\" complete the order?",
+   "explanation": "No rule covered \"order_completes\" after go_to_checkout; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 4,
+   "trigger": "log_in → Will \"log in\" take us to a different page?",
+   "explanation": "No rule covered \"page_changes\" after log_in; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 5,
+   "trigger": "surprise: log_in → Will \"log in\" take us to a different page?",
+   "explanation": "Expected \"Will \"log in\" take us to a different page?\" = yes (p=0.70) but saw no. Splitting on signed_in(user); the agent could not see it, so the concept session is now active.",
+   "conceptsAdded": [
+    "session"
+   ]
+  },
+  {
+   "version": 6,
+   "trigger": "log_in → Will \"log in\" show an error?",
+   "explanation": "No rule covered \"error_shows\" after log_in; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 7,
+   "trigger": "log_in → Will \"log in\" complete the order?",
+   "explanation": "No rule covered \"order_completes\" after log_in; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 8,
+   "trigger": "add_to_cart → Will \"add to cart\" take us to a different page?",
+   "explanation": "No rule covered \"page_changes\" after add_to_cart; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 9,
+   "trigger": "surprise: add_to_cart → Will \"add to cart\" take us to a different page?",
+   "explanation": "Expected \"Will \"add to cart\" take us to a different page?\" = no (p=0.34) but saw yes. Splitting on address(blank); the agent could not see it, so the concept validation is now active.",
+   "conceptsAdded": [
+    "validation"
+   ]
+  },
+  {
+   "version": 10,
+   "trigger": "add_to_cart → Will \"add to cart\" show an error?",
+   "explanation": "No rule covered \"error_shows\" after add_to_cart; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 11,
+   "trigger": "surprise: add_to_cart → Will \"add to cart\" show an error?",
+   "explanation": "Expected \"Will \"add to cart\" show an error?\" = yes (p=0.67) but saw no. Splitting on address(blank); the agent could not see it, so the concept validation is now active.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 12,
+   "trigger": "add_to_cart → Will \"add to cart\" complete the order?",
+   "explanation": "No rule covered \"order_completes\" after add_to_cart; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 13,
+   "trigger": "apply_coupon → Will \"apply coupon\" take us to a different page?",
+   "explanation": "No rule covered \"page_changes\" after apply_coupon; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 14,
+   "trigger": "apply_coupon → Will \"apply coupon\" show an error?",
+   "explanation": "No rule covered \"error_shows\" after apply_coupon; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 15,
+   "trigger": "surprise: apply_coupon → Will \"apply coupon\" show an error?",
+   "explanation": "Expected \"Will \"apply coupon\" show an error?\" = yes (p=0.75) but saw no. Splitting on page(cart).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 16,
+   "trigger": "apply_coupon → Will \"apply coupon\" complete the order?",
+   "explanation": "No rule covered \"order_completes\" after apply_coupon; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 17,
+   "trigger": "pay → Will \"pay\" take us to a different page?",
+   "explanation": "No rule covered \"page_changes\" after pay; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 18,
+   "trigger": "surprise: pay → Will \"pay\" take us to a different page?",
+   "explanation": "Expected \"Will \"pay\" take us to a different page?\" = yes (p=0.75) but saw no. Splitting on page(cart).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 19,
+   "trigger": "pay → Will \"pay\" show an error?",
+   "explanation": "No rule covered \"error_shows\" after pay; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 20,
+   "trigger": "pay → Will \"pay\" complete the order?",
+   "explanation": "No rule covered \"order_completes\" after pay; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 21,
+   "trigger": "surprise: add_to_cart → Will \"add to cart\" show an error?",
+   "explanation": "Expected \"Will \"add to cart\" show an error?\" = yes (p=0.70) but saw no. Splitting on page(cart).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 22,
+   "trigger": "remove_item → Will \"remove item\" take us to a different page?",
+   "explanation": "No rule covered \"page_changes\" after remove_item; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 23,
+   "trigger": "remove_item → Will \"remove item\" show an error?",
+   "explanation": "No rule covered \"error_shows\" after remove_item; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 24,
+   "trigger": "remove_item → Will \"remove item\" complete the order?",
+   "explanation": "No rule covered \"order_completes\" after remove_item; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 25,
+   "trigger": "surprise: pay → Will \"pay\" take us to a different page?",
+   "explanation": "Expected \"Will \"pay\" take us to a different page?\" = yes (p=0.75) but saw no. Splitting on page(cart).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 26,
+   "trigger": "surprise: go_to_checkout → Will \"go to checkout\" show an error?",
+   "explanation": "Expected \"Will \"go to checkout\" show an error?\" = yes (p=0.75) but saw no. Splitting on page(cart).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 27,
+   "trigger": "fill_address {\"valid\":\"yes\"} → Will \"fill address\" take us to a different page?",
+   "explanation": "No rule covered \"page_changes\" after fill_address; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 28,
+   "trigger": "surprise: fill_address {\"valid\":\"yes\"} → Will \"fill address\" take us to a different page?",
+   "explanation": "Expected \"Will \"fill address\" take us to a different page?\" = no (p=0.26) but saw yes. Splitting on param(valid,yes).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 29,
+   "trigger": "fill_address {\"valid\":\"yes\"} → Will \"fill address\" show an error?",
+   "explanation": "No rule covered \"error_shows\" after fill_address; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 30,
+   "trigger": "fill_address {\"valid\":\"yes\"} → Will \"fill address\" complete the order?",
+   "explanation": "No rule covered \"order_completes\" after fill_address; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 31,
+   "trigger": "fill_address {\"valid\":\"no\"} → Will \"fill address\" take us to a different page?",
+   "explanation": "No rule covered \"page_changes\" after fill_address; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 32,
+   "trigger": "fill_address {\"valid\":\"no\"} → Will \"fill address\" show an error?",
+   "explanation": "No rule covered \"error_shows\" after fill_address; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 33,
+   "trigger": "fill_address {\"valid\":\"no\"} → Will \"fill address\" complete the order?",
+   "explanation": "No rule covered \"order_completes\" after fill_address; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 34,
+   "trigger": "fill_payment {\"valid\":\"yes\"} → Will \"fill payment\" take us to a different page?",
+   "explanation": "No rule covered \"page_changes\" after fill_payment; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 35,
+   "trigger": "fill_payment {\"valid\":\"yes\"} → Will \"fill payment\" show an error?",
+   "explanation": "No rule covered \"error_shows\" after fill_payment; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 36,
+   "trigger": "surprise: fill_payment {\"valid\":\"yes\"} → Will \"fill payment\" show an error?",
+   "explanation": "Expected \"Will \"fill payment\" show an error?\" = no (p=0.17) but saw yes. Splitting on param(valid,yes).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 37,
+   "trigger": "fill_payment {\"valid\":\"yes\"} → Will \"fill payment\" complete the order?",
+   "explanation": "No rule covered \"order_completes\" after fill_payment; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 38,
+   "trigger": "back → Will \"back\" take us to a different page?",
+   "explanation": "No rule covered \"page_changes\" after back; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 39,
+   "trigger": "back → Will \"back\" show an error?",
+   "explanation": "No rule covered \"error_shows\" after back; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 40,
+   "trigger": "back → Will \"back\" complete the order?",
+   "explanation": "No rule covered \"order_completes\" after back; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 41,
+   "trigger": "surprise: pay → Will \"pay\" take us to a different page?",
+   "explanation": "Expected \"Will \"pay\" take us to a different page?\" = yes (p=0.72) but saw no. Splitting on page(cart).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 42,
+   "trigger": "surprise: add_to_cart → Will \"add to cart\" take us to a different page?",
+   "explanation": "Expected \"Will \"add to cart\" take us to a different page?\" = no (p=0.34) but saw yes. Splitting on page(product).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 43,
+   "trigger": "surprise: pay → Will \"pay\" take us to a different page?",
+   "explanation": "Expected \"Will \"pay\" take us to a different page?\" = yes (p=0.74) but saw no. Splitting on page(cart).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 44,
+   "trigger": "surprise: pay → Will \"pay\" take us to a different page?",
+   "explanation": "Expected \"Will \"pay\" take us to a different page?\" = yes (p=0.72) but saw no. Splitting on page(address).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 45,
+   "trigger": "surprise: fill_address {\"valid\":\"yes\"} → Will \"fill address\" show an error?",
+   "explanation": "Expected \"Will \"fill address\" show an error?\" = no (p=0.14) but saw yes. Splitting on param(valid,yes).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 46,
+   "trigger": "surprise: fill_payment {\"valid\":\"yes\"} → Will \"fill payment\" show an error?",
+   "explanation": "Expected \"Will \"fill payment\" show an error?\" = no (p=0.31) but saw yes. Splitting on param(valid,yes).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 47,
+   "trigger": "surprise: go_to_checkout → Will \"go to checkout\" take us to a different page?",
+   "explanation": "Expected \"Will \"go to checkout\" take us to a different page?\" = yes (p=0.74) but saw no. Unlike the last time this rule was right, cart(empty) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 48,
+   "trigger": "surprise: add_to_cart → Will \"add to cart\" show an error?",
+   "explanation": "Expected \"Will \"add to cart\" show an error?\" = yes (p=0.66) but saw no. Splitting on page(cart).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 49,
+   "trigger": "surprise: fill_payment {\"valid\":\"yes\"} → Will \"fill payment\" show an error?",
+   "explanation": "Expected \"Will \"fill payment\" show an error?\" = no (p=0.28) but saw yes. Splitting on param(valid,yes).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 50,
+   "trigger": "surprise: fill_address {\"valid\":\"yes\"} → Will \"fill address\" show an error?",
+   "explanation": "Expected \"Will \"fill address\" show an error?\" = no (p=0.13) but saw yes. Splitting on param(valid,yes).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 51,
+   "trigger": "surprise: go_to_checkout → Will \"go to checkout\" show an error?",
+   "explanation": "Expected \"Will \"go to checkout\" show an error?\" = yes (p=0.70) but saw no. Unlike the last time this rule was right, cart(one_item) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 52,
+   "trigger": "surprise: fill_address {\"valid\":\"yes\"} → Will \"fill address\" take us to a different page?",
+   "explanation": "Expected \"Will \"fill address\" take us to a different page?\" = no (p=0.24) but saw yes. Unlike the last time this rule was right, page(address) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 53,
+   "trigger": "surprise: fill_address {\"valid\":\"yes\"} → Will \"fill address\" show an error?",
+   "explanation": "Expected \"Will \"fill address\" show an error?\" = no (p=0.12) but saw yes. Unlike the last time this rule was right, page(payment) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 54,
+   "trigger": "add_to_cart → Will \"add to cart\" take us to a different page?",
+   "explanation": "No rule covered \"page_changes\" after add_to_cart; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 55,
+   "trigger": "surprise: add_to_cart → Will \"add to cart\" take us to a different page?",
+   "explanation": "Expected \"Will \"add to cart\" take us to a different page?\" = no (p=0.33) but saw yes. Splitting on page(product).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 56,
+   "trigger": "surprise: pay → Will \"pay\" take us to a different page?",
+   "explanation": "Expected \"Will \"pay\" take us to a different page?\" = yes (p=0.77) but saw no. Splitting on page(address).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 57,
+   "trigger": "surprise: go_to_checkout → Will \"go to checkout\" take us to a different page?",
+   "explanation": "Expected \"Will \"go to checkout\" take us to a different page?\" = yes (p=0.78) but saw no. Unlike the last time this rule was right, page(address) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 58,
+   "trigger": "surprise: pay → Will \"pay\" take us to a different page?",
+   "explanation": "Expected \"Will \"pay\" take us to a different page?\" = yes (p=0.79) but saw no. Splitting on page(cart).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 59,
+   "trigger": "surprise: fill_payment {\"valid\":\"yes\"} → Will \"fill payment\" show an error?",
+   "explanation": "Expected \"Will \"fill payment\" show an error?\" = no (p=0.11) but saw yes. Unlike the last time this rule was right, page(cart) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 60,
+   "trigger": "fill_payment {\"valid\":\"no\"} → Will \"fill payment\" take us to a different page?",
+   "explanation": "No rule covered \"page_changes\" after fill_payment; started one from this observation.",
+   "conceptsAdded": []
+  }
+ ]
+}

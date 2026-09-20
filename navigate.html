@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>surprise · navigate</title>
+<style>.skip{background:var(--ink);color:var(--paper);font-family:var(--font-mono);padding:8px 12px;position:absolute;top:8px;left:-999px}.skip:focus{z-index:10;left:8px}.menu{background:var(--ink);color:var(--paper);padding:10px var(--gutter);font:500 13px/1 var(--font-mono);flex-wrap:wrap;align-items:center;gap:4px 20px;display:flex}.menu a{color:var(--paper);padding:6px 0;text-decoration:none}.menu a[aria-current]{text-underline-offset:4px;text-decoration:underline}.menu .brand{margin-right:auto;font-weight:700}main{padding:20px var(--gutter) 48px}.notice{border:2px solid var(--ink);background:var(--paper);align-items:flex-start;gap:14px;margin:0 0 22px;padding:12px 14px;font-size:15px;line-height:1.4;display:flex}.notice b{font-family:var(--font-mono);white-space:nowrap;font-weight:700}.grid{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);align-items:start;gap:24px;display:grid}.col{gap:24px;min-width:0;display:grid}.said{font-family:var(--font-display);letter-spacing:-.03em;text-wrap:balance;min-height:3.2em;color:var(--ink);margin:0;font-size:clamp(30px,4.4vw,56px);font-weight:600;line-height:.98}.controls{flex-wrap:wrap;align-items:center;gap:10px;margin-top:18px;display:flex}.btn{min-width:44px;min-height:44px}.btn.big{padding:14px 22px;font-size:16px}.btn[aria-pressed=true]{border-color:var(--magenta);text-decoration:underline;-webkit-text-decoration-color:var(--magenta);text-decoration-color:var(--magenta);text-underline-offset:4px;text-decoration-thickness:2px}.cmd{gap:8px;margin-top:12px;display:flex}.cmd input,.field input{border:2px solid var(--ink);background:var(--paper);min-width:0;min-height:44px;font:400 15px/1.2 var(--font-mono);flex:1;padding:8px 10px}.pad{grid-template-columns:repeat(3,minmax(64px,1fr));gap:8px;max-width:320px;margin-top:14px;display:grid}.pad .btn{text-align:center;padding:12px 8px}.pad .btn:first-child{grid-column:2}#scene{aspect-ratio:4/3;background:var(--grey-100);border:2px solid var(--ink)}#scene canvas{display:block;width:100%!important;height:100%!important}video{border:2px solid var(--ink);background:#000;width:100%}.mono,.believes table,.log{font-family:var(--font-mono);font-size:13px}.chip{border:1.5px solid var(--ink);margin:0 6px 6px 0;padding:2px 8px;display:inline-block}.believes table{border-collapse:collapse;width:100%}.believes th,.believes td{text-align:left;vertical-align:top;border-bottom:1px solid var(--grey-300);padding:4px 6px}.believes th{color:var(--ink-soft);font-weight:500}.muted{color:var(--ink-soft)}.pred{margin:0 0 8px}.meter{border:1.5px solid var(--ink);vertical-align:middle;width:90px;height:10px;display:inline-block;position:relative}.meter i{background:var(--ink);position:absolute;top:0;bottom:0;left:0}.log{max-height:320px;margin:0;padding:0;list-style:none;overflow:auto}.log li{border-bottom:1px solid var(--grey-300);word-break:break-word;padding:4px 0}.log .k{color:var(--ink-soft);margin-right:8px}.settings summary{cursor:pointer;font:500 13px/1.2 var(--font-mono);align-items:center;min-height:44px;display:flex}.field{gap:6px;margin:10px 0;font-size:14px;display:grid}.field .hint{color:var(--ink-soft);font-size:13px}.check{align-items:center;gap:10px;min-height:44px;font-size:15px;display:flex}.check input{width:22px;height:22px;accent-color:var(--ink);margin:0}.sr-only{clip:rect(0 0 0 0);white-space:nowrap;width:1px;height:1px;position:absolute;overflow:hidden}@media (width<=860px){.grid{grid-template-columns:1fr}.notice{flex-direction:column;gap:6px}}</style>
+  <script type="module" crossorigin src="./assets/navigate-BRptrAd-.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/error-BTdmRKoB.js">
+  <link rel="modulepreload" crossorigin href="./assets/sync-interval-Cg8Phswo.js">
+  <link rel="modulepreload" crossorigin href="./assets/json-schema-9638SDV3.js">
+  <link rel="modulepreload" crossorigin href="./assets/tokens-6XeKRnDP.js">
+  <link rel="modulepreload" crossorigin href="./assets/serializer-B-4dBapU.js">
+  <link rel="modulepreload" crossorigin href="./assets/render-1_SOHW0S.js">
+  <link rel="stylesheet" crossorigin href="./assets/tokens-C1P9NNND.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="menu" aria-label="Pages">
+  <span class="brand">surprise</span>
+  <a href="./index.html">Landing</a>
+  <a href="./demo.html">Live playroom</a>
+  <a href="./navigate.html" aria-current="page">Voice navigation</a>
+  <a href="./unity.html">Unity</a>
+</nav>
+<main id="main">
+  <p class="notice" role="note"><b>Safety</b><span>Prototype. Not a substitute for a white cane, a guide dog, or orientation and mobility training. Always keep your usual aid.</span></p>
+  <div class="grid">
+    <div class="col">
+      <section class="win" aria-labelledby="guide-title">
+        <div class="win-title"><span id="guide-title">guide 0.1</span><span class="dots">···</span></div>
+        <div class="win-body">
+          <p class="label">Last spoken</p>
+          <p id="said" class="said" role="status" aria-live="polite" aria-atomic="true">Loading the room.</p>
+          <div class="controls">
+            <button id="listen" class="btn big" type="button" aria-pressed="false">Listen</button>
+            <button id="mute" class="btn ghost" type="button" aria-pressed="false">Mute</button>
+            <button id="repeat" class="btn ghost" type="button">Repeat</button>
+            <button id="help" class="btn ghost" type="button">Help</button>
+          </div>
+          <form id="cmd" class="cmd">
+            <label for="cmdInput" class="sr-only">Type a command</label>
+            <input id="cmdInput" autocomplete="off" placeholder="Type a command, e.g. guide me to the stage">
+            <button class="btn" type="submit">Send</button>
+          </form>
+          <div class="pad" role="group" aria-label="Move">
+            <button class="btn ghost" type="button" data-cmd="forward">Forward</button>
+            <button class="btn ghost" type="button" data-cmd="left">Left</button>
+            <button class="btn ghost" type="button" data-cmd="back">Back</button>
+            <button class="btn ghost" type="button" data-cmd="right">Right</button>
+            <button class="btn ghost" type="button" data-cmd="around">Around me</button>
+            <button class="btn ghost" type="button" data-cmd="where am i">Where am I</button>
+            <button class="btn ghost" type="button" data-cmd="next">Next move</button>
+          </div>
+          <div class="controls">
+            <button id="explore" class="btn ghost" type="button">Let the agent explore</button>
+            <label class="check"><input type="checkbox" id="useCamera"> Use camera</label>
+          </div>
+          <div class="controls">
+            <button id="photoBtn" class="btn ghost" type="button">Use a photo</button>
+            <input id="photo" type="file" accept="image/*" hidden aria-label="Choose a photo to describe">
+            <button id="samplePhoto" class="btn ghost" type="button">Sample: auditorium</button>
+            <button id="backToRoom" class="btn ghost" type="button">Back to the room</button>
+          </div>
+          <details class="settings">
+            <summary>Camera settings</summary>
+            <div class="field"><label for="anthropicKey">Anthropic API key</label><input id="anthropicKey" type="password" autocomplete="off"><span class="hint">Stored in this browser only, shared with the playroom page.</span></div>
+            <div class="field"><label for="camModel">Frame model</label><input id="camModel"><span class="hint">Default claude-haiku-4-5: fast and cheap. One call per camera frame every 2.5 seconds, or one call per photo.</span></div>
+          </details>
+        </div>
+      </section>
+      <section class="win" aria-labelledby="believes-title">
+        <div class="win-title"><span id="believes-title">what the agent believes</span><span class="dots">···</span></div>
+        <div id="believes" class="win-body believes paper"><span class="muted">No prediction yet.</span></div>
+      </section>
+    </div>
+    <div class="col">
+      <section class="win" aria-labelledby="room-title">
+        <div class="win-title"><span id="room-title">room</span><span id="mode" class="dots">simulated</span></div>
+        <div class="win-body">
+          <div id="scene" aria-label="Three-dimensional view of the simulated room with the avatar" role="img"></div>
+          <video id="cam" hidden playsinline muted aria-label="Live camera"></video>
+          <img id="photoView" hidden alt="The photo being described" style="width:100%;display:block;border:1.5px solid var(--ink)">
+        </div>
+      </section>
+      <section class="win" aria-labelledby="log-title">
+        <div class="win-title"><span id="log-title">log</span><span class="dots">···</span></div>
+        <div class="win-body paper"><ul id="log" class="log" aria-label="Commands and spoken output"></ul></div>
+      </section>
+    </div>
+  </div>
+</main>
+</body>
+</html>

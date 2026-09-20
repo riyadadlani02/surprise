@@ -1,0 +1,1879 @@
+{
+ "scenario": "habits",
+ "title": "One person · which slot will they take?",
+ "kind": "people",
+ "predictor": "jev-zero-shot",
+ "ticks": 300,
+ "predictions": 600,
+ "accuracy": 0.59,
+ "brier": 0.2680468333333332,
+ "thirds": [
+  {
+   "slice": 0,
+   "rate": 0.61,
+   "accuracy": 0.59,
+   "brier": 0.267084
+  },
+  {
+   "slice": 1,
+   "rate": 0.53,
+   "accuracy": 0.6,
+   "brier": 0.25968199999999986
+  },
+  {
+   "slice": 2,
+   "rate": 0.535,
+   "accuracy": 0.58,
+   "brier": 0.2773744999999999
+  }
+ ],
+ "calibration": [
+  {
+   "lo": 0,
+   "hi": 0.2,
+   "n": 8,
+   "sumProb": 1.4599999999999997,
+   "hits": 0,
+   "meanProb": 0.18249999999999997,
+   "hitRate": 0
+  },
+  {
+   "lo": 0.2,
+   "hi": 0.4,
+   "n": 246,
+   "sumProb": 79.59999999999998,
+   "hits": 46,
+   "meanProb": 0.32357723577235764,
+   "hitRate": 0.18699186991869918
+  },
+  {
+   "lo": 0.4,
+   "hi": 0.6,
+   "n": 227,
+   "sumProb": 109.40000000000006,
+   "hits": 43,
+   "meanProb": 0.4819383259911897,
+   "hitRate": 0.1894273127753304
+  },
+  {
+   "lo": 0.6,
+   "hi": 0.8,
+   "n": 62,
+   "sumProb": 40.91999999999998,
+   "hits": 7,
+   "meanProb": 0.6599999999999997,
+   "hitRate": 0.11290322580645161
+  },
+  {
+   "lo": 0.8,
+   "hi": 1,
+   "n": 57,
+   "sumProb": 47.930000000000035,
+   "hits": 0,
+   "meanProb": 0.8408771929824568,
+   "hitRate": 0
+  }
+ ],
+ "accuracyByStage": [
+  {
+   "stage": "free",
+   "n": 600,
+   "correct": 354,
+   "accuracy": 0.59
+  }
+ ],
+ "concepts": [
+  "weather",
+  "energy",
+  "history"
+ ],
+ "rules": 30,
+ "revisions": 139,
+ "accommodations": 128,
+ "accommodationValue": [
+  {
+   "version": 2,
+   "tick": 1,
+   "before": 0,
+   "after": 0.8333333333333334,
+   "delta": 0.8333333333333334,
+   "n": 0
+  },
+  {
+   "version": 8,
+   "tick": 4,
+   "before": 0.8333333333333334,
+   "after": 0.3333333333333333,
+   "delta": -0.5,
+   "n": 6
+  },
+  {
+   "version": 10,
+   "tick": 6,
+   "before": 0.5,
+   "after": 0.5,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 14,
+   "tick": 8,
+   "before": 0.3333333333333333,
+   "after": 0.8333333333333334,
+   "delta": 0.5,
+   "n": 6
+  },
+  {
+   "version": 15,
+   "tick": 14,
+   "before": 0.6666666666666666,
+   "after": 0.5,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 16,
+   "tick": 15,
+   "before": 0.5,
+   "after": 0.8333333333333334,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 17,
+   "tick": 15,
+   "before": 0.5,
+   "after": 0.8333333333333334,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 18,
+   "tick": 17,
+   "before": 0.3333333333333333,
+   "after": 0.6666666666666666,
+   "delta": 0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 19,
+   "tick": 19,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 20,
+   "tick": 20,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 21,
+   "tick": 24,
+   "before": 0.8333333333333334,
+   "after": 0.5,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 22,
+   "tick": 27,
+   "before": 0.6666666666666666,
+   "after": 0.5,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 23,
+   "tick": 30,
+   "before": 0.3333333333333333,
+   "after": 0.6666666666666666,
+   "delta": 0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 24,
+   "tick": 31,
+   "before": 0.5,
+   "after": 0.6666666666666666,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 26,
+   "tick": 44,
+   "before": 0.6666666666666666,
+   "after": 0.5,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 27,
+   "tick": 45,
+   "before": 0.3333333333333333,
+   "after": 0.8333333333333334,
+   "delta": 0.5,
+   "n": 6
+  },
+  {
+   "version": 28,
+   "tick": 55,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 29,
+   "tick": 58,
+   "before": 0.8333333333333334,
+   "after": 0.3333333333333333,
+   "delta": -0.5,
+   "n": 6
+  },
+  {
+   "version": 30,
+   "tick": 60,
+   "before": 0.8333333333333334,
+   "after": 0.16666666666666666,
+   "delta": -0.6666666666666667,
+   "n": 6
+  },
+  {
+   "version": 31,
+   "tick": 62,
+   "before": 0.3333333333333333,
+   "after": 0.5,
+   "delta": 0.16666666666666669,
+   "n": 6
+  },
+  {
+   "version": 32,
+   "tick": 69,
+   "before": 0.8333333333333334,
+   "after": 0.5,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 33,
+   "tick": 70,
+   "before": 0.6666666666666666,
+   "after": 0.3333333333333333,
+   "delta": -0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 34,
+   "tick": 71,
+   "before": 0.6666666666666666,
+   "after": 0.3333333333333333,
+   "delta": -0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 35,
+   "tick": 73,
+   "before": 0.5,
+   "after": 0.5,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 36,
+   "tick": 73,
+   "before": 0.5,
+   "after": 0.5,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 37,
+   "tick": 74,
+   "before": 0.3333333333333333,
+   "after": 0.5,
+   "delta": 0.16666666666666669,
+   "n": 6
+  },
+  {
+   "version": 38,
+   "tick": 77,
+   "before": 0.5,
+   "after": 0.6666666666666666,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 39,
+   "tick": 78,
+   "before": 0.5,
+   "after": 0.5,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 40,
+   "tick": 86,
+   "before": 1,
+   "after": 0.6666666666666666,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 41,
+   "tick": 89,
+   "before": 0.8333333333333334,
+   "after": 0.3333333333333333,
+   "delta": -0.5,
+   "n": 6
+  },
+  {
+   "version": 42,
+   "tick": 90,
+   "before": 0.6666666666666666,
+   "after": 0.3333333333333333,
+   "delta": -0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 43,
+   "tick": 91,
+   "before": 0.5,
+   "after": 0.3333333333333333,
+   "delta": -0.16666666666666669,
+   "n": 6
+  },
+  {
+   "version": 44,
+   "tick": 92,
+   "before": 0.3333333333333333,
+   "after": 0.5,
+   "delta": 0.16666666666666669,
+   "n": 6
+  },
+  {
+   "version": 45,
+   "tick": 93,
+   "before": 0.3333333333333333,
+   "after": 0.5,
+   "delta": 0.16666666666666669,
+   "n": 6
+  },
+  {
+   "version": 46,
+   "tick": 94,
+   "before": 0.3333333333333333,
+   "after": 0.3333333333333333,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 47,
+   "tick": 96,
+   "before": 0.5,
+   "after": 0.5,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 48,
+   "tick": 97,
+   "before": 0.5,
+   "after": 0.6666666666666666,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 49,
+   "tick": 105,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 50,
+   "tick": 112,
+   "before": 0.3333333333333333,
+   "after": 0.8333333333333334,
+   "delta": 0.5,
+   "n": 6
+  },
+  {
+   "version": 51,
+   "tick": 116,
+   "before": 0.8333333333333334,
+   "after": 0.3333333333333333,
+   "delta": -0.5,
+   "n": 6
+  },
+  {
+   "version": 52,
+   "tick": 118,
+   "before": 0.3333333333333333,
+   "after": 0.5,
+   "delta": 0.16666666666666669,
+   "n": 6
+  },
+  {
+   "version": 53,
+   "tick": 119,
+   "before": 0.3333333333333333,
+   "after": 0.6666666666666666,
+   "delta": 0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 54,
+   "tick": 120,
+   "before": 0.3333333333333333,
+   "after": 0.6666666666666666,
+   "delta": 0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 55,
+   "tick": 121,
+   "before": 0.5,
+   "after": 0.8333333333333334,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 56,
+   "tick": 123,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 57,
+   "tick": 128,
+   "before": 0.5,
+   "after": 0.6666666666666666,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 58,
+   "tick": 129,
+   "before": 0.5,
+   "after": 0.8333333333333334,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 59,
+   "tick": 134,
+   "before": 0.6666666666666666,
+   "after": 0.5,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 60,
+   "tick": 135,
+   "before": 0.3333333333333333,
+   "after": 0.6666666666666666,
+   "delta": 0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 61,
+   "tick": 136,
+   "before": 0.3333333333333333,
+   "after": 0.6666666666666666,
+   "delta": 0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 62,
+   "tick": 137,
+   "before": 0.3333333333333333,
+   "after": 0.6666666666666666,
+   "delta": 0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 63,
+   "tick": 140,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 64,
+   "tick": 141,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 65,
+   "tick": 146,
+   "before": 0.6666666666666666,
+   "after": 0.5,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 66,
+   "tick": 149,
+   "before": 0.5,
+   "after": 0.6666666666666666,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 67,
+   "tick": 151,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 68,
+   "tick": 153,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 69,
+   "tick": 155,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 70,
+   "tick": 160,
+   "before": 0.8333333333333334,
+   "after": 0.5,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 71,
+   "tick": 160,
+   "before": 0.8333333333333334,
+   "after": 0.5,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 72,
+   "tick": 164,
+   "before": 0.5,
+   "after": 0.3333333333333333,
+   "delta": -0.16666666666666669,
+   "n": 6
+  },
+  {
+   "version": 73,
+   "tick": 164,
+   "before": 0.5,
+   "after": 0.3333333333333333,
+   "delta": -0.16666666666666669,
+   "n": 6
+  },
+  {
+   "version": 74,
+   "tick": 167,
+   "before": 0.3333333333333333,
+   "after": 0.6666666666666666,
+   "delta": 0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 75,
+   "tick": 169,
+   "before": 0.3333333333333333,
+   "after": 0.6666666666666666,
+   "delta": 0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 76,
+   "tick": 174,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 77,
+   "tick": 174,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 78,
+   "tick": 175,
+   "before": 0.5,
+   "after": 0.8333333333333334,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 79,
+   "tick": 177,
+   "before": 0.5,
+   "after": 0.5,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 80,
+   "tick": 180,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 81,
+   "tick": 183,
+   "before": 0.6666666666666666,
+   "after": 0.3333333333333333,
+   "delta": -0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 82,
+   "tick": 183,
+   "before": 0.6666666666666666,
+   "after": 0.3333333333333333,
+   "delta": -0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 83,
+   "tick": 184,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 84,
+   "tick": 184,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 85,
+   "tick": 185,
+   "before": 0.3333333333333333,
+   "after": 0.8333333333333334,
+   "delta": 0.5,
+   "n": 6
+  },
+  {
+   "version": 86,
+   "tick": 185,
+   "before": 0.3333333333333333,
+   "after": 0.8333333333333334,
+   "delta": 0.5,
+   "n": 6
+  },
+  {
+   "version": 87,
+   "tick": 195,
+   "before": 0.8333333333333334,
+   "after": 0.3333333333333333,
+   "delta": -0.5,
+   "n": 6
+  },
+  {
+   "version": 88,
+   "tick": 196,
+   "before": 0.6666666666666666,
+   "after": 0.3333333333333333,
+   "delta": -0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 89,
+   "tick": 198,
+   "before": 0.5,
+   "after": 0.5,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 90,
+   "tick": 198,
+   "before": 0.5,
+   "after": 0.5,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 91,
+   "tick": 200,
+   "before": 0.3333333333333333,
+   "after": 0.5,
+   "delta": 0.16666666666666669,
+   "n": 6
+  },
+  {
+   "version": 92,
+   "tick": 201,
+   "before": 0.3333333333333333,
+   "after": 0.6666666666666666,
+   "delta": 0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 93,
+   "tick": 202,
+   "before": 0.5,
+   "after": 0.6666666666666666,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 94,
+   "tick": 203,
+   "before": 0.5,
+   "after": 0.6666666666666666,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 95,
+   "tick": 205,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 96,
+   "tick": 206,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 97,
+   "tick": 208,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 98,
+   "tick": 209,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 99,
+   "tick": 216,
+   "before": 0.5,
+   "after": 0.6666666666666666,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 100,
+   "tick": 217,
+   "before": 0.3333333333333333,
+   "after": 0.6666666666666666,
+   "delta": 0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 101,
+   "tick": 220,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 102,
+   "tick": 222,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 103,
+   "tick": 223,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 104,
+   "tick": 227,
+   "before": 0.8333333333333334,
+   "after": 0.3333333333333333,
+   "delta": -0.5,
+   "n": 6
+  },
+  {
+   "version": 105,
+   "tick": 229,
+   "before": 0.6666666666666666,
+   "after": 0.3333333333333333,
+   "delta": -0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 106,
+   "tick": 229,
+   "before": 0.6666666666666666,
+   "after": 0.3333333333333333,
+   "delta": -0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 107,
+   "tick": 232,
+   "before": 0.16666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.6666666666666667,
+   "n": 6
+  },
+  {
+   "version": 108,
+   "tick": 237,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 109,
+   "tick": 241,
+   "before": 0.8333333333333334,
+   "after": 0.3333333333333333,
+   "delta": -0.5,
+   "n": 6
+  },
+  {
+   "version": 110,
+   "tick": 241,
+   "before": 0.8333333333333334,
+   "after": 0.3333333333333333,
+   "delta": -0.5,
+   "n": 6
+  },
+  {
+   "version": 111,
+   "tick": 243,
+   "before": 0.5,
+   "after": 0.5,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 112,
+   "tick": 243,
+   "before": 0.5,
+   "after": 0.5,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 113,
+   "tick": 245,
+   "before": 0.3333333333333333,
+   "after": 0.8333333333333334,
+   "delta": 0.5,
+   "n": 6
+  },
+  {
+   "version": 114,
+   "tick": 245,
+   "before": 0.3333333333333333,
+   "after": 0.8333333333333334,
+   "delta": 0.5,
+   "n": 6
+  },
+  {
+   "version": 115,
+   "tick": 248,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 116,
+   "tick": 250,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 117,
+   "tick": 255,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 118,
+   "tick": 259,
+   "before": 0.8333333333333334,
+   "after": 0.3333333333333333,
+   "delta": -0.5,
+   "n": 6
+  },
+  {
+   "version": 119,
+   "tick": 260,
+   "before": 0.6666666666666666,
+   "after": 0.3333333333333333,
+   "delta": -0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 120,
+   "tick": 261,
+   "before": 0.5,
+   "after": 0.3333333333333333,
+   "delta": -0.16666666666666669,
+   "n": 6
+  },
+  {
+   "version": 121,
+   "tick": 262,
+   "before": 0.5,
+   "after": 0.5,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 122,
+   "tick": 263,
+   "before": 0.3333333333333333,
+   "after": 0.3333333333333333,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 123,
+   "tick": 269,
+   "before": 0.5,
+   "after": 0.5,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 124,
+   "tick": 269,
+   "before": 0.5,
+   "after": 0.5,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 125,
+   "tick": 276,
+   "before": 0.5,
+   "after": 0.3333333333333333,
+   "delta": -0.16666666666666669,
+   "n": 6
+  },
+  {
+   "version": 126,
+   "tick": 277,
+   "before": 0.6666666666666666,
+   "after": 0.5,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 127,
+   "tick": 278,
+   "before": 0.5,
+   "after": 0.6666666666666666,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 128,
+   "tick": 282,
+   "before": 0.6666666666666666,
+   "after": 0.5,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 129,
+   "tick": 282,
+   "before": 0.6666666666666666,
+   "after": 0.5,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 130,
+   "tick": 284,
+   "before": 0.5,
+   "after": 0.3333333333333333,
+   "delta": -0.16666666666666669,
+   "n": 6
+  },
+  {
+   "version": 131,
+   "tick": 285,
+   "before": 0.3333333333333333,
+   "after": 0.3333333333333333,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 132,
+   "tick": 287,
+   "before": 0.3333333333333333,
+   "after": 0.6666666666666666,
+   "delta": 0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 133,
+   "tick": 287,
+   "before": 0.3333333333333333,
+   "after": 0.6666666666666666,
+   "delta": 0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 134,
+   "tick": 290,
+   "before": 0.5,
+   "after": 0.6666666666666666,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 135,
+   "tick": 291,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 136,
+   "tick": 292,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 137,
+   "tick": 294,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 138,
+   "tick": 295,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 139,
+   "tick": 296,
+   "before": 0.6666666666666666,
+   "after": 1,
+   "delta": 0.33333333333333337,
+   "n": 6
+  }
+ ],
+ "escalationRate": 0.5583333333333333,
+ "jev": {
+  "calls": 300,
+  "ms": 116822.36325600008,
+  "inputTokens": 102803,
+  "outputTokens": 11700,
+  "errors": 0,
+  "msPerCall": 389.4078775200003,
+  "costUsd": 0.004317726000000001
+ },
+ "warnings": 0,
+ "durationMs": 116955,
+ "surprises": [
+  {
+   "tick": 1,
+   "action": "skip_today",
+   "question": "Will they say yes to \"skip today\"?",
+   "prob": 0.83,
+   "truth": false,
+   "explanation": "No rule covered \"annoyed\" after skip_today; started one from this observation."
+  },
+  {
+   "tick": 4,
+   "action": "skip_today",
+   "question": "Will they say yes to \"skip today\"?",
+   "prob": 0.86,
+   "truth": false,
+   "explanation": "Expected \"Will they say yes to \"skip today\"?\" = yes (p=0.86) but saw no. Splitting on energy(low); the agent could not see it, so the concept energy is now active."
+  },
+  {
+   "tick": 6,
+   "action": "send_reminder",
+   "question": "Will they say yes to \"send reminder\"?",
+   "prob": 0.67,
+   "truth": false,
+   "explanation": "No rule covered \"annoyed\" after send_reminder; started one from this observation."
+  },
+  {
+   "tick": 8,
+   "action": "send_reminder",
+   "question": "Will they say yes to \"send reminder\"?",
+   "prob": 0.67,
+   "truth": false,
+   "explanation": "Expected \"Will they say yes to \"send reminder\"?\" = yes (p=0.67) but saw no. Splitting on day(weekday)."
+  },
+  {
+   "tick": 14,
+   "action": "send_reminder",
+   "question": "Will they say yes to \"send reminder\"?",
+   "prob": 0.67,
+   "truth": false,
+   "explanation": "Expected \"Will they say yes to \"send reminder\"?\" = yes (p=0.67) but saw no. Splitting on declined(recently); the agent could not see it, so the concept history is now active."
+  },
+  {
+   "tick": 15,
+   "action": "send_reminder",
+   "question": "Will they say yes to \"send reminder\"?",
+   "prob": 0.69,
+   "truth": false,
+   "explanation": "Expected \"Will they be annoyed?\" = no (p=0.34) but saw yes. Splitting on day(weekday)."
+  },
+  {
+   "tick": 17,
+   "action": "skip_today",
+   "question": "Will they say yes to \"skip today\"?",
+   "prob": 0.84,
+   "truth": false,
+   "explanation": "Expected \"Will they say yes to \"skip today\"?\" = yes (p=0.84) but saw no. Splitting on day(weekday)."
+  },
+  {
+   "tick": 19,
+   "action": "send_reminder",
+   "question": "Will they say yes to \"send reminder\"?",
+   "prob": 0.68,
+   "truth": false,
+   "explanation": "Expected \"Will they say yes to \"send reminder\"?\" = yes (p=0.68) but saw no. Splitting on day(weekday)."
+  },
+  {
+   "tick": 20,
+   "action": "propose_morning",
+   "question": "Will they say yes to \"propose morning\"?",
+   "prob": 0.33,
+   "truth": true,
+   "explanation": "Expected \"Will they say yes to \"propose morning\"?\" = no (p=0.33) but saw yes. Unlike the last time this rule was right, last_slot(lunch) holds now."
+  },
+  {
+   "tick": 24,
+   "action": "skip_today",
+   "question": "Will they say yes to \"skip today\"?",
+   "prob": 0.8,
+   "truth": false,
+   "explanation": "Expected \"Will they say yes to \"skip today\"?\" = yes (p=0.80) but saw no. Splitting on day(weekend)."
+  },
+  {
+   "tick": 27,
+   "action": "propose_morning",
+   "question": "Will they say yes to \"propose morning\"?",
+   "prob": 0.3,
+   "truth": true,
+   "explanation": "Expected \"Will they say yes to \"propose morning\"?\" = no (p=0.30) but saw yes. Unlike the last time this rule was right, energy(high) holds now."
+  },
+  {
+   "tick": 30,
+   "action": "send_reminder",
+   "question": "Will they say yes to \"send reminder\"?",
+   "prob": 0.66,
+   "truth": false,
+   "explanation": "Expected \"Will they say yes to \"send reminder\"?\" = yes (p=0.66) but saw no. Splitting on day(weekday)."
+  }
+ ],
+ "rulesSample": [
+  {
+   "action": "skip_today",
+   "requires": [],
+   "question": "accepts",
+   "yes": 0,
+   "no": 1,
+   "source": "assimilate"
+  },
+  {
+   "action": "skip_today",
+   "requires": [
+    "weather(sun)"
+   ],
+   "question": "accepts",
+   "yes": 0,
+   "no": 11,
+   "source": "accommodate"
+  },
+  {
+   "action": "skip_today",
+   "requires": [],
+   "question": "annoyed",
+   "yes": 0,
+   "no": 59,
+   "source": "assimilate"
+  },
+  {
+   "action": "propose_evening",
+   "requires": [],
+   "question": "accepts",
+   "yes": 21,
+   "no": 42,
+   "source": "assimilate"
+  },
+  {
+   "action": "propose_evening",
+   "requires": [],
+   "question": "annoyed",
+   "yes": 0,
+   "no": 63,
+   "source": "assimilate"
+  },
+  {
+   "action": "propose_morning",
+   "requires": [],
+   "question": "annoyed",
+   "yes": 0,
+   "no": 66,
+   "source": "assimilate"
+  },
+  {
+   "action": "skip_today",
+   "requires": [
+    "energy(low)"
+   ],
+   "question": "accepts",
+   "yes": 0,
+   "no": 0,
+   "source": "accommodate"
+  },
+  {
+   "action": "send_reminder",
+   "requires": [],
+   "question": "accepts",
+   "yes": 0,
+   "no": 2,
+   "source": "assimilate"
+  },
+  {
+   "action": "send_reminder",
+   "requires": [
+    "day(weekend)"
+   ],
+   "question": "accepts",
+   "yes": 0,
+   "no": 15,
+   "source": "accommodate"
+  },
+  {
+   "action": "send_reminder",
+   "requires": [],
+   "question": "annoyed",
+   "yes": 7,
+   "no": 1,
+   "source": "assimilate"
+  },
+  {
+   "action": "propose_lunch",
+   "requires": [],
+   "question": "accepts",
+   "yes": 5,
+   "no": 24,
+   "source": "assimilate"
+  },
+  {
+   "action": "propose_lunch",
+   "requires": [],
+   "question": "annoyed",
+   "yes": 0,
+   "no": 62,
+   "source": "assimilate"
+  },
+  {
+   "action": "send_reminder",
+   "requires": [
+    "day(weekday)"
+   ],
+   "question": "accepts",
+   "yes": 0,
+   "no": 69,
+   "source": "accommodate"
+  },
+  {
+   "action": "send_reminder",
+   "requires": [
+    "declined(recently)"
+   ],
+   "question": "accepts",
+   "yes": 0,
+   "no": 0,
+   "source": "accommodate"
+  },
+  {
+   "action": "skip_today",
+   "requires": [
+    "day(weekday)"
+   ],
+   "question": "accepts",
+   "yes": 0,
+   "no": 72,
+   "source": "accommodate"
+  },
+  {
+   "action": "skip_today",
+   "requires": [
+    "day(weekend)"
+   ],
+   "question": "accepts",
+   "yes": 0,
+   "no": 32,
+   "source": "accommodate"
+  },
+  {
+   "action": "propose_morning",
+   "requires": [],
+   "question": "accepts",
+   "yes": 3,
+   "no": 18,
+   "source": "assimilate"
+  },
+  {
+   "action": "propose_lunch",
+   "requires": [
+    "weather(rain)"
+   ],
+   "question": "accepts",
+   "yes": 3,
+   "no": 12,
+   "source": "accommodate"
+  },
+  {
+   "action": "propose_morning",
+   "requires": [
+    "last_slot(evening)"
+   ],
+   "question": "accepts",
+   "yes": 2,
+   "no": 3,
+   "source": "accommodate"
+  },
+  {
+   "action": "send_reminder",
+   "requires": [
+    "day(weekday)"
+   ],
+   "question": "annoyed",
+   "yes": 21,
+   "no": 3,
+   "source": "accommodate"
+  },
+  {
+   "action": "propose_lunch",
+   "requires": [
+    "energy(low)"
+   ],
+   "question": "accepts",
+   "yes": 10,
+   "no": 3,
+   "source": "accommodate"
+  },
+  {
+   "action": "send_reminder",
+   "requires": [
+    "last_slot(lunch)"
+   ],
+   "question": "annoyed",
+   "yes": 6,
+   "no": 0,
+   "source": "accommodate"
+  },
+  {
+   "action": "send_reminder",
+   "requires": [
+    "energy(high)"
+   ],
+   "question": "annoyed",
+   "yes": 3,
+   "no": 1,
+   "source": "accommodate"
+  },
+  {
+   "action": "propose_lunch",
+   "requires": [
+    "day(weekend)"
+   ],
+   "question": "accepts",
+   "yes": 0,
+   "no": 3,
+   "source": "accommodate"
+  },
+  {
+   "action": "send_reminder",
+   "requires": [
+    "declined(recently)"
+   ],
+   "question": "annoyed",
+   "yes": 2,
+   "no": 0,
+   "source": "accommodate"
+  },
+  {
+   "action": "propose_morning",
+   "requires": [
+    "last_slot(lunch)"
+   ],
+   "question": "accepts",
+   "yes": 2,
+   "no": 3,
+   "source": "accommodate"
+  },
+  {
+   "action": "propose_lunch",
+   "requires": [
+    "day(weekday)"
+   ],
+   "question": "accepts",
+   "yes": 1,
+   "no": 0,
+   "source": "accommodate"
+  },
+  {
+   "action": "propose_morning",
+   "requires": [
+    "day(weekday)"
+   ],
+   "question": "accepts",
+   "yes": 1,
+   "no": 0,
+   "source": "accommodate"
+  },
+  {
+   "action": "send_reminder",
+   "requires": [
+    "day(weekend)"
+   ],
+   "question": "annoyed",
+   "yes": 1,
+   "no": 0,
+   "source": "accommodate"
+  },
+  {
+   "action": "propose_morning",
+   "requires": [
+    "energy(high)"
+   ],
+   "question": "accepts",
+   "yes": 1,
+   "no": 0,
+   "source": "accommodate"
+  }
+ ],
+ "history": [
+  {
+   "version": 1,
+   "trigger": "skip_today → Will they say yes to \"skip today\"?",
+   "explanation": "No rule covered \"accepts\" after skip_today; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 2,
+   "trigger": "surprise: skip_today → Will they say yes to \"skip today\"?",
+   "explanation": "Expected \"Will they say yes to \"skip today\"?\" = yes (p=0.83) but saw no. Splitting on weather(sun); the agent could not see it, so the concept weather is now active.",
+   "conceptsAdded": [
+    "weather"
+   ]
+  },
+  {
+   "version": 3,
+   "trigger": "skip_today → Will they be annoyed?",
+   "explanation": "No rule covered \"annoyed\" after skip_today; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 4,
+   "trigger": "propose_evening → Will they say yes to \"propose evening\"?",
+   "explanation": "No rule covered \"accepts\" after propose_evening; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 5,
+   "trigger": "propose_evening → Will they be annoyed?",
+   "explanation": "No rule covered \"annoyed\" after propose_evening; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 6,
+   "trigger": "propose_morning → Will they say yes to \"propose morning\"?",
+   "explanation": "No rule covered \"accepts\" after propose_morning; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 7,
+   "trigger": "propose_morning → Will they be annoyed?",
+   "explanation": "No rule covered \"annoyed\" after propose_morning; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 8,
+   "trigger": "surprise: skip_today → Will they say yes to \"skip today\"?",
+   "explanation": "Expected \"Will they say yes to \"skip today\"?\" = yes (p=0.86) but saw no. Splitting on energy(low); the agent could not see it, so the concept energy is now active.",
+   "conceptsAdded": [
+    "energy"
+   ]
+  },
+  {
+   "version": 9,
+   "trigger": "send_reminder → Will they say yes to \"send reminder\"?",
+   "explanation": "No rule covered \"accepts\" after send_reminder; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 10,
+   "trigger": "surprise: send_reminder → Will they say yes to \"send reminder\"?",
+   "explanation": "Expected \"Will they say yes to \"send reminder\"?\" = yes (p=0.67) but saw no. Splitting on day(weekend).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 11,
+   "trigger": "send_reminder → Will they be annoyed?",
+   "explanation": "No rule covered \"annoyed\" after send_reminder; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 12,
+   "trigger": "propose_lunch → Will they say yes to \"propose lunch\"?",
+   "explanation": "No rule covered \"accepts\" after propose_lunch; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 13,
+   "trigger": "propose_lunch → Will they be annoyed?",
+   "explanation": "No rule covered \"annoyed\" after propose_lunch; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 14,
+   "trigger": "surprise: send_reminder → Will they say yes to \"send reminder\"?",
+   "explanation": "Expected \"Will they say yes to \"send reminder\"?\" = yes (p=0.67) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 15,
+   "trigger": "surprise: send_reminder → Will they say yes to \"send reminder\"?",
+   "explanation": "Expected \"Will they say yes to \"send reminder\"?\" = yes (p=0.67) but saw no. Splitting on declined(recently); the agent could not see it, so the concept history is now active.",
+   "conceptsAdded": [
+    "history"
+   ]
+  },
+  {
+   "version": 16,
+   "trigger": "surprise: send_reminder → Will they say yes to \"send reminder\"?",
+   "explanation": "Expected \"Will they say yes to \"send reminder\"?\" = yes (p=0.69) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 17,
+   "trigger": "surprise: send_reminder → Will they be annoyed?",
+   "explanation": "Expected \"Will they be annoyed?\" = no (p=0.34) but saw yes. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 18,
+   "trigger": "surprise: skip_today → Will they say yes to \"skip today\"?",
+   "explanation": "Expected \"Will they say yes to \"skip today\"?\" = yes (p=0.84) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 19,
+   "trigger": "surprise: send_reminder → Will they say yes to \"send reminder\"?",
+   "explanation": "Expected \"Will they say yes to \"send reminder\"?\" = yes (p=0.68) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 20,
+   "trigger": "surprise: propose_morning → Will they say yes to \"propose morning\"?",
+   "explanation": "Expected \"Will they say yes to \"propose morning\"?\" = no (p=0.33) but saw yes. Unlike the last time this rule was right, last_slot(lunch) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 21,
+   "trigger": "surprise: skip_today → Will they say yes to \"skip today\"?",
+   "explanation": "Expected \"Will they say yes to \"skip today\"?\" = yes (p=0.80) but saw no. Splitting on day(weekend).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 22,
+   "trigger": "surprise: propose_morning → Will they say yes to \"propose morning\"?",
+   "explanation": "Expected \"Will they say yes to \"propose morning\"?\" = no (p=0.30) but saw yes. Unlike the last time this rule was right, energy(high) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 23,
+   "trigger": "surprise: send_reminder → Will they say yes to \"send reminder\"?",
+   "explanation": "Expected \"Will they say yes to \"send reminder\"?\" = yes (p=0.66) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 24,
+   "trigger": "surprise: skip_today → Will they say yes to \"skip today\"?",
+   "explanation": "Expected \"Will they say yes to \"skip today\"?\" = yes (p=0.84) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 25,
+   "trigger": "propose_morning → Will they say yes to \"propose morning\"?",
+   "explanation": "No rule covered \"accepts\" after propose_morning; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 26,
+   "trigger": "surprise: propose_lunch → Will they say yes to \"propose lunch\"?",
+   "explanation": "Expected \"Will they say yes to \"propose lunch\"?\" = no (p=0.31) but saw yes. Unlike the last time this rule was right, weather(rain) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 27,
+   "trigger": "surprise: send_reminder → Will they say yes to \"send reminder\"?",
+   "explanation": "Expected \"Will they say yes to \"send reminder\"?\" = yes (p=0.68) but saw no. Splitting on day(weekend).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 28,
+   "trigger": "surprise: skip_today → Will they say yes to \"skip today\"?",
+   "explanation": "Expected \"Will they say yes to \"skip today\"?\" = yes (p=0.79) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 29,
+   "trigger": "surprise: skip_today → Will they say yes to \"skip today\"?",
+   "explanation": "Expected \"Will they say yes to \"skip today\"?\" = yes (p=0.81) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 30,
+   "trigger": "surprise: send_reminder → Will they say yes to \"send reminder\"?",
+   "explanation": "Expected \"Will they say yes to \"send reminder\"?\" = yes (p=0.69) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 31,
+   "trigger": "surprise: skip_today → Will they say yes to \"skip today\"?",
+   "explanation": "Expected \"Will they say yes to \"skip today\"?\" = yes (p=0.83) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 32,
+   "trigger": "surprise: skip_today → Will they say yes to \"skip today\"?",
+   "explanation": "Expected \"Will they say yes to \"skip today\"?\" = yes (p=0.85) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 33,
+   "trigger": "surprise: skip_today → Will they say yes to \"skip today\"?",
+   "explanation": "Expected \"Will they say yes to \"skip today\"?\" = yes (p=0.85) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 34,
+   "trigger": "surprise: skip_today → Will they say yes to \"skip today\"?",
+   "explanation": "Expected \"Will they say yes to \"skip today\"?\" = yes (p=0.84) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 35,
+   "trigger": "surprise: send_reminder → Will they say yes to \"send reminder\"?",
+   "explanation": "Expected \"Will they say yes to \"send reminder\"?\" = yes (p=0.68) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 36,
+   "trigger": "surprise: send_reminder → Will they be annoyed?",
+   "explanation": "Expected \"Will they be annoyed?\" = no (p=0.35) but saw yes. Unlike the last time this rule was right, energy(high) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 37,
+   "trigger": "surprise: skip_today → Will they say yes to \"skip today\"?",
+   "explanation": "Expected \"Will they say yes to \"skip today\"?\" = yes (p=0.84) but saw no. Splitting on day(weekend).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 38,
+   "trigger": "surprise: skip_today → Will they say yes to \"skip today\"?",
+   "explanation": "Expected \"Will they say yes to \"skip today\"?\" = yes (p=0.85) but saw no. Splitting on day(weekend).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 39,
+   "trigger": "surprise: skip_today → Will they say yes to \"skip today\"?",
+   "explanation": "Expected \"Will they say yes to \"skip today\"?\" = yes (p=0.81) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 40,
+   "trigger": "surprise: skip_today → Will they say yes to \"skip today\"?",
+   "explanation": "Expected \"Will they say yes to \"skip today\"?\" = yes (p=0.80) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 41,
+   "trigger": "surprise: send_reminder → Will they say yes to \"send reminder\"?",
+   "explanation": "Expected \"Will they say yes to \"send reminder\"?\" = yes (p=0.68) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 42,
+   "trigger": "surprise: skip_today → Will they say yes to \"skip today\"?",
+   "explanation": "Expected \"Will they say yes to \"skip today\"?\" = yes (p=0.85) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 43,
+   "trigger": "surprise: send_reminder → Will they say yes to \"send reminder\"?",
+   "explanation": "Expected \"Will they say yes to \"send reminder\"?\" = yes (p=0.69) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 44,
+   "trigger": "surprise: propose_lunch → Will they say yes to \"propose lunch\"?",
+   "explanation": "Expected \"Will they say yes to \"propose lunch\"?\" = no (p=0.35) but saw yes. Unlike the last time this rule was right, energy(low) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 45,
+   "trigger": "surprise: send_reminder → Will they say yes to \"send reminder\"?",
+   "explanation": "Expected \"Will they say yes to \"send reminder\"?\" = yes (p=0.69) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 46,
+   "trigger": "surprise: propose_morning → Will they say yes to \"propose morning\"?",
+   "explanation": "Expected \"Will they say yes to \"propose morning\"?\" = no (p=0.35) but saw yes. Unlike the last time this rule was right, last_slot(lunch) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 47,
+   "trigger": "surprise: skip_today → Will they say yes to \"skip today\"?",
+   "explanation": "Expected \"Will they say yes to \"skip today\"?\" = yes (p=0.86) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 48,
+   "trigger": "surprise: send_reminder → Will they say yes to \"send reminder\"?",
+   "explanation": "Expected \"Will they say yes to \"send reminder\"?\" = yes (p=0.66) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 49,
+   "trigger": "surprise: skip_today → Will they say yes to \"skip today\"?",
+   "explanation": "Expected \"Will they say yes to \"skip today\"?\" = yes (p=0.81) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 50,
+   "trigger": "surprise: skip_today → Will they say yes to \"skip today\"?",
+   "explanation": "Expected \"Will they say yes to \"skip today\"?\" = yes (p=0.86) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 51,
+   "trigger": "surprise: skip_today → Will they say yes to \"skip today\"?",
+   "explanation": "Expected \"Will they say yes to \"skip today\"?\" = yes (p=0.82) but saw no. Splitting on day(weekend).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 52,
+   "trigger": "surprise: skip_today → Will they say yes to \"skip today\"?",
+   "explanation": "Expected \"Will they say yes to \"skip today\"?\" = yes (p=0.84) but saw no. Splitting on day(weekend).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 53,
+   "trigger": "surprise: send_reminder → Will they say yes to \"send reminder\"?",
+   "explanation": "Expected \"Will they say yes to \"send reminder\"?\" = yes (p=0.71) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 54,
+   "trigger": "surprise: send_reminder → Will they say yes to \"send reminder\"?",
+   "explanation": "Expected \"Will they say yes to \"send reminder\"?\" = yes (p=0.72) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 55,
+   "trigger": "surprise: skip_today → Will they say yes to \"skip today\"?",
+   "explanation": "Expected \"Will they say yes to \"skip today\"?\" = yes (p=0.84) but saw no. Splitting on day(weekday).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 56,
+   "trigger": "surprise: send_reminder → Will they say yes to \"send reminder\"?",
+   "explanation": "Expected \"Will they say yes to \"send reminder\"?\" = yes (p=0.67) but saw no. Splitting on day(weekend).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 57,
+   "trigger": "surprise: skip_today → Will they say yes to \"skip today\"?",
+   "explanation": "Expected \"Will they say yes to \"skip today\"?\" = yes (p=0.84) but saw no. Splitting on day(weekend).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 58,
+   "trigger": "surprise: propose_morning → Will they say yes to \"propose morning\"?",
+   "explanation": "Expected \"Will they say yes to \"propose morning\"?\" = no (p=0.35) but saw yes. Unlike the last time this rule was right, energy(high) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 59,
+   "trigger": "surprise: propose_morning → Will they say yes to \"propose morning\"?",
+   "explanation": "Expected \"Will they say yes to \"propose morning\"?\" = no (p=0.33) but saw yes. Unlike the last time this rule was right, last_slot(evening) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 60,
+   "trigger": "surprise: skip_today → Will they say yes to \"skip today\"?",
+   "explanation": "Expected \"Will they say yes to \"skip today\"?\" = yes (p=0.85) but saw no. Splitting on day(weekend).",
+   "conceptsAdded": []
+  }
+ ]
+}

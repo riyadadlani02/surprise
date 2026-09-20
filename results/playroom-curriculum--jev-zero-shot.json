@@ -1,0 +1,1121 @@
+{
+ "scenario": "playroom-curriculum",
+ "title": "3D playroom · developmental curriculum",
+ "kind": "physics",
+ "predictor": "jev-zero-shot",
+ "ticks": 92,
+ "predictions": 164,
+ "accuracy": 0.6951219512195121,
+ "brier": 0.20741158536585355,
+ "thirds": [
+  {
+   "slice": 0,
+   "rate": 0.2909090909090909,
+   "accuracy": 0.7090909090909091,
+   "brier": 0.20363454545454546
+  },
+  {
+   "slice": 1,
+   "rate": 0.23636363636363636,
+   "accuracy": 0.6727272727272727,
+   "brier": 0.23238909090909093
+  },
+  {
+   "slice": 2,
+   "rate": 0.24074074074074073,
+   "accuracy": 0.7037037037037037,
+   "brier": 0.1858185185185185
+  }
+ ],
+ "calibration": [
+  {
+   "lo": 0,
+   "hi": 0.2,
+   "n": 35,
+   "sumProb": 4.1000000000000005,
+   "hits": 6,
+   "meanProb": 0.11714285714285716,
+   "hitRate": 0.17142857142857143
+  },
+  {
+   "lo": 0.2,
+   "hi": 0.4,
+   "n": 43,
+   "sumProb": 13.030000000000003,
+   "hits": 13,
+   "meanProb": 0.30302325581395356,
+   "hitRate": 0.3023255813953488
+  },
+  {
+   "lo": 0.4,
+   "hi": 0.6,
+   "n": 29,
+   "sumProb": 13.839999999999998,
+   "hits": 12,
+   "meanProb": 0.47724137931034477,
+   "hitRate": 0.41379310344827586
+  },
+  {
+   "lo": 0.6,
+   "hi": 0.8,
+   "n": 28,
+   "sumProb": 20.489999999999995,
+   "hits": 14,
+   "meanProb": 0.7317857142857142,
+   "hitRate": 0.5
+  },
+  {
+   "lo": 0.8,
+   "hi": 1,
+   "n": 29,
+   "sumProb": 25.470000000000002,
+   "hits": 23,
+   "meanProb": 0.8782758620689656,
+   "hitRate": 0.7931034482758621
+  }
+ ],
+ "accuracyByStage": [
+  {
+   "stage": "objects_fall",
+   "n": 28,
+   "correct": 28,
+   "accuracy": 1
+  },
+  {
+   "stage": "object_permanence",
+   "n": 16,
+   "correct": 6,
+   "accuracy": 0.375
+  },
+  {
+   "stage": "containers",
+   "n": 28,
+   "correct": 16,
+   "accuracy": 0.5714285714285714
+  },
+  {
+   "stage": "support",
+   "n": 32,
+   "correct": 18,
+   "accuracy": 0.5625
+  },
+  {
+   "stage": "ramps",
+   "n": 12,
+   "correct": 10,
+   "accuracy": 0.8333333333333334
+  },
+  {
+   "stage": "tools",
+   "n": 48,
+   "correct": 36,
+   "accuracy": 0.75
+  }
+ ],
+ "concepts": [
+  "layout"
+ ],
+ "rules": 28,
+ "revisions": 55,
+ "accommodations": 35,
+ "accommodationValue": [
+  {
+   "version": 5,
+   "tick": 5,
+   "before": 1,
+   "after": 0.5,
+   "delta": -0.5,
+   "n": 6
+  },
+  {
+   "version": 7,
+   "tick": 9,
+   "before": 0.5,
+   "after": 0.6666666666666666,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 9,
+   "tick": 11,
+   "before": 0.5,
+   "after": 0.8333333333333334,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 13,
+   "tick": 14,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 15,
+   "tick": 16,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 16,
+   "tick": 16,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 21,
+   "tick": 20,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 25,
+   "tick": 22,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 26,
+   "tick": 22,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 30,
+   "tick": 28,
+   "before": 1,
+   "after": 0.5,
+   "delta": -0.5,
+   "n": 6
+  },
+  {
+   "version": 31,
+   "tick": 32,
+   "before": 0.5,
+   "after": 0.6666666666666666,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 32,
+   "tick": 34,
+   "before": 0.5,
+   "after": 0.8333333333333334,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 33,
+   "tick": 37,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 34,
+   "tick": 39,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 35,
+   "tick": 39,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 36,
+   "tick": 43,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 37,
+   "tick": 45,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 38,
+   "tick": 45,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 39,
+   "tick": 51,
+   "before": 1,
+   "after": 0.6666666666666666,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 40,
+   "tick": 55,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 41,
+   "tick": 57,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 42,
+   "tick": 60,
+   "before": 0.6666666666666666,
+   "after": 0.5,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 43,
+   "tick": 60,
+   "before": 0.6666666666666666,
+   "after": 0.5,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 44,
+   "tick": 62,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 45,
+   "tick": 62,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 46,
+   "tick": 68,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 47,
+   "tick": 74,
+   "before": 1,
+   "after": 0.6666666666666666,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 48,
+   "tick": 78,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 49,
+   "tick": 80,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 50,
+   "tick": 83,
+   "before": 0.6666666666666666,
+   "after": 0.5,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 51,
+   "tick": 83,
+   "before": 0.6666666666666666,
+   "after": 0.5,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 52,
+   "tick": 85,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 53,
+   "tick": 85,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 54,
+   "tick": 91,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 3
+  },
+  {
+   "version": 55,
+   "tick": 91,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 3
+  }
+ ],
+ "escalationRate": 0.25609756097560976,
+ "jev": {
+  "calls": 92,
+  "ms": 34877.91979000001,
+  "inputTokens": 34215,
+  "outputTokens": 3308,
+  "errors": 0,
+  "msPerCall": 379.1078238043479,
+  "costUsd": 0.0014370300000000002
+ },
+ "warnings": 0,
+ "durationMs": 35257,
+ "surprises": [
+  {
+   "tick": 5,
+   "action": "cover ball",
+   "question": "Will ball still be under the cup?",
+   "prob": 0.21,
+   "truth": true,
+   "explanation": "Expected \"Will ball still be under the cup?\" = no (p=0.21) but saw yes. Splitting on on(ball,floor)."
+  },
+  {
+   "tick": 9,
+   "action": "drop ball",
+   "question": "Will ball reach the floor?",
+   "prob": 0.76,
+   "truth": false,
+   "explanation": "Expected \"Will ball reach the floor?\" = yes (p=0.76) but saw no. Unlike the last time this rule was right, above(ball,cup) holds now."
+  },
+  {
+   "tick": 11,
+   "action": "drop green",
+   "question": "Will green reach the floor?",
+   "prob": 0.73,
+   "truth": false,
+   "explanation": "Expected \"Will green reach the floor?\" = yes (p=0.73) but saw no. Splitting on above(green,cup)."
+  },
+  {
+   "tick": 14,
+   "action": "stack green blue {\"offset\":0.9}",
+   "question": "Will green rest on blue?",
+   "prob": 0.7,
+   "truth": false,
+   "explanation": "No rule covered \"falls_to_floor\" after stack; started one from this observation."
+  },
+  {
+   "tick": 16,
+   "action": "stack red blue {\"offset\":0.95}",
+   "question": "Will red rest on blue?",
+   "prob": 0.65,
+   "truth": false,
+   "explanation": "Expected \"Will red end up on the floor?\" = no (p=0.35) but saw yes. Splitting on on(red,floor)."
+  },
+  {
+   "tick": 20,
+   "action": "push red {\"dir\":\"right\"}",
+   "question": "Will the ball move?",
+   "prob": 0.05,
+   "truth": true,
+   "explanation": "Expected \"Will the ball move?\" = no (p=0.05) but saw yes. Splitting on on(red,floor)."
+  },
+  {
+   "tick": 22,
+   "action": "push green {\"dir\":\"right\"}",
+   "question": "Will green move?",
+   "prob": 0.8,
+   "truth": false,
+   "explanation": "Expected \"Will the ball move?\" = no (p=0.06) but saw yes. Splitting on on(green,floor)."
+  },
+  {
+   "tick": 28,
+   "action": "cover ball",
+   "question": "Will ball still be under the cup?",
+   "prob": 0.22,
+   "truth": true,
+   "explanation": "Expected \"Will ball still be under the cup?\" = no (p=0.22) but saw yes. Splitting on on(ball,floor)."
+  },
+  {
+   "tick": 32,
+   "action": "drop ball",
+   "question": "Will ball reach the floor?",
+   "prob": 0.74,
+   "truth": false,
+   "explanation": "Expected \"Will ball reach the floor?\" = yes (p=0.74) but saw no. Splitting on above(ball,cup)."
+  },
+  {
+   "tick": 34,
+   "action": "drop green",
+   "question": "Will green reach the floor?",
+   "prob": 0.86,
+   "truth": false,
+   "explanation": "Expected \"Will green reach the floor?\" = yes (p=0.86) but saw no. Splitting on above(green,cup)."
+  },
+  {
+   "tick": 37,
+   "action": "stack green blue {\"offset\":0.9}",
+   "question": "Will green rest on blue?",
+   "prob": 0.7,
+   "truth": false,
+   "explanation": "Expected \"Will green rest on blue?\" = yes (p=0.70) but saw no. Splitting on on(blue,floor)."
+  },
+  {
+   "tick": 39,
+   "action": "stack red blue {\"offset\":0.95}",
+   "question": "Will red rest on blue?",
+   "prob": 0.69,
+   "truth": false,
+   "explanation": "Expected \"Will red end up on the floor?\" = no (p=0.32) but saw yes. Splitting on on(red,floor)."
+  }
+ ],
+ "rulesSample": [
+  {
+   "action": "lift",
+   "requires": [],
+   "question": "falls",
+   "yes": 0,
+   "no": 4,
+   "source": "assimilate"
+  },
+  {
+   "action": "drop",
+   "requires": [],
+   "question": "reaches_floor",
+   "yes": 16,
+   "no": 1,
+   "source": "assimilate"
+  },
+  {
+   "action": "drop",
+   "requires": [],
+   "question": "rests_on_something",
+   "yes": 0,
+   "no": 24,
+   "source": "assimilate"
+  },
+  {
+   "action": "cover",
+   "requires": [],
+   "question": "still_there",
+   "yes": 1,
+   "no": 0,
+   "source": "assimilate"
+  },
+  {
+   "action": "cover",
+   "requires": [
+    "on($obj,floor)"
+   ],
+   "question": "still_there",
+   "yes": 7,
+   "no": 0,
+   "source": "accommodate"
+  },
+  {
+   "action": "uncover",
+   "requires": [],
+   "question": "reveals",
+   "yes": 8,
+   "no": 4,
+   "source": "assimilate"
+  },
+  {
+   "action": "drop",
+   "requires": [
+    "above($obj,cup)"
+   ],
+   "question": "reaches_floor",
+   "yes": 0,
+   "no": 15,
+   "source": "accommodate"
+  },
+  {
+   "action": "tilt",
+   "requires": [],
+   "question": "keeps_ball",
+   "yes": 0,
+   "no": 4,
+   "source": "assimilate"
+  },
+  {
+   "action": "stack",
+   "requires": [
+    "param(offset,centred)"
+   ],
+   "question": "rests_on_target",
+   "yes": 8,
+   "no": 0,
+   "source": "assimilate"
+  },
+  {
+   "action": "stack",
+   "requires": [
+    "param(offset,centred)"
+   ],
+   "question": "falls_to_floor",
+   "yes": 0,
+   "no": 8,
+   "source": "assimilate"
+  },
+  {
+   "action": "stack",
+   "requires": [
+    "param(offset,overhanging)"
+   ],
+   "question": "rests_on_target",
+   "yes": 0,
+   "no": 1,
+   "source": "assimilate"
+  },
+  {
+   "action": "stack",
+   "requires": [
+    "on($target,floor)",
+    "param(offset,overhanging)"
+   ],
+   "question": "rests_on_target",
+   "yes": 0,
+   "no": 11,
+   "source": "accommodate"
+  },
+  {
+   "action": "stack",
+   "requires": [
+    "param(offset,overhanging)"
+   ],
+   "question": "falls_to_floor",
+   "yes": 2,
+   "no": 0,
+   "source": "assimilate"
+  },
+  {
+   "action": "stack",
+   "requires": [
+    "on($obj,floor)",
+    "param(offset,overhanging)"
+   ],
+   "question": "rests_on_target",
+   "yes": 0,
+   "no": 4,
+   "source": "accommodate"
+  },
+  {
+   "action": "stack",
+   "requires": [
+    "on($obj,floor)",
+    "param(offset,overhanging)"
+   ],
+   "question": "falls_to_floor",
+   "yes": 10,
+   "no": 0,
+   "source": "accommodate"
+  },
+  {
+   "action": "place_on_ramp",
+   "requires": [],
+   "question": "goes_down",
+   "yes": 4,
+   "no": 8,
+   "source": "assimilate"
+  },
+  {
+   "action": "push",
+   "requires": [
+    "param(dir,right)"
+   ],
+   "question": "moves",
+   "yes": 1,
+   "no": 1,
+   "source": "assimilate"
+  },
+  {
+   "action": "push",
+   "requires": [
+    "param(dir,right)"
+   ],
+   "question": "topples",
+   "yes": 0,
+   "no": 8,
+   "source": "assimilate"
+  },
+  {
+   "action": "push",
+   "requires": [
+    "param(dir,right)"
+   ],
+   "question": "ball_moves",
+   "yes": 1,
+   "no": 0,
+   "source": "assimilate"
+  },
+  {
+   "action": "push",
+   "requires": [
+    "on($obj,floor)",
+    "param(dir,right)"
+   ],
+   "question": "ball_moves",
+   "yes": 12,
+   "no": 0,
+   "source": "accommodate"
+  },
+  {
+   "action": "push",
+   "requires": [
+    "param(dir,left)"
+   ],
+   "question": "moves",
+   "yes": 4,
+   "no": 0,
+   "source": "assimilate"
+  },
+  {
+   "action": "push",
+   "requires": [
+    "param(dir,left)"
+   ],
+   "question": "topples",
+   "yes": 0,
+   "no": 4,
+   "source": "assimilate"
+  },
+  {
+   "action": "push",
+   "requires": [
+    "param(dir,left)"
+   ],
+   "question": "ball_moves",
+   "yes": 0,
+   "no": 4,
+   "source": "assimilate"
+  },
+  {
+   "action": "push",
+   "requires": [
+    "param(dir,back)"
+   ],
+   "question": "moves",
+   "yes": 4,
+   "no": 0,
+   "source": "assimilate"
+  },
+  {
+   "action": "push",
+   "requires": [
+    "param(dir,back)"
+   ],
+   "question": "topples",
+   "yes": 0,
+   "no": 4,
+   "source": "assimilate"
+  },
+  {
+   "action": "push",
+   "requires": [
+    "param(dir,back)"
+   ],
+   "question": "ball_moves",
+   "yes": 0,
+   "no": 4,
+   "source": "assimilate"
+  },
+  {
+   "action": "push",
+   "requires": [
+    "near($obj,ramp)",
+    "param(dir,right)"
+   ],
+   "question": "moves",
+   "yes": 0,
+   "no": 2,
+   "source": "accommodate"
+  },
+  {
+   "action": "stack",
+   "requires": [
+    "on($target,floor)",
+    "param(offset,overhanging)"
+   ],
+   "question": "falls_to_floor",
+   "yes": 2,
+   "no": 0,
+   "source": "accommodate"
+  }
+ ],
+ "history": [
+  {
+   "version": 1,
+   "trigger": "lift red → Will red fall while held?",
+   "explanation": "No rule covered \"falls\" after lift; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 2,
+   "trigger": "drop red → Will red reach the floor?",
+   "explanation": "No rule covered \"reaches_floor\" after drop; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 3,
+   "trigger": "drop red → Will red come to rest on another object?",
+   "explanation": "No rule covered \"rests_on_something\" after drop; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 4,
+   "trigger": "cover ball → Will ball still be under the cup?",
+   "explanation": "No rule covered \"still_there\" after cover; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 5,
+   "trigger": "surprise: cover ball → Will ball still be under the cup?",
+   "explanation": "Expected \"Will ball still be under the cup?\" = no (p=0.21) but saw yes. Splitting on on(ball,floor).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 6,
+   "trigger": "uncover → Will lifting the cup reveal something underneath?",
+   "explanation": "No rule covered \"reveals\" after uncover; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 7,
+   "trigger": "surprise: drop ball → Will ball reach the floor?",
+   "explanation": "Expected \"Will ball reach the floor?\" = yes (p=0.76) but saw no. Unlike the last time this rule was right, above(ball,cup) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 8,
+   "trigger": "tilt cup → Will ball stay inside cup?",
+   "explanation": "No rule covered \"keeps_ball\" after tilt; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 9,
+   "trigger": "surprise: drop green → Will green reach the floor?",
+   "explanation": "Expected \"Will green reach the floor?\" = yes (p=0.73) but saw no. Splitting on above(green,cup).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 10,
+   "trigger": "stack green blue {\"offset\":0} → Will green rest on blue?",
+   "explanation": "No rule covered \"rests_on_target\" after stack; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 11,
+   "trigger": "stack green blue {\"offset\":0} → Will green end up on the floor?",
+   "explanation": "No rule covered \"falls_to_floor\" after stack; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 12,
+   "trigger": "stack green blue {\"offset\":0.9} → Will green rest on blue?",
+   "explanation": "No rule covered \"rests_on_target\" after stack; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 13,
+   "trigger": "surprise: stack green blue {\"offset\":0.9} → Will green rest on blue?",
+   "explanation": "Expected \"Will green rest on blue?\" = yes (p=0.70) but saw no. Splitting on on(blue,floor).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 14,
+   "trigger": "stack green blue {\"offset\":0.9} → Will green end up on the floor?",
+   "explanation": "No rule covered \"falls_to_floor\" after stack; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 15,
+   "trigger": "surprise: stack red blue {\"offset\":0.95} → Will red rest on blue?",
+   "explanation": "Expected \"Will red rest on blue?\" = yes (p=0.65) but saw no. Splitting on on(red,floor).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 16,
+   "trigger": "surprise: stack red blue {\"offset\":0.95} → Will red end up on the floor?",
+   "explanation": "Expected \"Will red end up on the floor?\" = no (p=0.35) but saw yes. Splitting on on(red,floor).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 17,
+   "trigger": "place_on_ramp ball → Will ball go down the ramp to the floor?",
+   "explanation": "No rule covered \"goes_down\" after place_on_ramp; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 18,
+   "trigger": "push red {\"dir\":\"right\"} → Will red move?",
+   "explanation": "No rule covered \"moves\" after push; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 19,
+   "trigger": "push red {\"dir\":\"right\"} → Will red topple?",
+   "explanation": "No rule covered \"topples\" after push; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 20,
+   "trigger": "push red {\"dir\":\"right\"} → Will the ball move?",
+   "explanation": "No rule covered \"ball_moves\" after push; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 21,
+   "trigger": "surprise: push red {\"dir\":\"right\"} → Will the ball move?",
+   "explanation": "Expected \"Will the ball move?\" = no (p=0.05) but saw yes. Splitting on on(red,floor).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 22,
+   "trigger": "push red {\"dir\":\"left\"} → Will red move?",
+   "explanation": "No rule covered \"moves\" after push; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 23,
+   "trigger": "push red {\"dir\":\"left\"} → Will red topple?",
+   "explanation": "No rule covered \"topples\" after push; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 24,
+   "trigger": "push red {\"dir\":\"left\"} → Will the ball move?",
+   "explanation": "No rule covered \"ball_moves\" after push; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 25,
+   "trigger": "surprise: push green {\"dir\":\"right\"} → Will green move?",
+   "explanation": "Expected \"Will green move?\" = yes (p=0.80) but saw no. Splitting on on(green,floor).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 26,
+   "trigger": "surprise: push green {\"dir\":\"right\"} → Will the ball move?",
+   "explanation": "Expected \"Will the ball move?\" = no (p=0.06) but saw yes. Splitting on on(green,floor).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 27,
+   "trigger": "push green {\"dir\":\"back\"} → Will green move?",
+   "explanation": "No rule covered \"moves\" after push; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 28,
+   "trigger": "push green {\"dir\":\"back\"} → Will green topple?",
+   "explanation": "No rule covered \"topples\" after push; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 29,
+   "trigger": "push green {\"dir\":\"back\"} → Will the ball move?",
+   "explanation": "No rule covered \"ball_moves\" after push; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 30,
+   "trigger": "surprise: cover ball → Will ball still be under the cup?",
+   "explanation": "Expected \"Will ball still be under the cup?\" = no (p=0.22) but saw yes. Splitting on on(ball,floor).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 31,
+   "trigger": "surprise: drop ball → Will ball reach the floor?",
+   "explanation": "Expected \"Will ball reach the floor?\" = yes (p=0.74) but saw no. Splitting on above(ball,cup).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 32,
+   "trigger": "surprise: drop green → Will green reach the floor?",
+   "explanation": "Expected \"Will green reach the floor?\" = yes (p=0.86) but saw no. Splitting on above(green,cup).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 33,
+   "trigger": "surprise: stack green blue {\"offset\":0.9} → Will green rest on blue?",
+   "explanation": "Expected \"Will green rest on blue?\" = yes (p=0.70) but saw no. Splitting on on(blue,floor).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 34,
+   "trigger": "surprise: stack red blue {\"offset\":0.95} → Will red rest on blue?",
+   "explanation": "Expected \"Will red rest on blue?\" = yes (p=0.69) but saw no. Splitting on on(red,floor).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 35,
+   "trigger": "surprise: stack red blue {\"offset\":0.95} → Will red end up on the floor?",
+   "explanation": "Expected \"Will red end up on the floor?\" = no (p=0.32) but saw yes. Splitting on on(red,floor).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 36,
+   "trigger": "surprise: push red {\"dir\":\"right\"} → Will the ball move?",
+   "explanation": "Expected \"Will the ball move?\" = no (p=0.06) but saw yes. Splitting on on(red,floor).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 37,
+   "trigger": "surprise: push green {\"dir\":\"right\"} → Will green move?",
+   "explanation": "Expected \"Will green move?\" = yes (p=0.79) but saw no. Unlike the last time this rule was right, near(green,ramp) holds now; the agent could not see it, so the concept layout is now active.",
+   "conceptsAdded": [
+    "layout"
+   ]
+  },
+  {
+   "version": 38,
+   "trigger": "surprise: push green {\"dir\":\"right\"} → Will the ball move?",
+   "explanation": "Expected \"Will the ball move?\" = no (p=0.06) but saw yes. Splitting on on(green,floor).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 39,
+   "trigger": "surprise: cover ball → Will ball still be under the cup?",
+   "explanation": "Expected \"Will ball still be under the cup?\" = no (p=0.17) but saw yes. Splitting on on(ball,floor).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 40,
+   "trigger": "surprise: drop ball → Will ball reach the floor?",
+   "explanation": "Expected \"Will ball reach the floor?\" = yes (p=0.90) but saw no. Splitting on above(ball,cup).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 41,
+   "trigger": "surprise: drop green → Will green reach the floor?",
+   "explanation": "Expected \"Will green reach the floor?\" = yes (p=0.86) but saw no. Splitting on above(green,cup).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 42,
+   "trigger": "surprise: stack green blue {\"offset\":0.9} → Will green rest on blue?",
+   "explanation": "Expected \"Will green rest on blue?\" = yes (p=0.70) but saw no. Splitting on on(blue,floor).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 43,
+   "trigger": "surprise: stack green blue {\"offset\":0.9} → Will green end up on the floor?",
+   "explanation": "Expected \"Will green end up on the floor?\" = no (p=0.32) but saw yes. Splitting on on(blue,floor).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 44,
+   "trigger": "surprise: stack red blue {\"offset\":0.95} → Will red rest on blue?",
+   "explanation": "Expected \"Will red rest on blue?\" = yes (p=0.68) but saw no. Splitting on on(red,floor).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 45,
+   "trigger": "surprise: stack red blue {\"offset\":0.95} → Will red end up on the floor?",
+   "explanation": "Expected \"Will red end up on the floor?\" = no (p=0.33) but saw yes. Splitting on on(red,floor).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 46,
+   "trigger": "surprise: push green {\"dir\":\"right\"} → Will green move?",
+   "explanation": "Expected \"Will green move?\" = yes (p=0.77) but saw no. Unlike the last time this rule was right, near(green,ramp) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 47,
+   "trigger": "surprise: cover ball → Will ball still be under the cup?",
+   "explanation": "Expected \"Will ball still be under the cup?\" = no (p=0.14) but saw yes. Splitting on on(ball,floor).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 48,
+   "trigger": "surprise: drop ball → Will ball reach the floor?",
+   "explanation": "Expected \"Will ball reach the floor?\" = yes (p=0.88) but saw no. Splitting on above(ball,cup).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 49,
+   "trigger": "surprise: drop green → Will green reach the floor?",
+   "explanation": "Expected \"Will green reach the floor?\" = yes (p=0.85) but saw no. Splitting on above(green,cup).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 50,
+   "trigger": "surprise: stack green blue {\"offset\":0.9} → Will green rest on blue?",
+   "explanation": "Expected \"Will green rest on blue?\" = yes (p=0.69) but saw no. Splitting on on(blue,floor).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 51,
+   "trigger": "surprise: stack green blue {\"offset\":0.9} → Will green end up on the floor?",
+   "explanation": "Expected \"Will green end up on the floor?\" = no (p=0.34) but saw yes. Splitting on on(blue,floor).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 52,
+   "trigger": "surprise: stack red blue {\"offset\":0.95} → Will red rest on blue?",
+   "explanation": "Expected \"Will red rest on blue?\" = yes (p=0.65) but saw no. Splitting on on(red,floor).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 53,
+   "trigger": "surprise: stack red blue {\"offset\":0.95} → Will red end up on the floor?",
+   "explanation": "Expected \"Will red end up on the floor?\" = no (p=0.31) but saw yes. Splitting on on(red,floor).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 54,
+   "trigger": "surprise: push green {\"dir\":\"right\"} → Will green move?",
+   "explanation": "Expected \"Will green move?\" = yes (p=0.75) but saw no. Unlike the last time this rule was right, near(green,ramp) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 55,
+   "trigger": "surprise: push green {\"dir\":\"right\"} → Will the ball move?",
+   "explanation": "Expected \"Will the ball move?\" = no (p=0.30) but saw yes. Splitting on on(green,floor).",
+   "conceptsAdded": []
+  }
+ ]
+}

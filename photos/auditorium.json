@@ -1,0 +1,28 @@
+{
+  "source": "claude-opus-5 vision output, 2026-09-20; the page looks live when a key is set",
+  "ahead": {
+    "kind": "obstacle",
+    "distance": "two_steps",
+    "name": "beige sofa with a small drinks table beside it"
+  },
+  "left": {
+    "kind": "person",
+    "distance": "one_step",
+    "name": "woman seated on a beige sofa using a laptop"
+  },
+  "right": {
+    "kind": "obstacle",
+    "distance": "one_step",
+    "name": "black loudspeaker cabinet on the floor, sofas and low wooden table beyond"
+  },
+  "hazards": [
+    "Low sofas and small side tables block the path within one to two steps",
+    "Water bottles and a tray on a low table at knee height, easy to knock over",
+    "Loudspeaker cabinet on the floor to the right, possible cables around it",
+    "Open stage-front floor area ahead may have a step down or stage edge",
+    "Tiered auditorium steps rise beyond the sofas, roughly five or more steps ahead",
+    "People moving in the aisle and seated in rows further away"
+  ],
+  "text_visible": "",
+  "confidence": 0.53
+}
