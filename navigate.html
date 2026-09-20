@@ -92,10 +92,16 @@
             <button id="explore" class="btn ghost" type="button">Let the agent explore</button>
             <label class="check"><input type="checkbox" id="useCamera"> Use camera</label>
           </div>
+          <div class="controls">
+            <button id="photoBtn" class="btn ghost" type="button">Use a photo</button>
+            <input id="photo" type="file" accept="image/*" hidden aria-label="Choose a photo to describe">
+            <button id="samplePhoto" class="btn ghost" type="button">Sample: auditorium</button>
+            <button id="backToRoom" class="btn ghost" type="button">Back to the room</button>
+          </div>
           <details class="settings">
             <summary>Camera settings</summary>
             <div class="field"><label for="anthropicKey">Anthropic API key</label><input id="anthropicKey" type="password" autocomplete="off"><span class="hint">Stored in this browser only, shared with the playroom page.</span></div>
-            <div class="field"><label for="camModel">Frame model</label><input id="camModel"><span class="hint">Default claude-haiku-4-5: fast and cheap, one frame every 2.5 seconds.</span></div>
+            <div class="field"><label for="camModel">Frame model</label><input id="camModel"><span class="hint">Default claude-haiku-4-5: fast and cheap. One call per camera frame every 2.5 seconds, or one call per photo.</span></div>
           </details>
         </div>
       </section>
@@ -110,6 +116,7 @@
         <div class="win-body">
           <div id="scene" aria-label="Three-dimensional view of the simulated room with the avatar" role="img"></div>
           <video id="cam" hidden playsinline muted aria-label="Live camera"></video>
+          <img id="photoView" hidden alt="The photo being described" style="width:100%;display:block;border:1.5px solid var(--ink)">
         </div>
       </section>
       <section class="win" aria-labelledby="log-title">

@@ -82,7 +82,9 @@ What the numbers say:
 
 - Landing page and results: https://riyadadlani02.github.io/surprise/
 - Interactive playroom (Three.js + Rapier): `./demo.html`
-- Voice-guided navigation aid for blind users, simulated room plus live camera mode: `./navigate.html`. Prototype only: not a substitute for a white cane, a guide dog, or mobility training.
+- Live scenarios console for the five text worlds, with real Jev when served by the dev server: `./scenarios.html`
+- Voice-guided navigation aid for blind users: `./navigate.html`. A simulated room, a live camera mode, and a photo mode (any still image, for example an auditorium you are about to enter) that serialize the scene through Claude vision. Prototype only: not a substitute for a white cane, a guide dog, or mobility training.
+- Loom demo script: `docs/demo-script.md`
 - Unity playroom: `./unity.html`. The Unity project lives in `unity/`; it was written without a Unity install and has not been compiled. Build it with the command in `unity/README.md` and the page picks up `public/unity`.
 
 ## Adding an environment
