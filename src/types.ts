@@ -26,6 +26,7 @@ export interface Rule {
   no: number
   source: 'assimilate' | 'accommodate' | 'human' | 'fable'
   note?: string
+  example?: string[]        // templated context of the last pre-state where this rule predicted correctly
 }
 export const ruleProb = (r: Rule) => (r.yes + 1) / (r.yes + r.no + 2)
 export const ruleConfidence = (r: Rule) => (r.yes + r.no) / (r.yes + r.no + 2)

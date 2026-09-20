@@ -41,8 +41,8 @@ export function learnGeneral(wm: WorldModel, a: Action, question: string, truth:
   const requires = paramRelations(a).map(r => template(r, a))
   const existing = wm.rules.find(r => r.action === a.kind && r.question === question && sameSet(r.requires, requires))
   if (existing) { recordOutcome(wm, existing.id, truth); return existing }
-  const rule: Rule = { id: newId('r'), action: a.kind, requires, question, yes: 0, no: 0, source }
-  applyPatch(wm, { explanation: `No rule covered "${question}" after ${a.kind}; started one from this observation.`, conceptsAdd: [], rulesAdd: [rule], rulesRemove: [] }, trigger)
+  const { added: [rule] } = applyPatch(wm, { explanation: `No rule covered "${question}" after ${a.kind}; started one from this observation.`, conceptsAdd: [],
+    rulesAdd: [{ action: a.kind, requires, question, source }], rulesRemove: [] }, trigger)
   recordOutcome(wm, rule.id, truth)
   return rule
 }

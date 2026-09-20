@@ -13,7 +13,8 @@ describe('world model', () => {
     expect(g.requires).toEqual(['param(offset,centred)'])
     expect(matchRules(wm, state, stackO, 'rests_on_target')).toHaveLength(0)  // bucketed params separate the cases
     expect(wm.version).toBe(1)
-    // an accommodation with a latent concept activates it and adds a specific rule
+    // an accommodation contrasts with the last correct example; what differs is a latent concept, so it is activated
+    g.example = ['on($obj,floor)', 'on($target,floor)', 'param(offset,centred)']
     const acc = new RuleAccommodator()
     const patch = await acc.accommodate({ state, action: stackC, question: { id: 'rests_on_target', text: 'q' }, predicted: { prob: 0.9, confidence: 0.8, ruleId: g.id },
       truth: false, postState: [], latent: [{ r: rel('heavy', 'green'), concept: 'mass' }] }, wm)

@@ -1,6 +1,6 @@
 // Perceive → predict → act → compare → (assimilate | accommodate | escalate). Environment-agnostic.
 import { Metrics } from './metrics'
-import { RuleAccommodator, RulePredictor } from './model/rules'
+import { RuleAccommodator, RulePredictor, contextTemplates } from './model/rules'
 import { applyPatch, learnGeneral, matchRules, recordOutcome } from './model/worldmodel'
 import { actionText, type Accommodator, type Action, type Diff, type Environment, type Prediction, type Predictor, type Relation, type WorldModel } from './types'
 
@@ -75,7 +75,11 @@ export class Agent<Obs> {
         diffs.push(...this.wm.history.slice(-1))
         continue
       }
-      if (p.ruleId) recordOutcome(this.wm, p.ruleId, truth)          // assimilation
+      if (p.ruleId) {                                                  // assimilation
+        recordOutcome(this.wm, p.ruleId, truth)
+        const r = this.wm.rules.find(x => x.id === p.ruleId)
+        if (r && (p.prob > 0.5) === truth) r.example = contextTemplates(pre, latent, action).map(c => c.t)
+      }
       else if (!matchRules(this.wm, pre, action, q.id).length) {       // nothing knew this; start a rule
         learnGeneral(this.wm, action, q.id, truth, 'assimilate', `${actionText(action)} → ${q.text}`)
         diffs.push(...this.wm.history.slice(-1))

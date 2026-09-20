@@ -9,7 +9,7 @@ export const CONCEPTS = [
   { name: 'shape', description: 'round(x) vs flat(x); round things roll.' },
   { name: 'mass', description: 'heavy(x) for dense objects.' },
   { name: 'gravity', description: 'gravity(low) when the world\'s gravity has been weakened.' },
-  { name: 'layout', description: 'left_of(x,y) / right_of(x,y) / near(x,y) between objects.' },
+  { name: 'layout', description: 'near(x,y) when two objects are within reach of each other.' },
 ]
 
 const FOOT = 0.04
@@ -74,7 +74,6 @@ export function allRelations(s: Snapshot): { r: Relation; concept?: string }[] {
       if (a.id < b.id) {
         const d = Math.hypot(a.pos[0] - b.pos[0], a.pos[2] - b.pos[2])
         if (d < a.half[0] + b.half[0] + 0.5) out.push({ r: rel('near', a.id, b.id), concept: 'layout' })
-        if (Math.abs(a.pos[0] - b.pos[0]) > 0.2) out.push({ r: rel(a.pos[0] < b.pos[0] ? 'left_of' : 'right_of', a.id, b.id), concept: 'layout' })
       }
     }
   }
