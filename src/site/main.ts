@@ -85,11 +85,34 @@ async function renderResults() {
   }))
   grid.innerHTML = [...byScenario.values()].map(s => scenarioCard(s.title, s.runs)).join('')
   table.innerHTML = summaryTable(index.runs)
+  void renderFable(table)
   const js = index.runs.map(r => r.jev).filter((j): j is Jev => !!j)
   if (js.length) {
     const ms = js.reduce((n, j) => n + j.ms, 0) / Math.max(1, js.reduce((n, j) => n + j.calls, 0))
     $('measure-note')!.insertAdjacentHTML('afterbegin', `<span class="mono">Recorded ${new Date(index.generatedAt).toISOString().slice(0, 10)} with ${esc(index.jevModel)}: ${Math.round(ms)} ms per Jev call over ${js.reduce((n, j) => n + j.calls, 0)} calls.</span> `)
   }
+}
+
+// ---- the run where Claude Fable 5.1 wrote the accommodations ----------------
+interface FableRun { predictions: number; accuracy: number; brier: number; thirds: { brier: number }[]; concepts: string[]; accommodations: number; warnings: number; accommodator: string
+  explanations: { version: number; trigger: string; explanation: string; added: string[]; removed: string[]; conceptsAdded: string[] }[] }
+async function renderFable(after: HTMLElement) {
+  const r = await getJson<FableRun>('./results/playroom-curriculum--jev--fable.json')
+  if (!r) return
+  const picks = [...r.explanations.filter(e => e.conceptsAdded.length), ...r.explanations.filter(e => !e.conceptsAdded.length)].slice(0, 4)
+  const diffs = picks.map(e => `<div class="fable-diff">
+      <p class="mono"><b>v${e.version}</b> ${esc(e.trigger)}</p>
+      <p>${esc(e.explanation)}</p>
+      ${e.conceptsAdded.map(c => `<span class="chip">+ concept ${esc(c)}</span>`).join(' ')}
+      ${e.added.map(a => `<p class="mono add">+ ${esc(a)}</p>`).join('')}${e.removed.map(a => `<p class="mono rm">− ${esc(a)}</p>`).join('')}
+    </div>`).join('')
+  after.insertAdjacentHTML('afterend', `<section class="win fable" aria-labelledby="fable-title">
+    <div class="win-title"><span id="fable-title">playroom curriculum · Jev predicting · ${esc(r.accommodator)} accommodating</span><span>${r.accommodations} rewrites</span></div>
+    <div class="win-body paper">
+      <p class="mono">${r.predictions} predictions · accuracy ${Math.round(r.accuracy * 100)}% · Brier ${r.brier.toFixed(3)} · by third ${r.thirds.map(t => t.brier.toFixed(2)).join(' → ')} · concepts ${esc(r.concepts.join(', '))} · fallbacks ${r.warnings}</p>
+      <p>The best curve of any run. When a confident prediction failed, Fable read the trace, including the relations the agent could not yet see, and returned the patch. Its explanations, verbatim from the model's diff history:</p>
+      ${diffs}
+    </div></section>`)
 }
 
 // ---- hero transcript -------------------------------------------------------

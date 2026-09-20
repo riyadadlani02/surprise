@@ -104,3 +104,11 @@ footer a { color: var(--ink); }
   h1 br { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .term .cursor::after { content: ''; } }
+
+/* Fable's accommodations */
+.fable { margin-top: 24px; }
+.fable-diff { border-top: 1.5px solid var(--grey-300); padding: 12px 0 4px; }
+.fable-diff p { margin: 0 0 6px; }
+.fable-diff .add { color: #2e7d32; font-size: 12px; }
+.fable-diff .rm { color: #b3261e; font-size: 12px; }
+.fable .chip { display: inline-block; font: 500 12px/1 var(--font-mono); border: 1.5px solid var(--ink); padding: 3px 8px; margin: 2px 4px 6px 0; }

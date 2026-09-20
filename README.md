@@ -63,6 +63,20 @@ Every environment ran three times from an empty world model: the hand-written ru
 | One person's habits | 600 | 0.099 | 0.268 | 0.099 | weather, energy, history |
 | Rock-paper-scissors | 600 | 0.234 | 0.246 | 0.231 | history, opponent_model |
 
+### With Claude Fable 5.1 accommodating
+
+One more run of the playroom curriculum, three rounds, with Jev predicting and Claude Fable 5.1 writing every accommodation (`scenarios/fable.run.ts`, output in `public/results/playroom-curriculum--jev--fable.json`).
+
+| Predictions | Accuracy | Brier | Brier by third | Concepts acquired | Fable rewrites | Fallbacks |
+|---|---|---|---|---|---|---|
+| 123 | 82% | 0.137 | 0.20 > 0.11 > 0.10 | object_permanence, support, shape, layout, mass | 19 | 0 |
+
+That is the best Brier curve of any run, and five concepts against two or three for the heuristic accommodator. Fable's explanations, verbatim from the diff history:
+
+> v5: The agent had no rule requiring the pre-state relations (prediction came via 'none'), so it defaulted to a low prior that a covered ball vanishes. The observation shows the ball persists under the cup; activating object_permanence gives the agent the hidden(ball,cup) relation that explains persistence, and a rule keyed on the ball being on the floor with an upright cup predicts it stays there.
+> v14: Offset 0.9 is an overhanging placement, and green fell rather than resting on blue. The fallback prediction of 0.70 ignored the offset parameter; the existing overhanging rule already points the right way but is weak, so I strengthen the overhang→fall relation with a dedicated rule and activate support so the centred/overhang relation becomes visible.
+> v18: The rule predicted red would go down the ramp but red is flat, and flat objects do not roll; only round objects roll down. The shape concept must be activated to distinguish round from flat objects.
+
 Jev on this workload, measured from Node with fourteen runs in flight:
 
 | Calls | Mean latency per call | Input tokens | Total cost |
