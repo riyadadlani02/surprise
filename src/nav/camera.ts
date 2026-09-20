@@ -100,3 +100,40 @@ export class CameraEnv implements Environment<CamObs> {
   }
   randomAction(): Action { return { kind: 'step_forward' } }
 }
+
+// ---- routes: a frame plus a goal → numbered moves a blind pedestrian can do one at a time ----
+export interface Move { kind: 'turn_left' | 'turn_right' | 'forward' | 'stairs_up' | 'stairs_down' | 'stop_and_check' | 'ask_for_help'; steps: number; instruction: string; caution: string }
+export interface Route { goal: string; goal_seen: boolean; summary: string; moves: Move[]; confidence: number }
+export const ROUTE_MODEL = 'claude-opus-5'
+const ROUTE_SCHEMA = {
+  type: 'object',
+  properties: {
+    goal_seen: { type: 'boolean', description: 'Whether the goal is visible in the photo.' },
+    summary: { type: 'string', description: 'One sentence: where the goal is relative to the walker, or that it is not visible and which way is most likely.' },
+    moves: { type: 'array', maxItems: 8, items: { type: 'object', properties: {
+      kind: { type: 'string', enum: ['turn_left', 'turn_right', 'forward', 'stairs_up', 'stairs_down', 'stop_and_check', 'ask_for_help'] },
+      steps: { type: 'integer', description: 'Walking steps for forward moves (1 to 4); stair count for stairs; 0 otherwise.' },
+      instruction: { type: 'string', description: 'One plain sentence the walker can act on without sight, for example "Turn a quarter turn to your right." or "Walk two steps forward."' },
+      caution: { type: 'string', description: 'What the cane should find or avoid during this move, or an empty string.' },
+    }, required: ['kind', 'steps', 'instruction', 'caution'], additionalProperties: false } },
+    confidence: { type: 'number', description: '0 to 1.' },
+  },
+  required: ['goal_seen', 'summary', 'moves', 'confidence'],
+  additionalProperties: false,
+} as const
+const ROUTE_SYSTEM = `You plan a short walking route for a blind pedestrian from one photo taken at their chest height, facing forward.
+Moves are things a person can do without sight, one at a time: a quarter or half turn, one to four steps forward, a stair up or down, or stop and check with the cane. Keep every forward move short and stop before anything at knee or foot height: low tables, cables, speaker cabinets, bags, steps. Route around people and furniture on the clear floor. If the goal is not visible, say so and give at most three moves toward the most likely direction, ending with stop and check. Never claim more than the photo shows; put doubt into the caution text and the confidence number.`
+
+export async function planRoute(apiKey: string, base64WithoutPrefix: string, goal: string, model = ROUTE_MODEL): Promise<Route> {
+  if (!client || clientKey !== apiKey) { client = new Anthropic({ apiKey, dangerouslyAllowBrowser: true }); clientKey = apiKey }
+  const res = await client.messages.parse({
+    model, max_tokens: 2048, system: ROUTE_SYSTEM,
+    messages: [{ role: 'user', content: [
+      { type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: base64WithoutPrefix } },
+      { type: 'text', text: `Plan the route to: ${goal}.` },
+    ] }],
+    output_config: { format: jsonSchemaOutputFormat(ROUTE_SCHEMA) },
+  })
+  if (res.stop_reason === 'refusal' || !res.parsed_output) throw new Error(`no route (${res.stop_reason})`)
+  return { goal, ...(res.parsed_output as Omit<Route, 'goal'>) }
+}

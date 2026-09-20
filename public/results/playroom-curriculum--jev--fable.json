@@ -1,0 +1,873 @@
+{
+ "scenario": "playroom-curriculum",
+ "title": "3D playroom · developmental curriculum",
+ "kind": "physics",
+ "predictor": "jev",
+ "accommodator": "claude-fable-5-1",
+ "ticks": 69,
+ "predictions": 123,
+ "accuracy": 0.8211382113821138,
+ "brier": 0.1366560975609755,
+ "thirds": [
+  {
+   "slice": 0,
+   "rate": 0.0975609756097561,
+   "accuracy": 0.7560975609756098,
+   "brier": 0.1978926829268292
+  },
+  {
+   "slice": 1,
+   "rate": 0.0975609756097561,
+   "accuracy": 0.8536585365853658,
+   "brier": 0.10962682926829273
+  },
+  {
+   "slice": 2,
+   "rate": 0.07317073170731707,
+   "accuracy": 0.8536585365853658,
+   "brier": 0.10244878048780492
+  }
+ ],
+ "calibration": [
+  {
+   "lo": 0,
+   "hi": 0.2,
+   "n": 42,
+   "sumProb": 4.300000000000001,
+   "hits": 1,
+   "meanProb": 0.10238095238095239,
+   "hitRate": 0.023809523809523808
+  },
+  {
+   "lo": 0.2,
+   "hi": 0.4,
+   "n": 13,
+   "sumProb": 3.58,
+   "hits": 2,
+   "meanProb": 0.2753846153846154,
+   "hitRate": 0.15384615384615385
+  },
+  {
+   "lo": 0.4,
+   "hi": 0.6,
+   "n": 7,
+   "sumProb": 3.65,
+   "hits": 3,
+   "meanProb": 0.5214285714285715,
+   "hitRate": 0.42857142857142855
+  },
+  {
+   "lo": 0.6,
+   "hi": 0.8,
+   "n": 27,
+   "sumProb": 19.660000000000007,
+   "hits": 18,
+   "meanProb": 0.7281481481481484,
+   "hitRate": 0.6666666666666666
+  },
+  {
+   "lo": 0.8,
+   "hi": 1,
+   "n": 34,
+   "sumProb": 29.840000000000003,
+   "hits": 27,
+   "meanProb": 0.8776470588235296,
+   "hitRate": 0.7941176470588235
+  }
+ ],
+ "accuracyByStage": [
+  {
+   "stage": "objects_fall",
+   "n": 21,
+   "correct": 21,
+   "accuracy": 1
+  },
+  {
+   "stage": "object_permanence",
+   "n": 12,
+   "correct": 8,
+   "accuracy": 0.6666666666666666
+  },
+  {
+   "stage": "containers",
+   "n": 21,
+   "correct": 15,
+   "accuracy": 0.7142857142857143
+  },
+  {
+   "stage": "support",
+   "n": 24,
+   "correct": 22,
+   "accuracy": 0.9166666666666666
+  },
+  {
+   "stage": "ramps",
+   "n": 9,
+   "correct": 3,
+   "accuracy": 0.3333333333333333
+  },
+  {
+   "stage": "tools",
+   "n": 36,
+   "correct": 32,
+   "accuracy": 0.8888888888888888
+  }
+ ],
+ "concepts": [
+  "object_permanence",
+  "support",
+  "shape",
+  "layout",
+  "mass"
+ ],
+ "rules": 33,
+ "revisions": 38,
+ "accommodations": 19,
+ "accommodationValue": [
+  {
+   "version": 5,
+   "tick": 5,
+   "before": 1,
+   "after": 0.6666666666666666,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 7,
+   "tick": 7,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 8,
+   "tick": 9,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 10,
+   "tick": 11,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 14,
+   "tick": 14,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 16,
+   "tick": 14,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 18,
+   "tick": 18,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 19,
+   "tick": 19,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 23,
+   "tick": 20,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 27,
+   "tick": 22,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 30,
+   "tick": 32,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 31,
+   "tick": 34,
+   "before": 0.6666666666666666,
+   "after": 1,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 32,
+   "tick": 41,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 33,
+   "tick": 42,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 34,
+   "tick": 45,
+   "before": 1,
+   "after": 1,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 35,
+   "tick": 55,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 36,
+   "tick": 57,
+   "before": 0.6666666666666666,
+   "after": 1,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 37,
+   "tick": 64,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 38,
+   "tick": 65,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  }
+ ],
+ "warnings": 0,
+ "warningSamples": [],
+ "jev": {
+  "calls": 69,
+  "ms": 46189.88758000012,
+  "inputTokens": 34097,
+  "outputTokens": 2481,
+  "errors": 0,
+  "msPerCall": 669.4186605797119,
+  "costUsd": 0.0014320740000000002
+ },
+ "durationMs": 212533,
+ "explanations": [
+  {
+   "version": 5,
+   "trigger": "surprise: cover ball → Will ball still be under the cup?",
+   "explanation": "The agent had no rule requiring the pre-state relations (prediction came via 'none'), so it defaulted to a low prior that a covered ball vanishes. The observation shows the ball persists under the cup; activating object_permanence gives the agent the hidden(ball,cup) relation that explains persistence, and a rule keyed on the ball being on the floor with an upright cup predicts it stays there.",
+   "added": [
+    "r53cq: cover when on($obj,floor) & upright(cup) → still_there p=0.50 conf=0.00 [fable]"
+   ],
+   "removed": [],
+   "conceptsAdded": [
+    "object_permanence"
+   ]
+  },
+  {
+   "version": 7,
+   "trigger": "surprise: uncover → Will lifting the cup reveal something underneath?",
+   "explanation": "The generic uncover rule ignored whether anything was actually hidden under the cup. In the pre-state the ball was visibly on the floor and no hidden(x,cup) relation held, so lifting the cup revealed nothing. Uncover only reveals when some object is hidden beneath the cup; when the ball is already visible on the floor, the answer is no.",
+   "added": [
+    "r7ddh: uncover when inverted(cup) & on(ball,floor) → Will lifting the cup reveal something underneath? p=0.50 conf=0.00 [fable]",
+    "r8ddh: uncover when hidden(ball,cup) → Will lifting the cup reveal something underneath? p=0.50 conf=0.00 [fable]"
+   ],
+   "removed": [],
+   "conceptsAdded": []
+  },
+  {
+   "version": 8,
+   "trigger": "surprise: drop ball → Will ball reach the floor?",
+   "explanation": "The ball was dropped while positioned above an upright cup, so it fell into the cup rather than reaching the floor. The general drop rule ignores what lies beneath the held object; the visible relation above(ball,cup) with upright(cup) distinguishes this case, so no new concept is needed.",
+   "added": [
+    "r9knm: drop when held($obj) & above($obj,cup) & upright(cup) → reaches_floor p=0.50 conf=0.00 [fable]",
+    "raknm: drop when held($obj) & on(cup,floor) → reaches_floor p=0.50 conf=0.00 [fable]"
+   ],
+   "removed": [],
+   "conceptsAdded": []
+  },
+  {
+   "version": 10,
+   "trigger": "surprise: drop green → Will green reach the floor?",
+   "explanation": "Green was held directly above the upright cup, so when dropped it fell into the cup rather than reaching the floor. The cup acts as a container that intercepts anything dropped from above it; the distinguishing relations above($obj,cup) and upright(cup) were already visible, so no new concept is needed. The rule r9knm was giving the wrong probability for this exact situation, so it is replaced by a rule that predicts the object is caught by the cup.",
+   "added": [
+    "rctiv: drop when held($obj) & above($obj,cup) & upright(cup) → reaches_floor p=0.50 conf=0.00 [fable]"
+   ],
+   "removed": [
+    "r9knm: drop when held($obj) & above($obj,cup) & upright(cup) → reaches_floor p=0.25 conf=0.50 [fable]"
+   ],
+   "conceptsAdded": []
+  },
+  {
+   "version": 14,
+   "trigger": "surprise: stack green blue {\"offset\":0.9} → Will green rest on blue?",
+   "explanation": "Offset 0.9 is an overhanging placement, and green fell rather than resting on blue. The fallback prediction of 0.70 ignored the offset parameter; the existing overhanging rule already points the right way but is weak, so I strengthen the overhang→fall relation with a dedicated rule and activate support so the centred/overhang relation becomes visible.",
+   "added": [
+    "rg15j: stack when param(offset,overhanging) → rests_on_target p=0.50 conf=0.00 [fable]"
+   ],
+   "removed": [
+    "rfv9n: stack when param(offset,overhanging) → rests_on_target p=0.33 conf=0.33 [assimilate]"
+   ],
+   "conceptsAdded": [
+    "support"
+   ]
+  },
+  {
+   "version": 16,
+   "trigger": "surprise: stack green blue {\"offset\":0.9} → Will green end up on the floor?",
+   "explanation": "The stack used offset 0.9, which is an overhanging placement, and green fell to the floor. No rule fired because the offset bucket may not have matched; the model now holds that a strongly overhanging offset (0.9) reliably makes the stacked object fall, so the overhanging rule is strengthened with a more specific rule.",
+   "added": [
+    "ri5v1: stack when param(offset,overhanging) & on($target,floor) → falls_to_floor p=0.50 conf=0.00 [fable]"
+   ],
+   "removed": [],
+   "conceptsAdded": []
+  },
+  {
+   "version": 18,
+   "trigger": "surprise: place_on_ramp red → Will red go down the ramp to the floor?",
+   "explanation": "The rule predicted red would go down the ramp but red is flat, and flat objects do not roll; only round objects roll down. The shape concept must be activated to distinguish round from flat objects.",
+   "added": [
+    "rkd9x: place_on_ramp when flat($obj) → goes_down p=0.50 conf=0.00 [fable]",
+    "rld9x: place_on_ramp when round($obj) → goes_down p=0.50 conf=0.00 [fable]"
+   ],
+   "removed": [
+    "rj7oo: place_on_ramp → goes_down p=0.50 conf=0.50 [assimilate]"
+   ],
+   "conceptsAdded": [
+    "shape"
+   ]
+  },
+  {
+   "version": 19,
+   "trigger": "surprise: place_on_ramp green → Will green go down the ramp to the floor?",
+   "explanation": "Green is flat, and flat objects do not roll, so they stay put on the ramp instead of sliding to the floor. The distinguishing relation flat($obj) was already visible, so no new concept is needed; the flat rule simply needs a much lower probability of going down, while round objects remain the ones expected to roll.",
+   "added": [
+    "rmkhu: place_on_ramp when flat($obj) → goes_down p=0.50 conf=0.00 [fable]",
+    "rnkhu: place_on_ramp when round($obj) → goes_down p=0.50 conf=0.00 [fable]"
+   ],
+   "removed": [
+    "rkd9x: place_on_ramp when flat($obj) → goes_down p=0.33 conf=0.33 [fable]",
+    "rld9x: place_on_ramp when round($obj) → goes_down p=0.50 conf=0.00 [fable]"
+   ],
+   "conceptsAdded": []
+  },
+  {
+   "version": 23,
+   "trigger": "surprise: push red {\"dir\":\"right\"} → Will the ball move?",
+   "explanation": "Pushing red moved the ball even though the ball was not the target; the hidden relation near(ball,red) means the pushed object collided with or nudged the adjacent ball. The model now believes pushing an object near the ball causes the ball to move, so the layout concept must be activated to see proximity.",
+   "added": [
+    "rrptr: push when near(ball,$obj) → ball_moves p=0.50 conf=0.00 [fable]"
+   ],
+   "removed": [],
+   "conceptsAdded": [
+    "layout"
+   ]
+  },
+  {
+   "version": 27,
+   "trigger": "surprise: push green {\"dir\":\"right\"} → Will green move?",
+   "explanation": "Green stayed put while the adjacent ball started moving, so the push force was absorbed by green and transferred to the ball rather than moving green itself. This pattern suggests green is a dense, heavy object that resists pushing; the distinguishing relation heavy(green) is not yet visible, so the mass concept should be activated and the push rule split on heaviness.",
+   "added": [
+    "rvzjq: push when heavy($obj) → Will $obj move? p=0.50 conf=0.00 [fable]",
+    "rwzjq: push when flat($obj) & near(ball,$obj) → Will $obj move? p=0.50 conf=0.00 [fable]"
+   ],
+   "removed": [],
+   "conceptsAdded": [
+    "mass"
+   ]
+  },
+  {
+   "version": 30,
+   "trigger": "surprise: drop ball → Will ball reach the floor?",
+   "explanation": "The ball was held directly above an upright cup, so when dropped it fell into the cup and was caught inside rather than reaching the floor. Rule rctiv already encodes this at p=0.25 but was reported with p=0.74; the evidence confirms the low probability, so I strengthen it and add a distinguishing rule requiring near($obj,cup) alongside above and upright to predict the ball is caught.",
+   "added": [
+    "rz8zl: drop when held($obj) & above($obj,cup) & near($obj,cup) & upright(cup) & round($obj) → reaches_floor p=0.50 conf=0.00 [fable]"
+   ],
+   "removed": [],
+   "conceptsAdded": []
+  },
+  {
+   "version": 31,
+   "trigger": "surprise: drop green → Will green reach the floor?",
+   "explanation": "Green was held directly above an upright cup and landed inside the cup, so it never reached the floor. The existing cup-catch rule rctiv already points the right way, but the flat-object case had no specific rule and the prior drop rules dominated; a flat object dropped above an upright cup is caught by the cup just like a round one.",
+   "added": [
+    "r10hg4: drop when held($obj) & above($obj,cup) & upright(cup) & flat($obj) → reaches_floor p=0.50 conf=0.00 [fable]"
+   ],
+   "removed": [],
+   "conceptsAdded": []
+  },
+  {
+   "version": 32,
+   "trigger": "surprise: place_on_ramp red → Will red go down the ramp to the floor?",
+   "explanation": "The prediction leaned toward red sliding down, but red is flat and flat objects stay put on the ramp (friction holds them; only round things roll). The existing flat rule was already low-probability but weakly held; the evidence supports tightening it rather than invoking gravity.",
+   "added": [
+    "r11rp6: place_on_ramp when flat($obj) → goes_down p=0.50 conf=0.00 [fable]"
+   ],
+   "removed": [
+    "rmkhu: place_on_ramp when flat($obj) → goes_down p=0.25 conf=0.50 [fable]"
+   ],
+   "conceptsAdded": []
+  },
+  {
+   "version": 33,
+   "trigger": "surprise: place_on_ramp green → Will green go down the ramp to the floor?",
+   "explanation": "Green is flat, and flat objects stay put on the ramp rather than sliding; the observation confirms flat objects do not go down. The flat rule's prediction was miscalibrated toward yes, so I replace it with a firmer rule that flat objects placed on the ramp stay near it and do not reach the floor, while round objects remain the ones that roll down.",
+   "added": [
+    "r12zcq: place_on_ramp when flat($obj) → goes_down p=0.50 conf=0.00 [fable]"
+   ],
+   "removed": [
+    "r11rp6: place_on_ramp when flat($obj) → goes_down p=0.25 conf=0.50 [fable]"
+   ],
+   "conceptsAdded": []
+  },
+  {
+   "version": 34,
+   "trigger": "surprise: push green {\"dir\":\"right\"} → Will green move?",
+   "explanation": "Green was pushed right but stayed put while the adjacent round ball started moving, suggesting the push force was transferred to the nearby ball rather than moving the flat object. The model now believes a push on a flat object that is near a round ball tends to move the ball instead of the pushed object.",
+   "added": [
+    "r136t8: push when param(dir,right) & near(ball,$obj) & round(ball) & flat($obj) → moves p=0.50 conf=0.00 [fable]"
+   ],
+   "removed": [],
+   "conceptsAdded": []
+  },
+  {
+   "version": 35,
+   "trigger": "surprise: drop ball → Will ball reach the floor?",
+   "explanation": "The ball was dropped while directly above an upright cup, so it fell into the cup (inside(ball,cup)) and was caught before reaching the floor. Being above an upright, open container intercepts the fall; the general 'on(cup,floor)' rule does not account for this. The model now believes a held object above an upright cup will land inside it rather than reach the floor.",
+   "added": [
+    "rz8zl: drop when held($obj) & above($obj,cup) & near($obj,cup) & upright(cup) & round($obj) → reaches_floor p=0.25 conf=0.50 [fable]"
+   ],
+   "removed": [],
+   "conceptsAdded": []
+  },
+  {
+   "version": 36,
+   "trigger": "surprise: drop green → Will green reach the floor?",
+   "explanation": "Green was held directly above the upright cup and fell into it, ending inside(green,cup) rather than on the floor. The generic held & on(cup,floor) rule raknm overrode the more specific above-cup rules, which already predict low reaches_floor; the model now believes that dropping a flat object above an upright cup traps it inside the cup and prevents it reaching the floor.",
+   "added": [
+    "r15vha: drop when held($obj) & above($obj,cup) & near($obj,cup) & upright(cup) & flat($obj) → reaches_floor p=0.50 conf=0.00 [fable]"
+   ],
+   "removed": [],
+   "conceptsAdded": []
+  },
+  {
+   "version": 37,
+   "trigger": "surprise: place_on_ramp red → Will red go down the ramp to the floor?",
+   "explanation": "Red is flat, and flat objects rest on the ramp rather than rolling down; only round objects reliably roll. The prediction leaned toward yes despite the flat rule, so I sharpen the flat rule to a low probability and keep the round rule as the contrast.",
+   "added": [
+    "r164eh: place_on_ramp when flat($obj) → goes_down p=0.50 conf=0.00 [fable]"
+   ],
+   "removed": [
+    "r12zcq: place_on_ramp when flat($obj) → goes_down p=0.25 conf=0.50 [fable]"
+   ],
+   "conceptsAdded": []
+  },
+  {
+   "version": 38,
+   "trigger": "surprise: place_on_ramp green → Will green go down the ramp to the floor?",
+   "explanation": "Green is flat, and flat objects have no way to roll, so they stay put on the ramp (post-state shows green merely near(ramp), still not down). The existing flat rule already leaned toward 'no' but the prediction wrongly landed near 0.71; the flat-object rule should be tightened toward a confident 'no'. No hidden relation is needed to explain this, so no new concept is activated.",
+   "added": [
+    "r17cq8: place_on_ramp when flat($obj) → goes_down p=0.50 conf=0.00 [fable]"
+   ],
+   "removed": [
+    "r164eh: place_on_ramp when flat($obj) → goes_down p=0.25 conf=0.50 [fable]"
+   ],
+   "conceptsAdded": []
+  }
+ ],
+ "rulesSample": [
+  {
+   "action": "lift",
+   "requires": [],
+   "question": "falls",
+   "yes": 0,
+   "no": 3,
+   "source": "assimilate"
+  },
+  {
+   "action": "drop",
+   "requires": [],
+   "question": "reaches_floor",
+   "yes": 3,
+   "no": 1,
+   "source": "assimilate"
+  },
+  {
+   "action": "drop",
+   "requires": [],
+   "question": "rests_on_something",
+   "yes": 0,
+   "no": 18,
+   "source": "assimilate"
+  },
+  {
+   "action": "cover",
+   "requires": [],
+   "question": "still_there",
+   "yes": 1,
+   "no": 0,
+   "source": "assimilate"
+  },
+  {
+   "action": "cover",
+   "requires": [
+    "on($obj,floor)",
+    "upright(cup)"
+   ],
+   "question": "still_there",
+   "yes": 3,
+   "no": 0,
+   "source": "fable",
+   "note": "Covering a resting object with the cup hides it but does not remove it; it remains under the cup."
+  },
+  {
+   "action": "uncover",
+   "requires": [],
+   "question": "reveals",
+   "yes": 6,
+   "no": 3,
+   "source": "assimilate"
+  },
+  {
+   "action": "uncover",
+   "requires": [
+    "inverted(cup)",
+    "on(ball,floor)"
+   ],
+   "question": "Will lifting the cup reveal something underneath?",
+   "yes": 0,
+   "no": 0,
+   "source": "fable",
+   "note": "Ball is visibly on the floor, not under the cup; nothing hidden so uncovering reveals nothing. p≈0.10"
+  },
+  {
+   "action": "uncover",
+   "requires": [
+    "hidden(ball,cup)"
+   ],
+   "question": "Will lifting the cup reveal something underneath?",
+   "yes": 0,
+   "no": 0,
+   "source": "fable",
+   "note": "An object is hidden under the cup; lifting it reveals the object. p≈0.90"
+  },
+  {
+   "action": "drop",
+   "requires": [
+    "held($obj)",
+    "on(cup,floor)"
+   ],
+   "question": "reaches_floor",
+   "yes": 9,
+   "no": 1,
+   "source": "fable",
+   "note": "Default drop with nothing directly beneath: object falls to the floor. p(yes)~0.9 (applies when no above($obj,container) holds)"
+  },
+  {
+   "action": "tilt",
+   "requires": [],
+   "question": "keeps_ball",
+   "yes": 0,
+   "no": 3,
+   "source": "assimilate"
+  },
+  {
+   "action": "drop",
+   "requires": [
+    "held($obj)",
+    "above($obj,cup)",
+    "upright(cup)"
+   ],
+   "question": "reaches_floor",
+   "yes": 0,
+   "no": 3,
+   "source": "fable",
+   "note": "An object dropped while above an upright cup falls inside the cup and does not reach the floor (p(yes) ~ 0.1)."
+  },
+  {
+   "action": "stack",
+   "requires": [
+    "param(offset,centred)"
+   ],
+   "question": "rests_on_target",
+   "yes": 6,
+   "no": 0,
+   "source": "assimilate"
+  },
+  {
+   "action": "stack",
+   "requires": [
+    "param(offset,centred)"
+   ],
+   "question": "falls_to_floor",
+   "yes": 0,
+   "no": 6,
+   "source": "assimilate"
+  },
+  {
+   "action": "stack",
+   "requires": [
+    "param(offset,overhanging)"
+   ],
+   "question": "rests_on_target",
+   "yes": 0,
+   "no": 6,
+   "source": "fable",
+   "note": "Placing an object far off-centre (large offset) makes it fall; observed green fell with offset 0.9."
+  },
+  {
+   "action": "stack",
+   "requires": [
+    "param(offset,overhanging)"
+   ],
+   "question": "falls_to_floor",
+   "yes": 1,
+   "no": 0,
+   "source": "assimilate"
+  },
+  {
+   "action": "stack",
+   "requires": [
+    "param(offset,overhanging)",
+    "on($target,floor)"
+   ],
+   "question": "falls_to_floor",
+   "yes": 6,
+   "no": 0,
+   "source": "fable",
+   "note": "Stacking with a large overhang onto an object resting on the floor: the stacked object tips off and lands on the floor (observed offset 0.9)."
+  },
+  {
+   "action": "place_on_ramp",
+   "requires": [
+    "round($obj)"
+   ],
+   "question": "goes_down",
+   "yes": 2,
+   "no": 0,
+   "source": "fable",
+   "note": "Round objects roll down the ramp to the floor; p(yes) ~0.85"
+  },
+  {
+   "action": "push",
+   "requires": [
+    "param(dir,right)"
+   ],
+   "question": "moves",
+   "yes": 2,
+   "no": 2,
+   "source": "assimilate"
+  },
+  {
+   "action": "push",
+   "requires": [
+    "param(dir,right)"
+   ],
+   "question": "topples",
+   "yes": 0,
+   "no": 6,
+   "source": "assimilate"
+  },
+  {
+   "action": "push",
+   "requires": [
+    "param(dir,right)"
+   ],
+   "question": "ball_moves",
+   "yes": 6,
+   "no": 0,
+   "source": "assimilate"
+  },
+  {
+   "action": "push",
+   "requires": [
+    "near(ball,$obj)"
+   ],
+   "question": "ball_moves",
+   "yes": 0,
+   "no": 3,
+   "source": "fable",
+   "note": "Pushing an object that is near the ball transfers motion to the ball (contact/collision)."
+  },
+  {
+   "action": "push",
+   "requires": [
+    "param(dir,left)"
+   ],
+   "question": "moves",
+   "yes": 3,
+   "no": 0,
+   "source": "assimilate"
+  },
+  {
+   "action": "push",
+   "requires": [
+    "param(dir,left)"
+   ],
+   "question": "topples",
+   "yes": 0,
+   "no": 3,
+   "source": "assimilate"
+  },
+  {
+   "action": "push",
+   "requires": [
+    "param(dir,left)"
+   ],
+   "question": "ball_moves",
+   "yes": 0,
+   "no": 3,
+   "source": "assimilate"
+  },
+  {
+   "action": "push",
+   "requires": [
+    "heavy($obj)"
+   ],
+   "question": "Will $obj move?",
+   "yes": 0,
+   "no": 0,
+   "source": "fable",
+   "note": "Heavy objects resist pushes; force may instead be transferred to a nearby light object."
+  },
+  {
+   "action": "push",
+   "requires": [
+    "flat($obj)",
+    "near(ball,$obj)"
+   ],
+   "question": "Will $obj move?",
+   "yes": 0,
+   "no": 0,
+   "source": "fable",
+   "note": "Tentative: when a ball sits next to the pushed flat object, the ball may take the motion instead; low confidence until heavy() is observed."
+  },
+  {
+   "action": "push",
+   "requires": [
+    "param(dir,back)"
+   ],
+   "question": "moves",
+   "yes": 3,
+   "no": 0,
+   "source": "assimilate"
+  },
+  {
+   "action": "push",
+   "requires": [
+    "param(dir,back)"
+   ],
+   "question": "topples",
+   "yes": 0,
+   "no": 3,
+   "source": "assimilate"
+  },
+  {
+   "action": "drop",
+   "requires": [
+    "held($obj)",
+    "above($obj,cup)",
+    "near($obj,cup)",
+    "upright(cup)",
+    "round($obj)"
+   ],
+   "question": "reaches_floor",
+   "yes": 0,
+   "no": 3,
+   "source": "fable",
+   "note": "A round object dropped from directly above an upright cup falls inside the cup and does not reach the floor; p(yes) should be low (~0.1)."
+  },
+  {
+   "action": "drop",
+   "requires": [
+    "held($obj)",
+    "above($obj,cup)",
+    "upright(cup)",
+    "flat($obj)"
+   ],
+   "question": "reaches_floor",
+   "yes": 0,
+   "no": 2,
+   "source": "fable",
+   "note": "Flat object dropped directly above an upright cup falls inside the cup and does not reach the floor. p~0.1"
+  },
+  {
+   "action": "push",
+   "requires": [
+    "param(dir,right)",
+    "near(ball,$obj)",
+    "round(ball)",
+    "flat($obj)"
+   ],
+   "question": "moves",
+   "yes": 1,
+   "no": 2,
+   "source": "fable",
+   "note": "Pushing a flat object that is adjacent to a round ball: the ball absorbs the push and rolls, the flat object tends not to move. p(yes)~0.25"
+  },
+  {
+   "action": "drop",
+   "requires": [
+    "held($obj)",
+    "above($obj,cup)",
+    "near($obj,cup)",
+    "upright(cup)",
+    "flat($obj)"
+   ],
+   "question": "reaches_floor",
+   "yes": 0,
+   "no": 0,
+   "source": "fable",
+   "note": "Flat object dropped directly above and near an upright cup falls inside the cup and does not reach the floor. p=0.10"
+  },
+  {
+   "action": "place_on_ramp",
+   "requires": [
+    "flat($obj)"
+   ],
+   "question": "goes_down",
+   "yes": 0,
+   "no": 1,
+   "source": "fable",
+   "note": "Flat objects don't roll; they stay on the ramp and end up near(ramp). p=0.1"
+  }
+ ]
+}

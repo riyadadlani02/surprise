@@ -1,0 +1,27 @@
+{
+  "source": "claude-opus-5 route planner, 2026-09-20",
+  "goal": "the stage at the front of the hall",
+  "goal_seen": false,
+  "summary": "The stage is not visible in the photo because the camera is looking up the seating bowl from the flat floor at the front, so the stage is almost certainly behind the walker.",
+  "moves": [
+    {
+      "kind": "turn_right",
+      "steps": 0,
+      "instruction": "Turn all the way around to your right, a half turn, so the rows of seats are behind you.",
+      "caution": "Sweep the cane in a wide arc before and during the turn; there is a low sofa arm and a small side table close by on the floor, and a large speaker cabinet sits low on the floor to the right."
+    },
+    {
+      "kind": "forward",
+      "steps": 2,
+      "instruction": "Walk two short steps straight forward.",
+      "caution": "Floor looks flat wood here, but keep the cane low and ahead for cables, a speaker box, or the raised stage lip."
+    },
+    {
+      "kind": "stop_and_check",
+      "steps": 0,
+      "instruction": "Stop and sweep the cane left, right and ahead to find the edge or step up of the stage.",
+      "caution": "The stage edge may be a step up of unknown height, and staff or chairs may be in the way; ask a nearby person to confirm the stage direction if the cane finds nothing."
+    }
+  ],
+  "confidence": 0.4
+}

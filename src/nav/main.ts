@@ -5,7 +5,7 @@ import { Agent, type TickResult } from '../loop'
 import { createWorldModel } from '../model/worldmodel'
 import { ruleConfidence, ruleProb, type Action, type Environment, type Prediction, type Relation } from '../types'
 import { View } from '../ui/render'
-import { Camera, CameraEnv, DEFAULT_MODEL, describeFrame, type Report } from './camera'
+import { Camera, CameraEnv, DEFAULT_MODEL, describeFrame, planRoute, type Report, type Route } from './camera'
 import { NAMES, SAFETY, UNSURE, around, frameText, guidance, outcome, stopLine, whereIs } from './guide'
 import { NavEnv, TURN, headingName } from './navEnv'
 import { Voice, type Command } from './voice'
@@ -108,7 +108,7 @@ function renderBeliefs(preds: Record<string, Prediction>, rels: Relation[], last
 }
 
 // ---- commands ----
-const HELP = 'Say forward, back, left or right. Ask what is around me, where am I, or where is the cup. Say take me to the ball to walk there step by step. Say stop, repeat, mute or unmute.'
+const HELP = 'Say forward, back, left or right. Ask what is around me, where am I, or where is the cup. Say take me to the ball to walk there step by step. With the camera or a photo, say guide me to the exit, then say next after each move, or bumped if you touch something. Say stop, repeat, mute or unmute.'
 async function takeMeTo(id: ObjId) {
   sim.target = id; walking = true
   voice.say(`Taking you to ${NAMES[id]}. Say stop at any time.`)
@@ -129,7 +129,7 @@ async function handle(c: Command) {
     case 'back': return run({ kind: 'step_back' })
     case 'left': return run({ kind: 'turn_left' })
     case 'right': return run({ kind: 'turn_right' })
-    case 'stop': walking = false; cancelled = true; voice.stopSpeaking(); pendingReport?.(undefined); return voice.say('Stopped.')
+    case 'stop': walking = false; cancelled = true; route = undefined; voice.stopSpeaking(); pendingReport?.(undefined); return voice.say('Stopped.')
     case 'around': if (mode === 'cam' && !(photoB64 && cam.frame)) await look(); return voice.say(mode === 'cam' && cam.frame ? frameText(cam.frame) : around(relations()))
     case 'where_am_i': return voice.say(mode === 'sim' ? `You face ${headingName(sim.heading)}. ${whereIs(relations())}` : around(relations()))
     case 'where_is': {
@@ -140,7 +140,7 @@ async function handle(c: Command) {
       return voice.say(s)
     }
     case 'take_me':
-      if (mode === 'cam') return voice.say('Auto-walking needs the simulated room. Say forward when you are ready to step.')
+      if (mode === 'cam') return guideTo(c.goal || 'the exit')
       if (!c.obj) return voice.say('Take you where? Say for example take me to the cup.')
       return takeMeTo(c.obj as ObjId)
     case 'repeat': return voice.say(voice.last)
@@ -148,9 +148,61 @@ async function handle(c: Command) {
     case 'mute': voice.muted = true; voice.stopSpeaking(); $('mute').setAttribute('aria-pressed', 'true'); return voice.say('Muted. Text continues here.')
     case 'unmute': voice.muted = false; $('mute').setAttribute('aria-pressed', 'false'); return voice.say('Sound on.')
     case 'look': return mode === 'cam' ? look() : voice.say('Turn on the camera first.')
-    case 'clear': case 'bumped': return voice.say('Nothing to report right now.')
+    case 'guide':
+      if (mode === 'cam') return guideTo(c.goal || 'the exit')
+      return c.obj ? takeMeTo(c.obj as ObjId) : voice.say('In the room, say take me to the cup. Routes through a photo or the camera need photo or camera mode.')
+    case 'next': return nextMove()
+    case 'bumped': return route ? bumpedOnRoute() : voice.say('Nothing to report right now.')
+    case 'clear': return voice.say('Nothing to report right now.')
     default: return voice.say('I did not catch that. Say help for the commands.')
   }
+}
+
+// ---- step-by-step routes in camera or photo mode: one move at a time, spoken as the person goes ----
+let route: Route | undefined, moveIdx = 0
+function speakMove(i: number) {
+  if (!route) return
+  const m = route.moves[i]
+  if (!m) { voice.say(`That was the last move. You should be at ${route.goal}. Say around me to check, or guide me to somewhere else.`); log('route', 'route finished'); route = undefined; return }
+  voice.say(`Move ${i + 1} of ${route.moves.length}. ${m.instruction}${m.caution ? ' ' + m.caution : ''} Say next when you have done it, or bumped if you touched something.`)
+  log('route', `move ${i + 1}/${route.moves.length}: ${m.instruction}`)
+}
+async function guideTo(goal: string) {
+  if (mode !== 'cam') return voice.say('Routes need the camera or a photo. In the room, say take me to the cup.')
+  const b64 = photoB64 ?? camera.grab()
+  if (!b64) return voice.say('I have no picture yet. Say look first.')
+  if (!key()) {
+    const saved = photoB64 ? await fetch('./photos/auditorium.route.json').then(x => (x.ok ? x.json() : undefined)).catch(() => undefined) : undefined
+    if (!saved) return voice.say('Planning a route needs an Anthropic API key in camera settings.')
+    route = saved as Route; moveIdx = 0
+    log('route', `saved route to ${route.goal}`)
+    voice.say(`No key set, so this is a saved route to ${route.goal}. ${route.summary}`)
+    return speakMove(0)
+  }
+  voice.say(`Planning a route to ${goal}. One moment.`)
+  try { route = await planRoute(key(), b64, goal) } catch (e) { route = undefined; return voice.say(`I could not plan a route: ${(e as Error).message}`) }
+  moveIdx = 0
+  log('route', `${route.goal}: ${route.summary} · conf ${pct(route.confidence)} · ${route.moves.length} moves`)
+  voice.say(`${route.summary} ${route.moves.length} moves.${route.confidence < 0.5 ? ' I am not confident about this picture. Go slowly and check with your cane.' : ''}`)
+  speakMove(0)
+}
+/** The person has done the current move. A completed walking move counts as a clear step the model learns from. */
+async function nextMove() {
+  if (!route) return voice.say('No route in progress. Say guide me to, and a place.')
+  const done = route.moves[moveIdx]
+  if (done && (done.kind === 'forward' || done.kind === 'stairs_up' || done.kind === 'stairs_down')) { cam.report = 'clear'; await agents.cam.step({ kind: 'step_forward' }); renderBeliefs({}, relations()) }
+  moveIdx++
+  if (!photoB64 && route.moves[moveIdx] && key()) {
+    // Live camera: look again from the new position and re-plan the rest of the way, so the guidance follows the person.
+    const b64 = camera.grab()
+    if (b64) { try { route = await planRoute(key(), b64, route.goal); moveIdx = 0; log('route', `re-planned: ${route.summary}`) } catch { /* keep the old plan */ } }
+  }
+  speakMove(moveIdx)
+}
+async function bumpedOnRoute() {
+  cam.report = 'bumped'; await agents.cam.step({ kind: 'step_forward' }); renderBeliefs({}, relations())
+  log('agent', `bump reported → model v${agents.cam.wm.version}`)
+  voice.say('Stop. Check with your cane. When you are clear, say next to continue, or guide me again to plan afresh.')
 }
 
 // ---- camera mode ----
@@ -177,7 +229,7 @@ let wasUnsure = false
 function unsureFrame(unsure: boolean) { if (unsure && !wasUnsure) voice.say(UNSURE); wasUnsure = unsure }
 async function setCamera(on: boolean) {
   const box = $<HTMLInputElement>('useCamera')
-  if (!on) { clearInterval(camTimer); camera.stop(); pendingReport?.(undefined); photoB64 = undefined; $('photoView').hidden = true; mode = 'sim'; wasUnsure = false; $('cam').hidden = true; $('scene').hidden = false; $('mode').textContent = 'simulated'; voice.say('Back to the simulated room.'); return }
+  if (!on) { clearInterval(camTimer); camera.stop(); pendingReport?.(undefined); photoB64 = undefined; route = undefined; $('photoView').hidden = true; mode = 'sim'; wasUnsure = false; $('cam').hidden = true; $('scene').hidden = false; $('mode').textContent = 'simulated'; voice.say('Back to the simulated room.'); return }
   const missing = [!navigator.mediaDevices?.getUserMedia && 'a camera', !key() && 'an Anthropic API key in camera settings'].filter(Boolean)
   if (missing.length) { box.checked = false; return voice.say(`Camera mode needs ${missing.join(' and ')}. Staying in the simulated room.`) }
   try { await camera.start() } catch (e) { box.checked = false; return voice.say(`The camera could not start: ${(e as Error).message}. Staying in the simulated room.`) }

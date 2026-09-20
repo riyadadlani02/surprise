@@ -1,19 +1,22 @@
 // Speech in and out. Every spoken sentence is mirrored into an ARIA live region so screen readers hear it too.
-export type CommandKind = 'forward' | 'back' | 'left' | 'right' | 'stop' | 'where_am_i' | 'around' | 'where_is' | 'take_me' | 'repeat' | 'help' | 'mute' | 'unmute' | 'look' | 'clear' | 'bumped' | 'unknown'
-export interface Command { kind: CommandKind; obj?: string; raw: string }
+export type CommandKind = 'forward' | 'back' | 'left' | 'right' | 'stop' | 'where_am_i' | 'around' | 'where_is' | 'take_me' | 'guide' | 'next' | 'repeat' | 'help' | 'mute' | 'unmute' | 'look' | 'clear' | 'bumped' | 'unknown'
+export interface Command { kind: CommandKind; obj?: string; goal?: string; raw: string }
 
 export const OBJECT_WORDS: [RegExp, string][] = [
   [/red/, 'red'], [/blue/, 'blue'], [/green/, 'green'], [/ball/, 'ball'], [/cup|mug/, 'cup'], [/box|crate/, 'box'], [/ramp|slope/, 'ramp'], [/lid/, 'lid'],
 ]
 export const objectWord = (t: string) => OBJECT_WORDS.find(([re]) => re.test(t))?.[1]
 
+const GOAL_PREFIX = /^.*?\b(guide me to|route to|lead me to|how do i get to|directions to|take me to|go to the|go to|walk to|navigate to)\s*/
 const GRAMMAR: [RegExp, CommandKind][] = [
+  [/guide me to|route to|lead me to|how do i get to|directions to/, 'guide'],
   [/take me to|go to the|walk to|navigate to/, 'take_me'],
   [/where is|where'?s the|find the/, 'where_is'],
   [/where am i|my position|which way am i/, 'where_am_i'],
   [/what'?s ahead|what is ahead|around me|describe|look around|what do you see/, 'around'],
   [/^look$|take a look|camera/, 'look'],
   [/\b(stop|halt|wait|pause)\b/, 'stop'],
+  [/\b(next|done|moved|continue|go on|carry on)\b/, 'next'],
   [/\b(back|backward|backwards|reverse)\b/, 'back'],
   [/\bleft\b/, 'left'],
   [/\bright\b/, 'right'],
@@ -27,7 +30,7 @@ const GRAMMAR: [RegExp, CommandKind][] = [
 ]
 export function parseCommand(raw: string): Command {
   const t = raw.toLowerCase().trim().replace(/[.,!?]/g, '')
-  for (const [re, kind] of GRAMMAR) if (re.test(t)) return { kind, obj: kind === 'where_is' || kind === 'take_me' ? objectWord(t) : undefined, raw }
+  for (const [re, kind] of GRAMMAR) if (re.test(t)) return { kind, obj: kind === 'where_is' || kind === 'take_me' || kind === 'guide' ? objectWord(t) : undefined, goal: kind === 'take_me' || kind === 'guide' ? t.replace(GOAL_PREFIX, '').trim() || undefined : undefined, raw }
   return { kind: 'unknown', raw }
 }
 
