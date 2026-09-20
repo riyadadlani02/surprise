@@ -1,0 +1,14 @@
+{
+  "source": "hand-labelled from the photo by the project author, not model output; with an Anthropic key the page looks at the photo live instead",
+  "ahead": { "kind": "obstacle", "distance": "one_step", "name": "a cream sofa with a low glass table beside it; behind them the central stair aisle climbs between the rows of red seats" },
+  "left": { "kind": "obstacle", "distance": "two_steps", "name": "a second sofa where a woman sits with a laptop, then the left aisle steps rising along the wall" },
+  "right": { "kind": "obstacle", "distance": "touching", "name": "a black speaker cabinet on the floor at your feet, then two sofas with low tables and flower bouquets" },
+  "hazards": [
+    "a floor speaker cabinet at your right foot",
+    "low glass tables with water bottles at knee height",
+    "steps going up the central aisle two steps ahead",
+    "people seated on the sofas and walking in the aisles"
+  ],
+  "text_visible": "",
+  "confidence": 0.8
+}

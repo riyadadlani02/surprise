@@ -158,6 +158,7 @@ let photoB64: string | undefined   // a still photo standing in for the camera
 const key = () => $<HTMLInputElement>('anthropicKey').value.trim()
 async function look() {
   if (looking) return
+  if (!key()) return
   const b64 = photoB64 ?? camera.grab(); if (!b64) return
   looking = true
   try {
@@ -184,8 +185,7 @@ async function setCamera(on: boolean) {
 }
 
 // ---- photo mode: one still image stands in for the camera (a demo without a camera, or a place you are about to enter) ----
-async function usePhoto(blob: Blob, label: string) {
-  if (!key()) return voice.say('Photo mode needs an Anthropic API key in camera settings. Staying in the simulated room.')
+async function showPhoto(blob: Blob, label: string) {
   const b64 = await toJpegBase64(blob)
   clearInterval(camTimer); camera.stop(); $<HTMLInputElement>('useCamera').checked = false
   photoB64 = b64; cam.frame = undefined; mode = 'cam'; wasUnsure = false
@@ -193,9 +193,27 @@ async function usePhoto(blob: Blob, label: string) {
   const img = $<HTMLImageElement>('photoView'); img.src = 'data:image/jpeg;base64,' + b64; img.hidden = false
   $('mode').textContent = `photo · ${label}`
   log('photo', label)
+}
+async function usePhoto(blob: Blob, label: string) {
+  if (!key()) return voice.say('Photo mode needs an Anthropic API key in camera settings. Staying in the simulated room.')
+  await showPhoto(blob, label)
   voice.say('Looking at the photo.')
   await look()
   voice.say(cam.frame ? around(relations()) : UNSURE)
+}
+/** The bundled sample: looked at live when a key is set, otherwise shown with its saved, hand-written description. */
+async function useSample() {
+  const r = await fetch('./photos/auditorium.jpg').catch(() => undefined)
+  if (!r?.ok || !r.headers.get('content-type')?.startsWith('image/')) return voice.say('No sample photo yet. Add public/photos/auditorium.jpg to the repo, or use your own photo.')
+  const blob = await r.blob()
+  if (key()) return usePhoto(blob, 'auditorium')
+  const saved = await fetch('./photos/auditorium.json').then(x => (x.ok ? x.json() : undefined)).catch(() => undefined)
+  if (!saved) return voice.say('Photo mode needs an Anthropic API key in camera settings. Staying in the simulated room.')
+  await showPhoto(blob, 'auditorium · saved description')
+  cam.frame = saved
+  log('photo', 'no key set: using the saved, hand-written description of this photo')
+  renderBeliefs({}, relations())
+  voice.say('Using a saved description of this photo. Add an Anthropic key to look live. ' + around(relations()))
 }
 function toJpegBase64(blob: Blob): Promise<string> {
   return new Promise((res, rej) => {
@@ -213,11 +231,7 @@ function toJpegBase64(blob: Blob): Promise<string> {
 const photoFailed = (err: unknown) => voice.say(`The photo could not be used: ${(err as Error).message}`)
 $('photoBtn').addEventListener('click', () => $('photo').click())
 $('photo').addEventListener('change', e => { const f = (e.target as HTMLInputElement).files?.[0]; if (f) usePhoto(f, f.name).catch(photoFailed) })
-$('samplePhoto').addEventListener('click', async () => {
-  const r = await fetch('./photos/auditorium.jpg').catch(() => undefined)
-  if (!r?.ok || !r.headers.get('content-type')?.startsWith('image/')) return voice.say('No sample photo yet. Add public/photos/auditorium.jpg to the repo, or use your own photo.')
-  usePhoto(await r.blob(), 'auditorium').catch(photoFailed)
-})
+$('samplePhoto').addEventListener('click', () => useSample().catch(photoFailed))
 $('backToRoom').addEventListener('click', () => setCamera(false))
 
 // ---- controls ----
