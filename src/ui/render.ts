@@ -16,7 +16,7 @@ export class View {
   private flashes = new Map<ObjId, number>()
 
   constructor(container: HTMLElement, public room: Playroom) {
-    this.scene.background = new THREE.Color(0x14161c)
+    this.scene.background = new THREE.Color(0xfefefe)
     this.camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100)
     this.camera.position.set(4.5, 3.8, 5.5)
     this.renderer = new THREE.WebGLRenderer({ antialias: true })
@@ -28,10 +28,10 @@ export class View {
 
     const sun = new THREE.DirectionalLight(0xffffff, 2.2); sun.position.set(5, 8, 3); sun.castShadow = true
     sun.shadow.mapSize.set(2048, 2048); sun.shadow.camera.left = sun.shadow.camera.bottom = -6; sun.shadow.camera.right = sun.shadow.camera.top = 6
-    this.scene.add(sun, new THREE.HemisphereLight(0xdde4ff, 0x30281c, 0.9))
-    const floor = new THREE.Mesh(new THREE.BoxGeometry(8, 0.2, 8), new THREE.MeshStandardMaterial({ color: 0x2b2f3a, roughness: 0.9 }))
+    this.scene.add(sun, new THREE.HemisphereLight(0xffffff, 0xdedede, 0.9))
+    const floor = new THREE.Mesh(new THREE.BoxGeometry(8, 0.2, 8), new THREE.MeshStandardMaterial({ color: 0xdedede, roughness: 0.9 }))
     floor.position.y = -0.1; floor.receiveShadow = true
-    this.scene.add(floor, new THREE.GridHelper(8, 16, 0x3a3f4d, 0x2f3340))
+    this.scene.add(floor, new THREE.GridHelper(8, 16, 0x1e1e1e, 0xb8b8b8))
     for (const id of OBJ_IDS) { this.meshes[id] = this.build(id); this.scene.add(this.meshes[id]) }
 
     new ResizeObserver(() => this.resize(container)).observe(container)

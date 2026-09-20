@@ -4,13 +4,24 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>surprise · playroom</title>
-<link rel="stylesheet" href="/src/ui/style.css" />
+<link rel="stylesheet" href="./src/ui/tokens.css" />
+<link rel="stylesheet" href="./src/ui/style.css" />
 </head>
 <body>
 <div id="app">
-  <div id="scene"></div>
+  <nav id="links" class="mono">
+    <a href="./index.html">home</a>
+    <a href="./navigate.html">voice navigation</a>
+    <a href="./unity.html">Unity</a>
+    <a href="https://github.com/riyadadlani02/surprise" rel="noopener">GitHub</a>
+  </nav>
+  <div id="bar" role="toolbar" aria-label="playroom controls"></div>
+  <div class="win" id="scene-win">
+    <div class="win-title"><span>playroom 0.1</span><span id="status" aria-live="polite"></span></div>
+    <div id="scene"></div>
+  </div>
   <aside id="panel"></aside>
 </div>
-<script type="module" src="/src/ui/main.ts"></script>
+<script type="module" src="./src/ui/main.ts"></script>
 </body>
 </html>

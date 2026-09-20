@@ -1,2 +1,58 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>surprise · unity</title><link rel="stylesheet" href="/src/ui/tokens.css"></head>
-<body><main id="unity"><p>unity playroom: being built</p></main><script type="module" src="/src/ui/unity.ts"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>surprise · unity</title>
+<link rel="stylesheet" href="./src/ui/tokens.css">
+<style>
+  /* Page layout + panel skin in the design tokens. Everything the machine says is mono. */
+  body { padding: 0 var(--gutter) 64px; }
+  .toplinks { display: flex; gap: 20px; padding: 18px 0; font: 500 13px/1 var(--font-mono); border-bottom: 1.5px solid var(--ink); margin-bottom: 28px; flex-wrap: wrap; }
+  .toplinks a { color: var(--ink); text-decoration: none; } .toplinks a:hover { text-decoration: underline; }
+  .head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-bottom: 28px; }
+  .head h1 { font-size: clamp(36px, 5vw, 64px); }
+  .grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(320px, 1fr); gap: 28px; align-items: start; }
+  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+  #stage { background: var(--paper); border: 1.5px solid var(--ink); aspect-ratio: 16 / 10; position: relative; }
+  #stage canvas { display: block; width: 100%; height: 100%; }
+  #stage .missing { padding: 24px; max-width: var(--measure); font-size: 15px; }
+  #stage .missing pre { white-space: pre-wrap; word-break: break-all; font-size: 12px; border: 1.5px solid var(--ink); padding: 10px; background: var(--grey-100); }
+  #bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 14px; font: 500 13px/1 var(--font-mono); }
+  #bar .sep { flex-basis: 100%; height: 0; }
+  #bar button, #bar select, #bar input:not([type=checkbox]):not([type=range]) { border: 2px solid var(--ink); background: var(--paper); color: var(--ink); padding: 8px 10px; font: 500 13px/1 var(--font-mono); }
+  #bar button { background: var(--ink); color: var(--paper); cursor: pointer; } #bar button:hover, #bar button.on { background: var(--paper); color: var(--ink); }
+  #bar button.on { box-shadow: inset 0 0 0 2px var(--pink); }
+  #bar label { display: inline-flex; gap: 6px; align-items: center; }
+  #bar input[type=password], #bar input#fableModel { width: 150px; }
+  #panel { font-size: 14px; max-height: 80vh; overflow-y: auto; }
+  #panel h1 { font-size: 20px; margin-bottom: 12px; letter-spacing: -0.02em; line-height: 1.1; }
+  #panel h2 { font: 500 12px/1.2 var(--font-mono); letter-spacing: 0; margin: 22px 0 8px; border-left: 1.5px solid var(--ink); padding-left: 10px; }
+  #panel h3 { font: 500 12px/1.2 var(--font-mono); letter-spacing: 0; margin: 10px 0 4px; }
+  .muted { color: var(--ink-soft); }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .stat { background: var(--paper); border: 1.5px solid var(--ink); padding: 6px 8px; } .stat .k { font: 500 11px/1 var(--font-mono); } .stat .v { font: 500 16px/1.3 var(--font-mono); }
+  .q { padding: 8px; margin: 6px 0; background: var(--paper); border: 1.5px solid var(--ink); } .qt { margin-bottom: 4px; }
+  .bar { position: relative; height: 18px; background: var(--paper); border: 1.5px solid var(--ink); overflow: hidden; } .bar.small { height: 8px; }
+  .bar .fill { height: 100%; background: var(--ink); } .bar span { position: absolute; inset: 0; font: 500 11px/16px var(--font-mono); padding-left: 6px; color: var(--paper); mix-blend-mode: difference; }
+  .tag { font: 500 10px/1 var(--font-mono); padding: 2px 6px; border: 1.5px solid var(--ink); } .tag.ok { background: var(--ink); color: var(--paper); } .tag.bad { background: var(--pink); } .tag.warn { background: var(--teal); }
+  .warn-line { font-family: var(--font-mono); font-size: 12px; margin-top: 6px; }
+  .notice { font: 500 12px/1.4 var(--font-mono); margin-top: 8px; padding: 6px 8px; border: 1.5px solid var(--ink); background: var(--pink); }
+  .chips { display: flex; flex-wrap: wrap; gap: 4px; } .chip { font: 500 11px/1 var(--font-mono); padding: 4px 6px; border: 1.5px solid var(--ink); background: var(--paper); } .chip.ok { background: var(--ink); color: var(--paper); } .chip.bad { background: var(--pink); }
+  table { width: 100%; border-collapse: collapse; font: 400 11px/1.3 var(--font-mono); } th, td { text-align: left; padding: 4px 6px; border-bottom: 1px solid var(--grey-300); vertical-align: top; } th { font-weight: 500; }
+  .diff { padding: 8px; margin: 6px 0; background: var(--paper); border: 1.5px solid var(--ink); font-size: 13px; } .add, .rm { font: 400 12px/1.3 var(--font-mono); } .rm { text-decoration: line-through; opacity: .6; }
+  .stage { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; align-items: center; font: 400 12px/1.3 var(--font-mono); margin: 4px 0; }
+  .row { display: flex; gap: 16px; flex-wrap: wrap; }
+  #graph svg { max-width: 100%; }
+  .modal { position: fixed; inset: 0; background: rgba(30,30,30,.4); display: grid; place-items: center; z-index: 10; }
+  .modal .card { background: var(--grey-100); border: 2px solid var(--ink); box-shadow: var(--shadow); padding: 20px; max-width: 420px; width: calc(100% - 32px); }
+  .modal h2 { font-size: 24px; margin: 8px 0 16px; } .btns { display: flex; gap: 8px; flex-wrap: wrap; }
+  .btns button { border: 2px solid var(--ink); background: var(--ink); color: var(--paper); padding: 10px 16px; font: 500 14px/1 var(--font-mono); cursor: pointer; } .btns button:hover { background: var(--paper); color: var(--ink); }
+</style>
+</head>
+<body>
+<nav class="toplinks"><a href="./index.html">surprise</a><a href="./demo.html">playroom · rapier</a><a href="./navigate.html">navigate</a><a href="./unity.html" aria-current="page">playroom · unity</a></nav>
+<main id="unity"></main>
+<script type="module" src="./src/ui/unity.ts"></script>
+</body>
+</html>

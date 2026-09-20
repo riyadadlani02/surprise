@@ -30,7 +30,8 @@ const settings = {
   accommodator: localStorage.getItem('accommodator') ?? 'heuristic',
 }
 function applyModels() {
-  agent.predictor = settings.predictor === 'jev' && settings.jevKey ? new JevPredictor(settings.jevKey) : new RulePredictor()
+  // In dev the Vite server proxies Jev and adds the key itself; on static hosting the direct call fails on CORS and the loop falls back to rules.
+  agent.predictor = settings.predictor === 'jev' ? new JevPredictor(settings.jevKey || 'via-proxy', import.meta.env.DEV ? { endpoint: './api/jev' } : {}) : new RulePredictor()
   agent.accommodator = settings.accommodator === 'fable' && settings.anthropicKey ? new FableAccommodator(settings.anthropicKey, env.concepts, settings.fableModel) : new RuleAccommodator()
 }
 applyModels()
@@ -59,38 +60,37 @@ async function curriculumRound() {
 let stopRound = false
 async function autoplayLoop() { while (autoplay) { await run(env.randomAction(), 'random'); await new Promise(r => setTimeout(r, 400)) } }
 
-// ---- controls (top bar) ----
-const bar = document.createElement('div'); bar.id = 'bar'
+// ---- controls (menu bar) ----
+const bar = document.getElementById('bar')!
 bar.innerHTML = `
-  <button id="round">▶ Curriculum round</button>
-  <button id="auto">⟳ Autoplay</button>
+  <button id="round">curriculum round</button>
+  <button id="auto" aria-pressed="false">autoplay</button>
   <label><input type="checkbox" id="ask" checked> ask me when unsure</label>
   <span class="sep"></span>
-  <select id="kind">${['lift', 'drop', 'stack', 'push', 'tilt', 'cover', 'uncover', 'place_on_ramp', 'wait'].map(k => `<option>${k}</option>`).join('')}</select>
-  <select id="obj">${['red', 'blue', 'green', 'ball', 'cup', 'box'].map(k => `<option>${k}</option>`).join('')}</select>
-  <select id="target">${['blue', 'red', 'green', 'box'].map(k => `<option>${k}</option>`).join('')}</select>
-  <select id="param"><option value="">centred</option><option value="0.9">overhanging</option><option value="left">left</option><option value="right">right</option><option value="forward">forward</option><option value="back">back</option></select>
-  <button id="do">Do it</button>
+  <select id="kind" aria-label="action">${['lift', 'drop', 'stack', 'push', 'tilt', 'cover', 'uncover', 'place_on_ramp', 'wait'].map(k => `<option>${k}</option>`).join('')}</select>
+  <select id="obj" aria-label="object">${['red', 'blue', 'green', 'ball', 'cup', 'box'].map(k => `<option>${k}</option>`).join('')}</select>
+  <select id="target" aria-label="target">${['blue', 'red', 'green', 'box'].map(k => `<option>${k}</option>`).join('')}</select>
+  <select id="param" aria-label="parameter"><option value="">centred</option><option value="0.9">overhanging</option><option value="left">left</option><option value="right">right</option><option value="forward">forward</option><option value="back">back</option></select>
+  <button id="do">do it</button>
   <span class="sep"></span>
   <label>gravity <input type="range" id="g" min="0.5" max="15" step="0.5" value="9.81"></label>
-  <button id="heavy">⚖ toggle heavy</button>
-  <button id="hide">🥤 hide ball</button>
-  <button id="reset">↺ reset scene</button>
-  <button id="forget">🧹 forget model</button>
-  <button id="export">⤓ export model</button>
+  <button id="heavy">toggle heavy</button>
+  <button id="hide">hide ball</button>
+  <button id="reset">reset scene</button>
+  <button id="forget">forget model</button>
+  <button id="export">export model</button>
   <span class="sep"></span>
-  <select id="pred"><option value="rules">predictor: rules</option><option value="jev">predictor: Jev</option></select>
-  <select id="acc"><option value="heuristic">accommodator: heuristic</option><option value="fable">accommodator: Fable</option></select>
-  <input id="jevKey" placeholder="TypeSafe API key" type="password">
-  <input id="anthropicKey" placeholder="Anthropic API key" type="password">
-  <input id="fableModel" placeholder="claude-fable-5-1">`
-document.getElementById('app')!.prepend(bar)
+  <select id="pred" aria-label="predictor"><option value="rules">predictor: rules</option><option value="jev">predictor: Jev</option></select>
+  <select id="acc" aria-label="accommodator"><option value="heuristic">accommodator: heuristic</option><option value="fable">accommodator: Fable</option></select>
+  <input id="jevKey" placeholder="TypeSafe API key" aria-label="TypeSafe API key" type="password">
+  <input id="anthropicKey" placeholder="Anthropic API key" aria-label="Anthropic API key" type="password">
+  <input id="fableModel" placeholder="claude-fable-5-1" aria-label="Fable model">`
 const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T
 ;($<HTMLSelectElement>('pred')).value = settings.predictor; ($<HTMLSelectElement>('acc')).value = settings.accommodator
 ;($<HTMLInputElement>('jevKey')).value = settings.jevKey; ($<HTMLInputElement>('anthropicKey')).value = settings.anthropicKey; ($<HTMLInputElement>('fableModel')).value = settings.fableModel
 
 $('round').onclick = async () => { stopRound = false; await curriculumRound() }
-$('auto').onclick = () => { autoplay = !autoplay; $('auto').classList.toggle('on', autoplay); if (autoplay) void autoplayLoop() }
+$('auto').onclick = () => { autoplay = !autoplay; $('auto').classList.toggle('on', autoplay); $('auto').setAttribute('aria-pressed', String(autoplay)); if (autoplay) void autoplayLoop() }
 $<HTMLInputElement>('ask').onchange = e => { settings.ask = (e.target as HTMLInputElement).checked }
 $('do').onclick = () => {
   const kind = $<HTMLSelectElement>('kind').value, obj = $<HTMLSelectElement>('obj').value, target = $<HTMLSelectElement>('target').value, p = $<HTMLSelectElement>('param').value
@@ -120,4 +120,4 @@ for (const id of ['pred', 'acc', 'jevKey', 'anthropicKey', 'fableModel'] as cons
 }
 view.onDragEnd = id => { status = `you moved ${id}`; panel.render(agent, agent.log.at(-1), status) }
 document.addEventListener('keydown', e => { if (e.key === ' ' && e.target === document.body) { paused = !paused; e.preventDefault() } })
-panel.render(agent, undefined, 'ready — run a curriculum round, or drag things around')
+panel.render(agent, undefined, 'ready: run a curriculum round, or drag things around')

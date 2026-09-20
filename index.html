@@ -1,2 +1,136 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>surprise</title><link rel="stylesheet" href="/src/ui/tokens.css"></head>
-<body><main id="site"><p>landing page: being built</p></main><script type="module" src="/src/site/main.ts"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>surprise · a world model that learns by being wrong</title>
+<meta name="description" content="An AI that learns any world by predicting what will happen, being surprised when wrong, and rewriting its own explicit world model." />
+<link rel="stylesheet" href="./src/ui/tokens.css" />
+<link rel="stylesheet" href="./src/site/site.css" />
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar mono">
+  <span class="brand">surprise 0.1</span>
+  <nav aria-label="Pages">
+    <a href="./demo.html">Live playroom</a>
+    <a href="./navigate.html">Voice navigation</a>
+    <a href="./unity.html">Unity</a>
+    <a href="https://github.com/riyadadlani02/surprise" rel="noopener">Source</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero bracketed">
+    <div class="hero-text">
+      <p class="label">world model · surprise driven · every belief written down</p>
+      <h1>Predict. Be Surprised.<br />Rewrite The Model.</h1>
+      <p class="lede">An agent that learns any world by predicting what will happen, noticing when it is wrong, and patching its own explicit world model. Every belief is a readable, versioned diff.</p>
+      <p class="actions">
+        <a class="btn" href="./demo.html">Open the live playroom</a>
+        <a class="btn ghost" href="#results">See the measured results</a>
+      </p>
+    </div>
+    <div class="win hero-win" id="surprise-win">
+      <div class="win-title"><span>surprise.log</span><span class="dots">· · ·</span></div>
+      <div class="win-body">
+        <pre class="term" id="term" aria-live="polite"></pre>
+        <div class="term-foot mono"><span id="term-src">one real surprise from a recorded run</span><button class="btn" id="replay" type="button">Replay</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="loop dither">
+    <div class="inner">
+      <p class="label">the loop</p>
+      <h2>Perceive, Predict, Act, Compare</h2>
+      <div class="loop-grid">
+        <div class="win"><div class="win-title">1 · perceive</div><div class="win-body paper">The environment is serialized into relations such as <code>on(red,blue)</code> or <code>urgent(caller)</code>. Only relations whose concept is active are visible.</div></div>
+        <div class="win"><div class="win-title">2 · predict</div><div class="win-body paper">For each yes/no question about the next action, the predictor gives a calibrated probability and a confidence.</div></div>
+        <div class="win"><div class="win-title">3 · act</div><div class="win-body paper">The action runs in the world: a block is dropped, a caller is transferred, a ticket is reassigned.</div></div>
+        <div class="win"><div class="win-title">4 · compare</div><div class="win-body paper">Truth is evaluated after the world settles. Each prediction ends as one of three outcomes.</div></div>
+      </div>
+      <div class="outcomes">
+        <div class="win"><div class="win-title">matched → assimilate</div><div class="win-body">The rule that predicted gets one more piece of evidence. Confidence grows with counts.</div></div>
+        <div class="win"><div class="win-title">surprised → accommodate</div><div class="win-body">A confident guess failed. Claude Fable 5.1 reads the full trace, including what the agent could not see, and returns a patch: an explanation, concepts to activate, rules to add or remove.</div></div>
+        <div class="win"><div class="win-title">unsure → escalate</div><div class="win-body">Low confidence means a human is asked. The answer becomes an example the model can predict from next time.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="models bracketed">
+    <p class="label">two models share the work</p>
+    <p class="statement">A fast, cheap model makes every moment-to-moment prediction. A slow, careful model steps in only when a confident guess fails.</p>
+    <div class="two">
+      <div class="win"><div class="win-title"><span>jev · TypeSafe AI</span><span class="dots">system one</span></div><div class="win-body paper">
+        <p>Calibrated probabilities for every question, every tick. About $0.042 per million input tokens. Given the current rules as context it predicts from them; without them it predicts zero-shot from the state alone.</p>
+        <p class="mono small">predict(state, action, questions, rules) → { p(yes), confidence }</p>
+      </div></div>
+      <div class="win"><div class="win-title"><span>claude fable 5.1</span><span class="dots">system two</span></div><div class="win-body paper">
+        <p>Called only on surprise. It explains why the prediction failed and writes the patch as structured output. A hand-written rule predictor and a heuristic accommodator run the whole loop with no keys, and remain the fallback when a call fails.</p>
+        <p class="mono small">accommodate(surprise, worldModel) → { explanation, conceptsAdd, rulesAdd, rulesRemove }</p>
+      </div></div>
+    </div>
+  </section>
+
+  <section class="envs">
+    <div class="inner">
+      <p class="label">environments · one loop, one world model, seven worlds</p>
+      <h2>The Loop Is Not A Physics Trick</h2>
+      <ul class="env-list">
+        <li><span class="mono">physics</span><a href="./demo.html">3D playroom</a><span>Naive physics curriculum in the order children acquire it: objects fall, object permanence, containers, support, ramps, tools.</span></li>
+        <li><span class="mono">people</span><span>Phone call</span><span>A synthetic caller with an intent, a mood and hidden dynamics. Urgent results must be transferred; asking twice annoys people.</span></li>
+        <li><span class="mono">software</span><span>Web shop checkout</span><span>An undocumented flow with session and validation state the agent must discover.</span></li>
+        <li><span class="mono">organisation</span><span>Team tickets</span><span>Will the ticket close by Friday? Capacity and dependencies are latent until learned.</span></li>
+        <li><span class="mono">people</span><span>One person's habits</span><span>Which slot will they take? Weather, energy and history explain the pattern.</span></li>
+        <li><span class="mono">game</span><span>Rock, paper, scissors</span><span>An opponent with a habit. The agent has to acquire an opponent model to beat chance.</span></li>
+        <li><span class="mono">assistive</span><a href="./navigate.html">Voice navigation aid</a><span>A spoken guide for blind users, built on the same predict-and-correct loop.</span></li>
+      </ul>
+      <p class="mono small">A Unity build of the playroom is at <a href="./unity.html">./unity.html</a>. It may show build instructions instead of a scene.</p>
+    </div>
+  </section>
+
+  <section class="metrics dither">
+    <div class="inner">
+      <p class="label">four numbers, all measured</p>
+      <div class="metric-grid">
+        <div><p class="label">prediction accuracy</p><p class="statement">Did the guess match what happened? Reported per curriculum stage and per third of the run.</p></div>
+        <div><p class="label">calibration</p><p class="statement">Does 80% mean 80%? Predicted probability against observed hit rate, in five buckets.</p></div>
+        <div><p class="label">accommodation value</p><p class="statement">Did each rewrite help? Accuracy on the next predictions before and after every patch.</p></div>
+        <div><p class="label">escalation rate</p><p class="statement">How often the agent asked a human. It should fall as the model fills in.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="results bracketed" id="results">
+    <p class="label">results · measured on this workload</p>
+    <h2>Seven Worlds, Three Predictors</h2>
+    <p class="lede">Each scenario ran once per predictor: hand-written rules, Jev zero-shot from the state alone, and Jev given the learned rules. Brier score is the mean squared error of the probabilities, so lower is better. Escalation should fall as the model fills in.</p>
+    <div class="legend mono" id="legend" aria-label="Predictors"></div>
+    <div id="scenarios" class="scenario-grid"><p class="mono" id="results-status">Loading ./results/index.json …</p></div>
+    <div class="win table-win"><div class="win-title">summary · all scenarios</div><div class="win-body paper"><div class="table-scroll"><table class="mono" id="summary"><caption class="sr-only">Per predictor: mean Brier, mean accuracy, Jev latency, cost and errors</caption></table></div></div></div>
+    <p class="note" id="measure-note">Latency and cost were measured on this workload, not taken from a datasheet. Jev measured about 0.9 seconds per call from this machine in early runs, against the vendor's claimed roughly 100 ms; the table above reports what the recorded runs saw. The browser demo cannot call Jev directly because the API disallows browser origins (CORS), so every Jev number here comes from Node runs written to ./results.</p>
+  </section>
+
+  <section class="tradeoffs">
+    <div class="inner">
+      <p class="label">honest tradeoffs</p>
+      <h2>What This Is Not</h2>
+      <dl class="trade-list">
+        <div><dt>Neurosymbolic, not latent</dt><dd>Learning lives in the explicit schema and in the accommodator's revisions, not in any model's weights. That is the point, and the limit.</dd></div>
+        <div><dt>The serializer is load-bearing</dt><dd>The starting vocabulary caps what can be learned. A relation the serializer cannot emit can never appear in a rule. Growing that vocabulary is the main lever.</dd></div>
+        <div><dt>Jev cannot do arithmetic</dt><dd>All numbers are bucketed into categories before they reach it: near or far, few or many, soon or late.</dd></div>
+        <div><dt>Schema bloat needs pruning</dt><dd>Every surprise can add rules. Uninformative rules are pruned on each revision, and that pruning is a heuristic, not a proof.</dd></div>
+        <div><dt>Vendor benchmarks re-measured</dt><dd>Latency and cost quoted on this page are what this machine saw on this workload. Where they differ from the vendor's numbers, the page says so.</dd></div>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer class="mono">
+  <span>surprise · a surprise-driven world model</span>
+  <a href="https://github.com/riyadadlani02/surprise" rel="noopener">github.com/riyadadlani02/surprise</a>
+</footer>
+<script type="module" src="./src/site/main.ts"></script>
+</body>
+</html>
