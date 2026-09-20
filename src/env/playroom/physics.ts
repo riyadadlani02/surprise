@@ -31,7 +31,27 @@ export const specOf = (id: ObjId) => SPEC[id]
 let ready: Promise<void> | null = null
 export const initRapier = () => (ready ??= RAPIER.init())
 
-export class Playroom {
+export interface Rot { x: number; y: number; z: number; w: number }
+/** What the environment needs from a physics room. Playroom (Rapier) implements it; a Unity build can too. */
+export interface Room {
+  held: Set<ObjId>
+  pos(id: ObjId): { x: number; y: number; z: number }
+  rot(id: ObjId): Rot
+  topOf(id: ObjId): number
+  place(id: ObjId, x: number, y: number, z: number, rot?: Rot): void
+  hold(id: ObjId): void
+  release(id: ObjId): void
+  push(id: ObjId, dir: [number, number, number], strength?: number): void
+  setGravity(g: number): void
+  setHeavy(id: ObjId, heavy: boolean): void
+  isHeavy(id: ObjId): boolean
+  reset(): void
+  snapshot(): Snapshot
+  isStill(): boolean
+  settle(max?: number): number
+}
+
+export class Playroom implements Room {
   world: RAPIER.World
   bodies = {} as Record<ObjId, RAPIER.RigidBody>
   held = new Set<ObjId>()
@@ -89,7 +109,9 @@ export class Playroom {
   }
 
   // ---- primitives used by actions and by the viewer ----
-  place(id: ObjId, x: number, y: number, z: number, rot: RAPIER.Rotation = { x: 0, y: 0, z: 0, w: 1 }) {
+  pos(id: ObjId) { const p = this.bodies[id].translation(); return { x: p.x, y: p.y, z: p.z } }
+  rot(id: ObjId): Rot { const r = this.bodies[id].rotation(); return { x: r.x, y: r.y, z: r.z, w: r.w } }
+  place(id: ObjId, x: number, y: number, z: number, rot: Rot = { x: 0, y: 0, z: 0, w: 1 }) {
     const b = this.bodies[id]
     b.setTranslation({ x, y, z }, true); b.setRotation(rot, true)
     b.setLinvel({ x: 0, y: 0, z: 0 }, true); b.setAngvel({ x: 0, y: 0, z: 0 }, true)
@@ -111,8 +133,8 @@ export class Playroom {
   topOf(id: ObjId) { const p = this.bodies[id].translation(); return p.y + SPEC[id].half[1] }
 }
 
-export const quatZ = (a: number): RAPIER.Rotation => ({ x: 0, y: 0, z: Math.sin(a / 2), w: Math.cos(a / 2) })
-export const quatX = (a: number): RAPIER.Rotation => ({ x: Math.sin(a / 2), y: 0, z: 0, w: Math.cos(a / 2) })
+export const quatZ = (a: number): Rot => ({ x: 0, y: 0, z: Math.sin(a / 2), w: Math.cos(a / 2) })
+export const quatX = (a: number): Rot => ({ x: Math.sin(a / 2), y: 0, z: 0, w: Math.cos(a / 2) })
 const len = (v: { x: number; y: number; z: number }) => Math.hypot(v.x, v.y, v.z)
 function rotY(q: RAPIER.Rotation): [number, number, number] {
   // rotate (0,1,0) by q

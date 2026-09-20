@@ -102,7 +102,7 @@ $('do').onclick = () => {
 }
 $<HTMLInputElement>('g').oninput = e => room.setGravity(-Number((e.target as HTMLInputElement).value))
 $('heavy').onclick = () => { const o = $<HTMLSelectElement>('obj').value as ObjId; room.setHeavy(o, !room.isHeavy(o)); view.flash(o); status = `${o} is now ${room.isHeavy(o) ? 'heavy' : 'normal'}`; panel.render(agent, agent.log.at(-1), status) }
-$('hide').onclick = () => { const p = room.bodies.ball.translation(); room.release('cup'); room.place('cup', p.x, specOf('cup').half[1] + 0.01, p.z, quatX(Math.PI)); status = 'you hid the ball'; panel.render(agent, agent.log.at(-1), status) }
+$('hide').onclick = () => { const p = room.pos('ball'); room.release('cup'); room.place('cup', p.x, specOf('cup').half[1] + 0.01, p.z, quatX(Math.PI)); status = 'you hid the ball'; panel.render(agent, agent.log.at(-1), status) }
 $('reset').onclick = () => { room.reset(); status = 'scene reset'; panel.render(agent, agent.log.at(-1), status) }
 $('forget').onclick = () => { agent.wm = createWorldModel(); agent.metrics.records = []; agent.metrics.accommodations = []; agent.log = []; agent.tick = 0; panel.render(agent, undefined, 'model forgotten') }
 $('export').onclick = () => {

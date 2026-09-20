@@ -1,0 +1,65 @@
+/* surprise · design tokens. Retro operating-system desktop after typesafe.ai: paper, ink, grey windows, dithered pink.
+   Two families: Inter / Inter Tight for text and display, JetBrains Mono for anything the machine says. No border radius anywhere. */
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --paper: #FEFEFE;
+  --ink: #1E1E1E;
+  --ink-soft: rgba(30, 30, 30, 0.86);
+  --grey-100: #E5E5E5;   /* window body */
+  --grey-200: #DEDEDE;
+  --grey-300: #C4C4C4;   /* window border, rules */
+  --pink: #F386A1;       /* section background */
+  --teal: #ABBAB9;       /* secondary surface */
+  --magenta: #D45BB6;    /* one accent, rarely */
+  --link: #0000EE;
+  --shadow: 6px 6px 0 rgba(30, 30, 30, 0.22);
+  --font-text: 'Inter', -apple-system, system-ui, sans-serif;
+  --font-display: 'Inter Tight', 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --measure: 34rem;
+  --gutter: clamp(16px, 4vw, 48px);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.45 var(--font-text); }
+a { color: var(--link); }
+h1, h2, h3 { margin: 0; font-family: var(--font-display); font-weight: 600; letter-spacing: -0.035em; line-height: 0.88; text-wrap: balance; }
+h1 { font-size: clamp(44px, 8vw, 104px); }
+h2 { font-size: clamp(32px, 5vw, 60px); }
+h3 { font-size: clamp(22px, 2.6vw, 30px); letter-spacing: -0.02em; line-height: 1.05; }
+code, pre, .mono { font-family: var(--font-mono); font-size: 0.85em; }
+
+/* Dithered pink section, as on the reference site */
+.dither { background-color: var(--pink); background-image: radial-gradient(rgba(30,30,30,.55) 0.7px, transparent 0.8px); background-size: 5px 5px; }
+
+/* Corner brackets framing a section */
+.bracketed { position: relative; padding: 48px var(--gutter); }
+.bracketed::before, .bracketed::after { content: ''; position: absolute; width: 18px; height: 18px; border: 1.5px solid var(--ink); }
+.bracketed::before { top: 12px; left: 12px; border-right: 0; border-bottom: 0; }
+.bracketed::after { bottom: 12px; right: 12px; border-left: 0; border-top: 0; }
+
+/* A classic window. <div class="win"><div class="win-title">name 1.1</div><div class="win-body">…</div></div> */
+.win { background: var(--grey-100); border: 2px solid var(--ink); box-shadow: var(--shadow); }
+.win-title { background: var(--ink); color: var(--paper); font: 500 14px/1 var(--font-mono); padding: 8px 12px; display: flex; justify-content: space-between; gap: 12px; }
+.win-title .dots { color: var(--grey-300); letter-spacing: 2px; }
+.win-body { padding: 14px 16px; }
+.win-body.paper { background: var(--paper); }
+
+/* Mono label with a left rule, then a large sans statement (reference site pattern) */
+.label { font: 500 13px/1.2 var(--font-mono); color: var(--ink); border-left: 1.5px solid var(--ink); padding: 2px 0 2px 12px; margin: 0 0 26px; }
+.statement { font-size: clamp(20px, 2.4vw, 30px); line-height: 1.25; letter-spacing: -0.015em; max-width: 28em; margin: 0; }
+
+/* Buttons: black block, white mono text */
+.btn { display: inline-block; background: var(--ink); color: var(--paper); border: 2px solid var(--ink); padding: 10px 16px; font: 500 14px/1 var(--font-mono); text-decoration: none; cursor: pointer; }
+.btn:hover { background: var(--paper); color: var(--ink); }
+.btn.ghost { background: var(--paper); color: var(--ink); }
+.btn.ghost:hover { background: var(--ink); color: var(--paper); }
+.btn:focus-visible, a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid var(--magenta); outline-offset: 2px; }
+
+/* Terminal-style progress bar */
+.progress { border: 1.5px solid var(--ink); background: var(--paper); height: 22px; position: relative; font: 500 13px/20px var(--font-mono); padding-left: 6px; }
+.progress > i { position: absolute; inset: 0; width: var(--p, 0%); background: var(--ink); }
+.progress > span { position: relative; mix-blend-mode: difference; color: var(--paper); }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }

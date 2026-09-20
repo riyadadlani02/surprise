@@ -1,11 +1,11 @@
 // Six developmental stages, in roughly the order children acquire them. Each trial is one loop tick.
 import type { Action } from './types'
-import { Playroom, quatX, specOf } from './env/playroom/physics'
+import { quatX, specOf, type Room } from './env/playroom/physics'
 
-export interface Trial { stage: string; setup: (r: Playroom) => void; action: Action; expect?: Record<string, boolean> }
+export interface Trial { stage: string; setup: (r: Room) => void; action: Action; expect?: Record<string, boolean> }
 
-const at = (r: Playroom, id: Parameters<Playroom['place']>[0], x: number, y: number, z: number) => r.place(id, x, y, z)
-const holdAbove = (r: Playroom, id: Parameters<Playroom['hold']>[0], x: number, z: number, y = 1.4) => { r.place(id, x, y, z); r.hold(id) }
+const at = (r: Room, id: Parameters<Room['place']>[0], x: number, y: number, z: number) => r.place(id, x, y, z)
+const holdAbove = (r: Room, id: Parameters<Room['hold']>[0], x: number, z: number, y = 1.4) => { r.place(id, x, y, z); r.hold(id) }
 
 export const CURRICULUM: Trial[] = [
   // 1. objects fall
