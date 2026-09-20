@@ -215,7 +215,7 @@ $('photoBtn').addEventListener('click', () => $('photo').click())
 $('photo').addEventListener('change', e => { const f = (e.target as HTMLInputElement).files?.[0]; if (f) usePhoto(f, f.name).catch(photoFailed) })
 $('samplePhoto').addEventListener('click', async () => {
   const r = await fetch('./photos/auditorium.jpg').catch(() => undefined)
-  if (!r?.ok) return voice.say('No sample photo yet. Add public/photos/auditorium.jpg to the repo, or use your own photo.')
+  if (!r?.ok || !r.headers.get('content-type')?.startsWith('image/')) return voice.say('No sample photo yet. Add public/photos/auditorium.jpg to the repo, or use your own photo.')
   usePhoto(await r.blob(), 'auditorium').catch(photoFailed)
 })
 $('backToRoom').addEventListener('click', () => setCamera(false))
