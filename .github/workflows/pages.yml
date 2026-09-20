@@ -1,7 +1,6 @@
 name: GitHub Pages
+# Manual only: the account's Actions are locked (billing). `npm run deploy` publishes the gh-pages branch instead.
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read

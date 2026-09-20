@@ -8,7 +8,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "scenarios": "vitest run --config scenarios/vitest.config.ts"
+    "scenarios": "vitest run --config scenarios/vitest.config.ts",
+    "deploy": "npm run build && cd dist && touch .nojekyll && git init -q -b gh-pages && git add -A && git commit -qm deploy && git push -f https://github.com/riyadadlani02/surprise.git gh-pages && rm -rf .git"
   },
   "keywords": [],
   "author": "",
