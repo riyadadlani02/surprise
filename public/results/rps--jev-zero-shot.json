@@ -1,0 +1,1892 @@
+{
+ "scenario": "rps",
+ "title": "Game · an opponent with a habit",
+ "kind": "game",
+ "predictor": "jev-zero-shot",
+ "ticks": 300,
+ "predictions": 600,
+ "accuracy": 0.6183333333333333,
+ "brier": 0.2464513333333333,
+ "thirds": [
+  {
+   "slice": 0,
+   "rate": 0.63,
+   "accuracy": 0.615,
+   "brier": 0.22894699999999996
+  },
+  {
+   "slice": 1,
+   "rate": 0.345,
+   "accuracy": 0.63,
+   "brier": 0.24818649999999992
+  },
+  {
+   "slice": 2,
+   "rate": 0.34,
+   "accuracy": 0.61,
+   "brier": 0.26222049999999997
+  }
+ ],
+ "calibration": [
+  {
+   "lo": 0,
+   "hi": 0.2,
+   "n": 89,
+   "sumProb": 12.910000000000004,
+   "hits": 24,
+   "meanProb": 0.14505617977528093,
+   "hitRate": 0.2696629213483146
+  },
+  {
+   "lo": 0.2,
+   "hi": 0.4,
+   "n": 192,
+   "sumProb": 56.09000000000004,
+   "hits": 49,
+   "meanProb": 0.29213541666666687,
+   "hitRate": 0.2552083333333333
+  },
+  {
+   "lo": 0.4,
+   "hi": 0.6,
+   "n": 198,
+   "sumProb": 93.17000000000004,
+   "hits": 83,
+   "meanProb": 0.4705555555555558,
+   "hitRate": 0.41919191919191917
+  },
+  {
+   "lo": 0.6,
+   "hi": 0.8,
+   "n": 83,
+   "sumProb": 58.01000000000003,
+   "hits": 32,
+   "meanProb": 0.6989156626506028,
+   "hitRate": 0.3855421686746988
+  },
+  {
+   "lo": 0.8,
+   "hi": 1,
+   "n": 38,
+   "sumProb": 32.06,
+   "hits": 17,
+   "meanProb": 0.8436842105263158,
+   "hitRate": 0.4473684210526316
+  }
+ ],
+ "accuracyByStage": [
+  {
+   "stage": "free",
+   "n": 600,
+   "correct": 371,
+   "accuracy": 0.6183333333333333
+  }
+ ],
+ "concepts": [
+  "history",
+  "opponent_model"
+ ],
+ "rules": 38,
+ "revisions": 129,
+ "accommodations": 119,
+ "accommodationValue": [
+  {
+   "version": 7,
+   "tick": 64,
+   "before": 0.8333333333333334,
+   "after": 0.3333333333333333,
+   "delta": -0.5,
+   "n": 6
+  },
+  {
+   "version": 8,
+   "tick": 67,
+   "before": 0.3333333333333333,
+   "after": 0.6666666666666666,
+   "delta": 0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 10,
+   "tick": 70,
+   "before": 0.5,
+   "after": 0.8333333333333334,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 11,
+   "tick": 73,
+   "before": 0.8333333333333334,
+   "after": 0.5,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 12,
+   "tick": 75,
+   "before": 0.8333333333333334,
+   "after": 0.3333333333333333,
+   "delta": -0.5,
+   "n": 6
+  },
+  {
+   "version": 13,
+   "tick": 77,
+   "before": 0.5,
+   "after": 0.6666666666666666,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 14,
+   "tick": 78,
+   "before": 0.16666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.6666666666666667,
+   "n": 6
+  },
+  {
+   "version": 15,
+   "tick": 80,
+   "before": 0.5,
+   "after": 1,
+   "delta": 0.5,
+   "n": 6
+  },
+  {
+   "version": 17,
+   "tick": 84,
+   "before": 1,
+   "after": 0.5,
+   "delta": -0.5,
+   "n": 6
+  },
+  {
+   "version": 18,
+   "tick": 84,
+   "before": 1,
+   "after": 0.5,
+   "delta": -0.5,
+   "n": 6
+  },
+  {
+   "version": 19,
+   "tick": 85,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 20,
+   "tick": 85,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 21,
+   "tick": 86,
+   "before": 0.3333333333333333,
+   "after": 0.5,
+   "delta": 0.16666666666666669,
+   "n": 6
+  },
+  {
+   "version": 23,
+   "tick": 88,
+   "before": 0.5,
+   "after": 0.3333333333333333,
+   "delta": -0.16666666666666669,
+   "n": 6
+  },
+  {
+   "version": 24,
+   "tick": 89,
+   "before": 0.6666666666666666,
+   "after": 0.5,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 25,
+   "tick": 93,
+   "before": 0.5,
+   "after": 0.6666666666666666,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 26,
+   "tick": 93,
+   "before": 0.5,
+   "after": 0.6666666666666666,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 27,
+   "tick": 94,
+   "before": 0.3333333333333333,
+   "after": 0.8333333333333334,
+   "delta": 0.5,
+   "n": 6
+  },
+  {
+   "version": 28,
+   "tick": 96,
+   "before": 0.5,
+   "after": 1,
+   "delta": 0.5,
+   "n": 6
+  },
+  {
+   "version": 29,
+   "tick": 105,
+   "before": 0.6666666666666666,
+   "after": 1,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 30,
+   "tick": 111,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 31,
+   "tick": 120,
+   "before": 0.8333333333333334,
+   "after": 0.3333333333333333,
+   "delta": -0.5,
+   "n": 6
+  },
+  {
+   "version": 32,
+   "tick": 121,
+   "before": 0.8333333333333334,
+   "after": 0.5,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 33,
+   "tick": 122,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 34,
+   "tick": 123,
+   "before": 0.5,
+   "after": 1,
+   "delta": 0.5,
+   "n": 6
+  },
+  {
+   "version": 35,
+   "tick": 123,
+   "before": 0.5,
+   "after": 1,
+   "delta": 0.5,
+   "n": 6
+  },
+  {
+   "version": 36,
+   "tick": 127,
+   "before": 1,
+   "after": 0.5,
+   "delta": -0.5,
+   "n": 6
+  },
+  {
+   "version": 37,
+   "tick": 128,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 38,
+   "tick": 130,
+   "before": 0.5,
+   "after": 0.8333333333333334,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 39,
+   "tick": 132,
+   "before": 0.6666666666666666,
+   "after": 1,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 40,
+   "tick": 136,
+   "before": 1,
+   "after": 0.5,
+   "delta": -0.5,
+   "n": 6
+  },
+  {
+   "version": 41,
+   "tick": 137,
+   "before": 0.8333333333333334,
+   "after": 0.5,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 42,
+   "tick": 138,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 43,
+   "tick": 139,
+   "before": 0.5,
+   "after": 0.6666666666666666,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 44,
+   "tick": 140,
+   "before": 0.5,
+   "after": 0.6666666666666666,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 45,
+   "tick": 142,
+   "before": 0.6666666666666666,
+   "after": 0.3333333333333333,
+   "delta": -0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 46,
+   "tick": 144,
+   "before": 0.6666666666666666,
+   "after": 0.3333333333333333,
+   "delta": -0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 47,
+   "tick": 145,
+   "before": 0.5,
+   "after": 0.6666666666666666,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 48,
+   "tick": 145,
+   "before": 0.5,
+   "after": 0.6666666666666666,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 49,
+   "tick": 146,
+   "before": 0.3333333333333333,
+   "after": 0.6666666666666666,
+   "delta": 0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 50,
+   "tick": 149,
+   "before": 0.6666666666666666,
+   "after": 0.5,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 51,
+   "tick": 150,
+   "before": 0.6666666666666666,
+   "after": 0.5,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 52,
+   "tick": 152,
+   "before": 0.5,
+   "after": 0.8333333333333334,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 53,
+   "tick": 153,
+   "before": 0.5,
+   "after": 1,
+   "delta": 0.5,
+   "n": 6
+  },
+  {
+   "version": 55,
+   "tick": 159,
+   "before": 1,
+   "after": 0.8333333333333334,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 56,
+   "tick": 162,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 57,
+   "tick": 163,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 58,
+   "tick": 164,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 59,
+   "tick": 168,
+   "before": 0.6666666666666666,
+   "after": 0.5,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 60,
+   "tick": 168,
+   "before": 0.6666666666666666,
+   "after": 0.5,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 61,
+   "tick": 170,
+   "before": 0.3333333333333333,
+   "after": 0.8333333333333334,
+   "delta": 0.5,
+   "n": 6
+  },
+  {
+   "version": 62,
+   "tick": 170,
+   "before": 0.3333333333333333,
+   "after": 0.8333333333333334,
+   "delta": 0.5,
+   "n": 6
+  },
+  {
+   "version": 63,
+   "tick": 174,
+   "before": 0.8333333333333334,
+   "after": 0.5,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 64,
+   "tick": 175,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 65,
+   "tick": 177,
+   "before": 0.6666666666666666,
+   "after": 1,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 66,
+   "tick": 177,
+   "before": 0.6666666666666666,
+   "after": 1,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 67,
+   "tick": 182,
+   "before": 1,
+   "after": 0.16666666666666666,
+   "delta": -0.8333333333333334,
+   "n": 6
+  },
+  {
+   "version": 68,
+   "tick": 183,
+   "before": 0.8333333333333334,
+   "after": 0.3333333333333333,
+   "delta": -0.5,
+   "n": 6
+  },
+  {
+   "version": 69,
+   "tick": 183,
+   "before": 0.8333333333333334,
+   "after": 0.3333333333333333,
+   "delta": -0.5,
+   "n": 6
+  },
+  {
+   "version": 70,
+   "tick": 185,
+   "before": 0.3333333333333333,
+   "after": 0.5,
+   "delta": 0.16666666666666669,
+   "n": 6
+  },
+  {
+   "version": 71,
+   "tick": 185,
+   "before": 0.3333333333333333,
+   "after": 0.5,
+   "delta": 0.16666666666666669,
+   "n": 6
+  },
+  {
+   "version": 72,
+   "tick": 187,
+   "before": 0.3333333333333333,
+   "after": 0.6666666666666666,
+   "delta": 0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 73,
+   "tick": 187,
+   "before": 0.3333333333333333,
+   "after": 0.6666666666666666,
+   "delta": 0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 74,
+   "tick": 190,
+   "before": 0.5,
+   "after": 0.16666666666666666,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 75,
+   "tick": 191,
+   "before": 0.6666666666666666,
+   "after": 0.3333333333333333,
+   "delta": -0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 76,
+   "tick": 191,
+   "before": 0.6666666666666666,
+   "after": 0.3333333333333333,
+   "delta": -0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 77,
+   "tick": 193,
+   "before": 0.3333333333333333,
+   "after": 0.3333333333333333,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 78,
+   "tick": 193,
+   "before": 0.3333333333333333,
+   "after": 0.3333333333333333,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 79,
+   "tick": 196,
+   "before": 0.16666666666666666,
+   "after": 1,
+   "delta": 0.8333333333333334,
+   "n": 6
+  },
+  {
+   "version": 80,
+   "tick": 201,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 81,
+   "tick": 201,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 82,
+   "tick": 206,
+   "before": 0.8333333333333334,
+   "after": 0.3333333333333333,
+   "delta": -0.5,
+   "n": 6
+  },
+  {
+   "version": 83,
+   "tick": 208,
+   "before": 0.5,
+   "after": 0.5,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 84,
+   "tick": 214,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 85,
+   "tick": 219,
+   "before": 1,
+   "after": 0.6666666666666666,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 86,
+   "tick": 220,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 87,
+   "tick": 229,
+   "before": 0.6666666666666666,
+   "after": 0.5,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 88,
+   "tick": 229,
+   "before": 0.6666666666666666,
+   "after": 0.5,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 89,
+   "tick": 230,
+   "before": 0.3333333333333333,
+   "after": 0.5,
+   "delta": 0.16666666666666669,
+   "n": 6
+  },
+  {
+   "version": 90,
+   "tick": 232,
+   "before": 0.3333333333333333,
+   "after": 0.5,
+   "delta": 0.16666666666666669,
+   "n": 6
+  },
+  {
+   "version": 91,
+   "tick": 233,
+   "before": 0.5,
+   "after": 0.8333333333333334,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 92,
+   "tick": 233,
+   "before": 0.5,
+   "after": 0.8333333333333334,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 93,
+   "tick": 235,
+   "before": 0.5,
+   "after": 0.8333333333333334,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 94,
+   "tick": 237,
+   "before": 0.8333333333333334,
+   "after": 0.8333333333333334,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 95,
+   "tick": 240,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 96,
+   "tick": 241,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 97,
+   "tick": 241,
+   "before": 0.8333333333333334,
+   "after": 1,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 98,
+   "tick": 246,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 99,
+   "tick": 246,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 100,
+   "tick": 249,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 101,
+   "tick": 249,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 102,
+   "tick": 251,
+   "before": 0.6666666666666666,
+   "after": 1,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 103,
+   "tick": 255,
+   "before": 1,
+   "after": 0.6666666666666666,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 104,
+   "tick": 256,
+   "before": 0.8333333333333334,
+   "after": 0.5,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 105,
+   "tick": 257,
+   "before": 0.6666666666666666,
+   "after": 0.5,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 106,
+   "tick": 259,
+   "before": 0.6666666666666666,
+   "after": 0.3333333333333333,
+   "delta": -0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 107,
+   "tick": 259,
+   "before": 0.6666666666666666,
+   "after": 0.3333333333333333,
+   "delta": -0.3333333333333333,
+   "n": 6
+  },
+  {
+   "version": 108,
+   "tick": 261,
+   "before": 0.5,
+   "after": 0.6666666666666666,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 109,
+   "tick": 261,
+   "before": 0.5,
+   "after": 0.6666666666666666,
+   "delta": 0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 110,
+   "tick": 262,
+   "before": 0.16666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0.5,
+   "n": 6
+  },
+  {
+   "version": 111,
+   "tick": 265,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 112,
+   "tick": 270,
+   "before": 0.8333333333333334,
+   "after": 0.5,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 113,
+   "tick": 272,
+   "before": 0.6666666666666666,
+   "after": 0.5,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 114,
+   "tick": 272,
+   "before": 0.6666666666666666,
+   "after": 0.5,
+   "delta": -0.16666666666666663,
+   "n": 6
+  },
+  {
+   "version": 115,
+   "tick": 275,
+   "before": 0.3333333333333333,
+   "after": 0.8333333333333334,
+   "delta": 0.5,
+   "n": 6
+  },
+  {
+   "version": 116,
+   "tick": 276,
+   "before": 0.5,
+   "after": 0.8333333333333334,
+   "delta": 0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 117,
+   "tick": 279,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 118,
+   "tick": 280,
+   "before": 0.8333333333333334,
+   "after": 0.6666666666666666,
+   "delta": -0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 119,
+   "tick": 284,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 120,
+   "tick": 284,
+   "before": 0.6666666666666666,
+   "after": 0.6666666666666666,
+   "delta": 0,
+   "n": 6
+  },
+  {
+   "version": 121,
+   "tick": 286,
+   "before": 0.3333333333333333,
+   "after": 0.8333333333333334,
+   "delta": 0.5,
+   "n": 6
+  },
+  {
+   "version": 122,
+   "tick": 288,
+   "before": 0.6666666666666666,
+   "after": 0.8333333333333334,
+   "delta": 0.16666666666666674,
+   "n": 6
+  },
+  {
+   "version": 123,
+   "tick": 291,
+   "before": 0.8333333333333334,
+   "after": 0.5,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 124,
+   "tick": 295,
+   "before": 0.5,
+   "after": 0.16666666666666666,
+   "delta": -0.33333333333333337,
+   "n": 6
+  },
+  {
+   "version": 125,
+   "tick": 296,
+   "before": 0.5,
+   "after": 0.3333333333333333,
+   "delta": -0.16666666666666669,
+   "n": 6
+  },
+  {
+   "version": 126,
+   "tick": 296,
+   "before": 0.5,
+   "after": 0.3333333333333333,
+   "delta": -0.16666666666666669,
+   "n": 6
+  },
+  {
+   "version": 127,
+   "tick": 298,
+   "before": 0.3333333333333333,
+   "after": 0.5,
+   "delta": 0.16666666666666669,
+   "n": 4
+  },
+  {
+   "version": 128,
+   "tick": 298,
+   "before": 0.3333333333333333,
+   "after": 0.5,
+   "delta": 0.16666666666666669,
+   "n": 4
+  },
+  {
+   "version": 129,
+   "tick": 300,
+   "before": 0.3333333333333333,
+   "after": 0,
+   "delta": -0.3333333333333333,
+   "n": 0
+  }
+ ],
+ "escalationRate": 0.43833333333333335,
+ "jev": {
+  "calls": 300,
+  "ms": 118555.36662699995,
+  "inputTokens": 101543,
+  "outputTokens": 11100,
+  "errors": 0,
+  "msPerCall": 395.18455542333317,
+  "costUsd": 0.004264806
+ },
+ "warnings": 0,
+ "durationMs": 118692,
+ "surprises": [
+  {
+   "tick": 64,
+   "action": "play_rock",
+   "question": "Will rock win this round?",
+   "prob": 0.34,
+   "truth": true,
+   "explanation": "Expected \"Will rock win this round?\" = no (p=0.34) but saw yes. Unlike the last time this rule was right, my_last(scissors) holds now; the agent could not see it, so the concept history is now active."
+  },
+  {
+   "tick": 67,
+   "action": "play_paper",
+   "question": "Will paper lose this round?",
+   "prob": 0.23,
+   "truth": true,
+   "explanation": "Expected \"Will paper lose this round?\" = no (p=0.23) but saw yes. Unlike the last time this rule was right, habit(copy) holds now; the agent could not see it, so the concept opponent_model is now active."
+  },
+  {
+   "tick": 70,
+   "action": "play_rock",
+   "question": "Will rock win this round?",
+   "prob": 0.79,
+   "truth": false,
+   "explanation": "Expected \"Will rock win this round?\" = yes (p=0.79) but saw no. Splitting on round(later)."
+  },
+  {
+   "tick": 73,
+   "action": "play_rock",
+   "question": "Will rock lose this round?",
+   "prob": 0.85,
+   "truth": false,
+   "explanation": "Expected \"Will rock lose this round?\" = yes (p=0.85) but saw no. Unlike the last time this rule was right, last_result(lose) holds now."
+  },
+  {
+   "tick": 75,
+   "action": "play_scissors",
+   "question": "Will scissors win this round?",
+   "prob": 0.32,
+   "truth": true,
+   "explanation": "Expected \"Will scissors win this round?\" = no (p=0.32) but saw yes. Unlike the last time this rule was right, last_result(win) holds now."
+  },
+  {
+   "tick": 77,
+   "action": "play_rock",
+   "question": "Will rock lose this round?",
+   "prob": 0.26,
+   "truth": true,
+   "explanation": "Expected \"Will rock lose this round?\" = no (p=0.26) but saw yes. Splitting on round(later)."
+  },
+  {
+   "tick": 78,
+   "action": "play_rock",
+   "question": "Will rock lose this round?",
+   "prob": 0.86,
+   "truth": false,
+   "explanation": "Expected \"Will rock lose this round?\" = yes (p=0.86) but saw no. Splitting on round(later)."
+  },
+  {
+   "tick": 80,
+   "action": "play_scissors",
+   "question": "Will scissors lose this round?",
+   "prob": 0.69,
+   "truth": false,
+   "explanation": "Expected \"Will scissors lose this round?\" = yes (p=0.69) but saw no. Unlike the last time this rule was right, last_result(lose) holds now."
+  },
+  {
+   "tick": 84,
+   "action": "play_paper",
+   "question": "Will paper win this round?",
+   "prob": 0.68,
+   "truth": false,
+   "explanation": "Expected \"Will paper lose this round?\" = no (p=0.15) but saw yes. Unlike the last time this rule was right, my_last(scissors) holds now."
+  },
+  {
+   "tick": 85,
+   "action": "play_rock",
+   "question": "Will rock win this round?",
+   "prob": 0.78,
+   "truth": false,
+   "explanation": "Expected \"Will rock lose this round?\" = no (p=0.17) but saw yes. Splitting on round(later)."
+  },
+  {
+   "tick": 86,
+   "action": "play_rock",
+   "question": "Will rock lose this round?",
+   "prob": 0.87,
+   "truth": false,
+   "explanation": "Expected \"Will rock lose this round?\" = yes (p=0.87) but saw no. Splitting on round(later)."
+  },
+  {
+   "tick": 88,
+   "action": "play_paper",
+   "question": "Will paper win this round?",
+   "prob": 0.71,
+   "truth": false,
+   "explanation": "Expected \"Will paper win this round?\" = yes (p=0.71) but saw no. Splitting on round(later)."
+  }
+ ],
+ "rulesSample": [
+  {
+   "action": "play_rock",
+   "requires": [],
+   "question": "loses",
+   "yes": 15,
+   "no": 36,
+   "source": "assimilate"
+  },
+  {
+   "action": "play_paper",
+   "requires": [],
+   "question": "loses",
+   "yes": 6,
+   "no": 33,
+   "source": "assimilate"
+  },
+  {
+   "action": "play_scissors",
+   "requires": [],
+   "question": "wins",
+   "yes": 11,
+   "no": 41,
+   "source": "assimilate"
+  },
+  {
+   "action": "play_rock",
+   "requires": [
+    "my_last(scissors)"
+   ],
+   "question": "wins",
+   "yes": 1,
+   "no": 2,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_rock",
+   "requires": [],
+   "question": "wins",
+   "yes": 0,
+   "no": 1,
+   "source": "assimilate"
+  },
+  {
+   "action": "play_rock",
+   "requires": [
+    "round(later)"
+   ],
+   "question": "wins",
+   "yes": 20,
+   "no": 53,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_scissors",
+   "requires": [],
+   "question": "loses",
+   "yes": 1,
+   "no": 8,
+   "source": "assimilate"
+  },
+  {
+   "action": "play_paper",
+   "requires": [
+    "last_result(draw)"
+   ],
+   "question": "wins",
+   "yes": 3,
+   "no": 17,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_rock",
+   "requires": [
+    "my_last(paper)"
+   ],
+   "question": "wins",
+   "yes": 0,
+   "no": 2,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_rock",
+   "requires": [
+    "last_result(win)"
+   ],
+   "question": "wins",
+   "yes": 3,
+   "no": 5,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_paper",
+   "requires": [
+    "last_result(win)"
+   ],
+   "question": "wins",
+   "yes": 6,
+   "no": 15,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_paper",
+   "requires": [
+    "my_last(paper)"
+   ],
+   "question": "wins",
+   "yes": 0,
+   "no": 12,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_scissors",
+   "requires": [
+    "my_last(paper)"
+   ],
+   "question": "loses",
+   "yes": 0,
+   "no": 20,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_scissors",
+   "requires": [
+    "my_last(rock)"
+   ],
+   "question": "wins",
+   "yes": 16,
+   "no": 3,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_paper",
+   "requires": [
+    "my_last(rock)"
+   ],
+   "question": "wins",
+   "yes": 2,
+   "no": 8,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_rock",
+   "requires": [
+    "last_result(draw)"
+   ],
+   "question": "wins",
+   "yes": 2,
+   "no": 4,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_rock",
+   "requires": [
+    "last_result(draw)"
+   ],
+   "question": "loses",
+   "yes": 4,
+   "no": 7,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_paper",
+   "requires": [],
+   "question": "wins",
+   "yes": 2,
+   "no": 0,
+   "source": "assimilate"
+  },
+  {
+   "action": "play_paper",
+   "requires": [
+    "last_result(draw)"
+   ],
+   "question": "loses",
+   "yes": 5,
+   "no": 2,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_scissors",
+   "requires": [
+    "last_result(draw)"
+   ],
+   "question": "loses",
+   "yes": 2,
+   "no": 12,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_scissors",
+   "requires": [
+    "habit(copy)"
+   ],
+   "question": "loses",
+   "yes": 0,
+   "no": 4,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_rock",
+   "requires": [
+    "habit(copy)"
+   ],
+   "question": "loses",
+   "yes": 0,
+   "no": 3,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_paper",
+   "requires": [
+    "last_result(lose)"
+   ],
+   "question": "loses",
+   "yes": 2,
+   "no": 7,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_paper",
+   "requires": [
+    "round(later)"
+   ],
+   "question": "loses",
+   "yes": 3,
+   "no": 2,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_rock",
+   "requires": [
+    "my_last(paper)"
+   ],
+   "question": "loses",
+   "yes": 1,
+   "no": 4,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_scissors",
+   "requires": [
+    "my_last(paper)"
+   ],
+   "question": "wins",
+   "yes": 1,
+   "no": 0,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_rock",
+   "requires": [
+    "my_last(rock)"
+   ],
+   "question": "wins",
+   "yes": 0,
+   "no": 1,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_scissors",
+   "requires": [
+    "habit(counter)"
+   ],
+   "question": "wins",
+   "yes": 5,
+   "no": 13,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_scissors",
+   "requires": [
+    "my_last(rock)"
+   ],
+   "question": "loses",
+   "yes": 0,
+   "no": 11,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_paper",
+   "requires": [
+    "habit(counter)"
+   ],
+   "question": "loses",
+   "yes": 2,
+   "no": 0,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_scissors",
+   "requires": [
+    "habit(counter)"
+   ],
+   "question": "loses",
+   "yes": 5,
+   "no": 0,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_rock",
+   "requires": [
+    "habit(counter)"
+   ],
+   "question": "wins",
+   "yes": 0,
+   "no": 1,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_paper",
+   "requires": [
+    "habit(counter)"
+   ],
+   "question": "wins",
+   "yes": 1,
+   "no": 1,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_paper",
+   "requires": [
+    "my_last(paper)"
+   ],
+   "question": "loses",
+   "yes": 2,
+   "no": 0,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_rock",
+   "requires": [
+    "last_result(win)"
+   ],
+   "question": "loses",
+   "yes": 2,
+   "no": 4,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_scissors",
+   "requires": [
+    "last_result(win)"
+   ],
+   "question": "wins",
+   "yes": 1,
+   "no": 0,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_rock",
+   "requires": [
+    "my_last(rock)"
+   ],
+   "question": "loses",
+   "yes": 7,
+   "no": 0,
+   "source": "accommodate"
+  },
+  {
+   "action": "play_scissors",
+   "requires": [
+    "last_result(lose)"
+   ],
+   "question": "wins",
+   "yes": 1,
+   "no": 0,
+   "source": "accommodate"
+  }
+ ],
+ "history": [
+  {
+   "version": 1,
+   "trigger": "play_rock → Will rock win this round?",
+   "explanation": "No rule covered \"wins\" after play_rock; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 2,
+   "trigger": "play_rock → Will rock lose this round?",
+   "explanation": "No rule covered \"loses\" after play_rock; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 3,
+   "trigger": "play_paper → Will paper win this round?",
+   "explanation": "No rule covered \"wins\" after play_paper; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 4,
+   "trigger": "play_paper → Will paper lose this round?",
+   "explanation": "No rule covered \"loses\" after play_paper; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 5,
+   "trigger": "play_scissors → Will scissors win this round?",
+   "explanation": "No rule covered \"wins\" after play_scissors; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 6,
+   "trigger": "play_scissors → Will scissors lose this round?",
+   "explanation": "No rule covered \"loses\" after play_scissors; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 7,
+   "trigger": "surprise: play_rock → Will rock win this round?",
+   "explanation": "Expected \"Will rock win this round?\" = no (p=0.34) but saw yes. Unlike the last time this rule was right, my_last(scissors) holds now; the agent could not see it, so the concept history is now active.",
+   "conceptsAdded": [
+    "history"
+   ]
+  },
+  {
+   "version": 8,
+   "trigger": "surprise: play_paper → Will paper lose this round?",
+   "explanation": "Expected \"Will paper lose this round?\" = no (p=0.23) but saw yes. Unlike the last time this rule was right, habit(copy) holds now; the agent could not see it, so the concept opponent_model is now active.",
+   "conceptsAdded": [
+    "opponent_model"
+   ]
+  },
+  {
+   "version": 9,
+   "trigger": "play_rock → Will rock win this round?",
+   "explanation": "No rule covered \"wins\" after play_rock; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 10,
+   "trigger": "surprise: play_rock → Will rock win this round?",
+   "explanation": "Expected \"Will rock win this round?\" = yes (p=0.79) but saw no. Splitting on round(later).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 11,
+   "trigger": "surprise: play_rock → Will rock lose this round?",
+   "explanation": "Expected \"Will rock lose this round?\" = yes (p=0.85) but saw no. Unlike the last time this rule was right, last_result(lose) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 12,
+   "trigger": "surprise: play_scissors → Will scissors win this round?",
+   "explanation": "Expected \"Will scissors win this round?\" = no (p=0.32) but saw yes. Unlike the last time this rule was right, last_result(win) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 13,
+   "trigger": "surprise: play_rock → Will rock lose this round?",
+   "explanation": "Expected \"Will rock lose this round?\" = no (p=0.26) but saw yes. Splitting on round(later).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 14,
+   "trigger": "surprise: play_rock → Will rock lose this round?",
+   "explanation": "Expected \"Will rock lose this round?\" = yes (p=0.86) but saw no. Splitting on round(later).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 15,
+   "trigger": "surprise: play_scissors → Will scissors lose this round?",
+   "explanation": "Expected \"Will scissors lose this round?\" = yes (p=0.69) but saw no. Unlike the last time this rule was right, last_result(lose) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 16,
+   "trigger": "play_scissors → Will scissors lose this round?",
+   "explanation": "No rule covered \"loses\" after play_scissors; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 17,
+   "trigger": "surprise: play_paper → Will paper win this round?",
+   "explanation": "Expected \"Will paper win this round?\" = yes (p=0.68) but saw no. Unlike the last time this rule was right, last_result(draw) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 18,
+   "trigger": "surprise: play_paper → Will paper lose this round?",
+   "explanation": "Expected \"Will paper lose this round?\" = no (p=0.15) but saw yes. Unlike the last time this rule was right, my_last(scissors) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 19,
+   "trigger": "surprise: play_rock → Will rock win this round?",
+   "explanation": "Expected \"Will rock win this round?\" = yes (p=0.78) but saw no. Unlike the last time this rule was right, my_last(paper) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 20,
+   "trigger": "surprise: play_rock → Will rock lose this round?",
+   "explanation": "Expected \"Will rock lose this round?\" = no (p=0.17) but saw yes. Splitting on round(later).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 21,
+   "trigger": "surprise: play_rock → Will rock lose this round?",
+   "explanation": "Expected \"Will rock lose this round?\" = yes (p=0.87) but saw no. Splitting on round(later).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 22,
+   "trigger": "play_paper → Will paper win this round?",
+   "explanation": "No rule covered \"wins\" after play_paper; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 23,
+   "trigger": "surprise: play_paper → Will paper win this round?",
+   "explanation": "Expected \"Will paper win this round?\" = yes (p=0.71) but saw no. Splitting on round(later).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 24,
+   "trigger": "surprise: play_scissors → Will scissors win this round?",
+   "explanation": "Expected \"Will scissors win this round?\" = no (p=0.32) but saw yes. Unlike the last time this rule was right, my_last(paper) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 25,
+   "trigger": "surprise: play_rock → Will rock win this round?",
+   "explanation": "Expected \"Will rock win this round?\" = yes (p=0.69) but saw no. Unlike the last time this rule was right, my_last(paper) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 26,
+   "trigger": "surprise: play_rock → Will rock lose this round?",
+   "explanation": "Expected \"Will rock lose this round?\" = no (p=0.27) but saw yes. Splitting on round(later).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 27,
+   "trigger": "surprise: play_rock → Will rock lose this round?",
+   "explanation": "Expected \"Will rock lose this round?\" = yes (p=0.86) but saw no. Splitting on round(later).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 28,
+   "trigger": "surprise: play_scissors → Will scissors lose this round?",
+   "explanation": "Expected \"Will scissors lose this round?\" = yes (p=0.79) but saw no. Unlike the last time this rule was right, my_last(scissors) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 29,
+   "trigger": "surprise: play_rock → Will rock win this round?",
+   "explanation": "Expected \"Will rock win this round?\" = yes (p=0.74) but saw no. Unlike the last time this rule was right, last_result(win) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 30,
+   "trigger": "surprise: play_paper → Will paper win this round?",
+   "explanation": "Expected \"Will paper win this round?\" = yes (p=0.70) but saw no. Unlike the last time this rule was right, last_result(win) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 31,
+   "trigger": "surprise: play_paper → Will paper win this round?",
+   "explanation": "Expected \"Will paper win this round?\" = yes (p=0.66) but saw no. Unlike the last time this rule was right, my_last(paper) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 32,
+   "trigger": "surprise: play_scissors → Will scissors lose this round?",
+   "explanation": "Expected \"Will scissors lose this round?\" = yes (p=0.70) but saw no. Unlike the last time this rule was right, my_last(paper) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 33,
+   "trigger": "surprise: play_rock → Will rock win this round?",
+   "explanation": "Expected \"Will rock win this round?\" = yes (p=0.84) but saw no. Unlike the last time this rule was right, my_last(scissors) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 34,
+   "trigger": "surprise: play_scissors → Will scissors win this round?",
+   "explanation": "Expected \"Will scissors win this round?\" = no (p=0.18) but saw yes. Unlike the last time this rule was right, my_last(rock) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 35,
+   "trigger": "surprise: play_scissors → Will scissors lose this round?",
+   "explanation": "Expected \"Will scissors lose this round?\" = yes (p=0.75) but saw no. Unlike the last time this rule was right, habit(counter) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 36,
+   "trigger": "surprise: play_rock → Will rock win this round?",
+   "explanation": "Expected \"Will rock win this round?\" = yes (p=0.85) but saw no. Unlike the last time this rule was right, my_last(scissors) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 37,
+   "trigger": "surprise: play_rock → Will rock lose this round?",
+   "explanation": "Expected \"Will rock lose this round?\" = no (p=0.18) but saw yes. Unlike the last time this rule was right, my_last(rock) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 38,
+   "trigger": "surprise: play_paper → Will paper lose this round?",
+   "explanation": "Expected \"Will paper lose this round?\" = no (p=0.25) but saw yes. Unlike the last time this rule was right, last_result(draw) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 39,
+   "trigger": "surprise: play_scissors → Will scissors lose this round?",
+   "explanation": "Expected \"Will scissors lose this round?\" = no (p=0.20) but saw yes. Unlike the last time this rule was right, last_result(draw) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 40,
+   "trigger": "surprise: play_paper → Will paper win this round?",
+   "explanation": "Expected \"Will paper win this round?\" = yes (p=0.85) but saw no. Unlike the last time this rule was right, my_last(rock) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 41,
+   "trigger": "surprise: play_scissors → Will scissors lose this round?",
+   "explanation": "Expected \"Will scissors lose this round?\" = yes (p=0.65) but saw no. Unlike the last time this rule was right, last_result(draw) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 42,
+   "trigger": "surprise: play_rock → Will rock win this round?",
+   "explanation": "Expected \"Will rock win this round?\" = yes (p=0.86) but saw no. Unlike the last time this rule was right, last_result(draw) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 43,
+   "trigger": "surprise: play_paper → Will paper win this round?",
+   "explanation": "Expected \"Will paper win this round?\" = yes (p=0.84) but saw no. Unlike the last time this rule was right, my_last(rock) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 44,
+   "trigger": "surprise: play_paper → Will paper lose this round?",
+   "explanation": "Expected \"Will paper lose this round?\" = no (p=0.23) but saw yes. Unlike the last time this rule was right, my_last(paper) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 45,
+   "trigger": "surprise: play_scissors → Will scissors lose this round?",
+   "explanation": "Expected \"Will scissors lose this round?\" = no (p=0.19) but saw yes. Splitting on round(later).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 46,
+   "trigger": "surprise: play_paper → Will paper win this round?",
+   "explanation": "Expected \"Will paper win this round?\" = yes (p=0.85) but saw no. Unlike the last time this rule was right, my_last(rock) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 47,
+   "trigger": "surprise: play_rock → Will rock win this round?",
+   "explanation": "Expected \"Will rock win this round?\" = no (p=0.28) but saw yes. Unlike the last time this rule was right, last_result(draw) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 48,
+   "trigger": "surprise: play_rock → Will rock lose this round?",
+   "explanation": "Expected \"Will rock lose this round?\" = yes (p=0.79) but saw no. Unlike the last time this rule was right, last_result(draw) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 49,
+   "trigger": "surprise: play_paper → Will paper win this round?",
+   "explanation": "Expected \"Will paper win this round?\" = yes (p=0.67) but saw no. Unlike the last time this rule was right, my_last(rock) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 50,
+   "trigger": "surprise: play_rock → Will rock win this round?",
+   "explanation": "Expected \"Will rock win this round?\" = no (p=0.22) but saw yes. Unlike the last time this rule was right, last_result(win) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 51,
+   "trigger": "surprise: play_scissors → Will scissors win this round?",
+   "explanation": "Expected \"Will scissors win this round?\" = no (p=0.35) but saw yes. Unlike the last time this rule was right, my_last(rock) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 52,
+   "trigger": "surprise: play_rock → Will rock win this round?",
+   "explanation": "Expected \"Will rock win this round?\" = no (p=0.23) but saw yes. Unlike the last time this rule was right, last_result(win) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 53,
+   "trigger": "surprise: play_scissors → Will scissors win this round?",
+   "explanation": "Expected \"Will scissors win this round?\" = no (p=0.34) but saw yes. Unlike the last time this rule was right, my_last(rock) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 54,
+   "trigger": "play_paper → Will paper win this round?",
+   "explanation": "No rule covered \"wins\" after play_paper; started one from this observation.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 55,
+   "trigger": "surprise: play_scissors → Will scissors lose this round?",
+   "explanation": "Expected \"Will scissors lose this round?\" = no (p=0.17) but saw yes. Unlike the last time this rule was right, last_result(draw) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 56,
+   "trigger": "surprise: play_rock → Will rock win this round?",
+   "explanation": "Expected \"Will rock win this round?\" = yes (p=0.83) but saw no. Unlike the last time this rule was right, last_result(draw) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 57,
+   "trigger": "surprise: play_paper → Will paper win this round?",
+   "explanation": "Expected \"Will paper win this round?\" = yes (p=0.85) but saw no. Unlike the last time this rule was right, my_last(rock) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 58,
+   "trigger": "surprise: play_paper → Will paper lose this round?",
+   "explanation": "Expected \"Will paper lose this round?\" = no (p=0.21) but saw yes. Unlike the last time this rule was right, my_last(paper) holds now.",
+   "conceptsAdded": []
+  },
+  {
+   "version": 59,
+   "trigger": "surprise: play_scissors → Will scissors win this round?",
+   "explanation": "Expected \"Will scissors win this round?\" = no (p=0.16) but saw yes. Splitting on round(later).",
+   "conceptsAdded": []
+  },
+  {
+   "version": 60,
+   "trigger": "surprise: play_scissors → Will scissors lose this round?",
+   "explanation": "Expected \"Will scissors lose this round?\" = yes (p=0.74) but saw no. Unlike the last time this rule was right, last_result(draw) holds now.",
+   "conceptsAdded": []
+  }
+ ]
+}
