@@ -75,7 +75,7 @@ What the numbers say:
 - Jev zero-shot is close to a coin flip on people-shaped worlds (phone call, habits) and useful on the ticket queue, where its priors about workload beat the empty rule set.
 - Jev with the learned rules in context tracks the rule predictor closely and beats it slightly on habits. The rules carry most of the signal; Jev adds calibrated priors on unseen situations.
 - Rock-paper-scissors stays hard for all three: the opponent switches habit every sixty rounds, and the world model's rules average over both regimes.
-- Latency measured about 0.9 s per call in isolation and about 389 ms per call under concurrency, against the vendor's stated 70 to 500 ms. Cost was negligible: under a cent for the whole suite.
+- Latency measured about 0.9 s per call in isolation and about 389 ms per call under concurrency, against the vendor's stated 70 to 500 ms. Cost was negligible: about six cents for the whole suite of 3,398 calls.
 - The Jev API refuses browser origins, so the published demo cannot call it directly; results above come from Node runs. Add a small proxy to use Jev live in the browser.
 
 ## Pages
