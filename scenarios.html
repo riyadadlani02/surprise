@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>surprise · live scenarios</title>
+<link rel="stylesheet" href="./src/ui/tokens.css" />
+<link rel="stylesheet" href="./src/ui/style.css" />
+<link rel="stylesheet" href="./src/scenarios/scenarios.css" />
+</head>
+<body>
+<nav id="links" class="mono">
+  <a href="./index.html">home</a>
+  <a href="./demo.html">playroom</a>
+  <a href="./navigate.html">voice navigation</a>
+  <a href="./unity.html">Unity</a>
+  <a href="https://github.com/riyadadlani02/surprise" rel="noopener">GitHub</a>
+</nav>
+<div id="bar" role="toolbar" aria-label="scenario controls"></div>
+<main id="scenarios">
+  <div class="win" id="console-win">
+    <div class="win-title"><span>live scenarios 0.1</span><span id="status" aria-live="polite"></span></div>
+    <div class="win-body paper">
+      <p class="label">the world</p>
+      <p class="statement" id="about"></p>
+      <p class="mono notice" id="jev-notice" hidden>Real Jev needs the local dev server (npm run dev with JEV_API_KEY in .env); on this static page the loop falls back to rules.</p>
+      <p class="label">steer it</p>
+      <div id="actions" role="group" aria-label="manual actions"></div>
+    </div>
+  </div>
+  <div id="console">
+    <div class="col">
+      <section class="win"><div class="win-title"><span>the world · hidden from the agent</span><span class="dots">···</span></div>
+        <div class="win-body paper"><p class="muted small">The agent never sees this object, only the relations its active concepts allow.</p><pre id="world" class="mono"></pre></div></section>
+      <section class="win"><div class="win-title"><span>the agent</span><span class="dots">···</span></div><div class="win-body" id="agent"></div></section>
+    </div>
+    <div class="col">
+      <section class="win"><div class="win-title"><span>run log · last 40 ticks</span><span class="dots">···</span></div><div class="win-body paper" id="runlog"></div></section>
+    </div>
+  </div>
+</main>
+<script type="module" src="./src/scenarios/main.ts"></script>
+</body>
+</html>

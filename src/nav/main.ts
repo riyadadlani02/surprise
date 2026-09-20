@@ -6,7 +6,7 @@ import { createWorldModel } from '../model/worldmodel'
 import { ruleConfidence, ruleProb, type Action, type Environment, type Prediction, type Relation } from '../types'
 import { View } from '../ui/render'
 import { Camera, CameraEnv, DEFAULT_MODEL, describeFrame, type Report } from './camera'
-import { NAMES, SAFETY, UNSURE, around, guidance, outcome, whereIs } from './guide'
+import { NAMES, SAFETY, UNSURE, around, frameText, guidance, outcome, stopLine, whereIs } from './guide'
 import { NavEnv, TURN, headingName } from './navEnv'
 import { Voice, type Command } from './voice'
 
@@ -71,14 +71,16 @@ async function run(action: Action, opts: { stopIfUnsure?: boolean } = {}): Promi
     const a = agent(), e = env(), pre = e.observe(), rels = e.serialize(pre, a.wm.concepts)
     const questions = e.questionsFor(action, pre).map(q => ({ id: q.id, text: q.text }))
     const preds: Record<string, Prediction> = questions.length ? await a.predictor.predict({ state: rels, action, questions, wm: a.wm }) : {}
-    const say = guidance(action, preds, rels)
+    const say = (mode === 'cam' && cam.frame && action.kind === 'step_forward' && stopLine(cam.frame)) || guidance(action, preds, rels)
     if (say) voice.say(say)
     if (opts.stopIfUnsure && (say === UNSURE || (preds.blocked?.prob ?? 0) > 0.5)) { renderBeliefs(preds, rels); return }
+    // In camera or photo mode the user takes the real step and their answer is the truth. Arm the listener before the
+    // guide finishes talking so an early "bumped" is not lost. No answer, no learning from this tick.
+    const report = mode === 'cam' && questions.length ? askReport() : undefined
     await voice.settled()
     if (cancelled) return
-    if (mode === 'cam' && questions.length) {
-      // The user takes the real step; their answer is the truth. No answer, no learning from this tick.
-      cam.report = await askReport()
+    if (report) {
+      cam.report = await report
       if (cancelled) return
       if (!cam.report) { voice.say('No report taken; nothing learned from that step.'); return }
     }
@@ -128,7 +130,7 @@ async function handle(c: Command) {
     case 'left': return run({ kind: 'turn_left' })
     case 'right': return run({ kind: 'turn_right' })
     case 'stop': walking = false; cancelled = true; voice.stopSpeaking(); pendingReport?.(undefined); return voice.say('Stopped.')
-    case 'around': if (mode === 'cam' && !(photoB64 && cam.frame)) await look(); return voice.say(around(relations()))
+    case 'around': if (mode === 'cam' && !(photoB64 && cam.frame)) await look(); return voice.say(mode === 'cam' && cam.frame ? frameText(cam.frame) : around(relations()))
     case 'where_am_i': return voice.say(mode === 'sim' ? `You face ${headingName(sim.heading)}. ${whereIs(relations())}` : around(relations()))
     case 'where_is': {
       if (mode === 'cam') return voice.say('The camera cannot find named objects yet; ask what is around me.')
@@ -199,7 +201,7 @@ async function usePhoto(blob: Blob, label: string) {
   await showPhoto(blob, label)
   voice.say('Looking at the photo.')
   await look()
-  voice.say(cam.frame ? around(relations()) : UNSURE)
+  voice.say(cam.frame ? frameText(cam.frame) : UNSURE)
 }
 /** The bundled sample: looked at live when a key is set, otherwise shown with its saved, hand-written description. */
 async function useSample() {
@@ -213,7 +215,7 @@ async function useSample() {
   cam.frame = saved
   log('photo', 'no key set: using the saved, hand-written description of this photo')
   renderBeliefs({}, relations())
-  voice.say('Using a saved description of this photo. Add an Anthropic key to look live. ' + around(relations()))
+  voice.say('Using a saved description of this photo. Add an Anthropic key to look live. ' + frameText(saved))
 }
 function toJpegBase64(blob: Blob): Promise<string> {
   return new Promise((res, rej) => {

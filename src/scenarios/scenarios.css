@@ -1,0 +1,35 @@
+/* live scenarios page. Menu bar (#bar), panel parts and dialog come from style.css; this is layout plus the run log. */
+#scenarios { padding: 16px var(--gutter) 48px; display: flex; flex-direction: column; gap: 24px; }
+#console-win .win-body > .label { margin-bottom: 10px; }
+#console-win .statement { font-size: clamp(17px, 1.6vw, 22px); margin-bottom: 18px; }
+#status { font-weight: 400; text-align: right; white-space: normal; }
+.notice[hidden] { display: none; }
+#actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+#actions .btn { padding: 8px 12px; font-size: 13px; }
+#actions label { font: 500 13px/1 var(--font-mono); display: inline-flex; gap: 6px; align-items: center; margin-left: 8px; }
+#actions input[type=checkbox] { accent-color: var(--ink); }
+
+#console { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+.col { display: flex; flex-direction: column; gap: 24px; min-width: 0; }
+#agent { display: flex; flex-direction: column; gap: 16px; }
+#agent .win-body { background: var(--paper); font-size: 13px; }
+.small { font-size: 12px; margin: 0 0 8px; }
+#world { margin: 0; white-space: pre-wrap; font-size: 12px; line-height: 1.5; }
+
+/* run log: one block per tick, one line per question; a surprised tick is inverted */
+#runlog { font: 400 12px/1.5 var(--font-mono); display: flex; flex-direction: column; gap: 6px; max-height: 80vh; overflow-y: auto; }
+.tk { padding: 6px 8px; border: 1.5px solid var(--grey-300); }
+.tk.surprised { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.tk.surprised .muted { color: var(--paper); opacity: .75; }
+.tk .head { font-weight: 500; }
+.tk .why { margin-top: 4px; padding-top: 4px; border-top: 1px solid var(--grey-300); opacity: .92; }
+.tk .tag { margin-left: 6px; } .tk.surprised .tag { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+
+/* during a demo run, the surprised question in the prediction panel is highlighted so the audience can find it */
+body.demo .q:has(.tag.bad) { background: var(--pink); margin: 0 -16px; padding-left: 16px; padding-right: 16px; }
+
+@media (max-width: 900px) {
+  #console { grid-template-columns: 1fr; }
+  #runlog { max-height: 60vh; }
+  body.demo .q:has(.tag.bad) { margin: 0 -12px; padding-left: 12px; padding-right: 12px; }
+}

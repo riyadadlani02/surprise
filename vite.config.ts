@@ -17,7 +17,7 @@ export default defineConfig(({ mode }) => {
         },
       } : undefined,
     },
-    build: { rollupOptions: { input: { index: resolve(__dirname, 'index.html'), demo: resolve(__dirname, 'demo.html'), navigate: resolve(__dirname, 'navigate.html'), unity: resolve(__dirname, 'unity.html') } } },
+    build: { rollupOptions: { input: { index: resolve(__dirname, 'index.html'), demo: resolve(__dirname, 'demo.html'), navigate: resolve(__dirname, 'navigate.html'), unity: resolve(__dirname, 'unity.html'), scenarios: resolve(__dirname, 'scenarios.html') } } },
     test: { include: ['tests/**/*.test.ts'], testTimeout: 30000 },
   }
 })

@@ -19,6 +19,9 @@ const get = (rels: Relation[], pred: string) => rels.find(r => r.pred === pred)?
 /** What to say before a step or turn, given the agent's predictions. */
 export function guidance(a: Action, preds: Record<string, Prediction>, rels: Relation[]): string {
   if (a.kind === 'step_forward' || a.kind === 'step_back') {
+    // Perception first: something within a step is a stop, whatever the model has or has not learned yet.
+    const ahead = get(rels, 'ahead'), near = get(rels, 'ahead_distance')
+    if (a.kind === 'step_forward' && ahead === 'blocked' && (near === 'touching' || near === 'one_step')) return `Stop. ${cap(name(get(rels, 'ahead_object')))} is ${DIST[near]}.`
     const b = preds.blocked ?? { prob: 0.5, confidence: 0 }
     if (b.confidence < UNSURE_THRESHOLD) return UNSURE
     const dir = a.kind === 'step_back' ? 'Step back' : 'Step forward'
@@ -56,3 +59,16 @@ export function whereIs(rels: Relation[], id = get(rels, 'target')) {
 }
 
 export const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1)
+
+/** A camera or photo frame in words, using the described names and hazards rather than the bucketed relations. */
+export interface FrameLike { ahead: SideLike; left: SideLike; right: SideLike; hazards: string[] }
+export interface SideLike { kind: string; distance: string; name: string }
+const NEAR: Record<string, string> = { touching: 'touching you', one_step: 'one step away', two_steps: 'two steps away', far: 'far' }
+export function frameText(f: FrameLike) {
+  const side = (s: SideLike, label: string) => s.kind === 'clear' ? `${label}: clear.` : `${label}, ${NEAR[s.distance] ?? s.distance}: ${s.name || name(s.kind)}.`
+  return [side(f.ahead, 'Ahead'), side(f.left, 'Left'), side(f.right, 'Right'), f.hazards.length ? `Hazards: ${f.hazards.join('; ')}.` : ''].filter(Boolean).join(' ')
+}
+/** The pre-step line in camera or photo mode: the described obstacle by name when it is within a step. */
+export function stopLine(f: FrameLike) {
+  return f.ahead.kind !== 'clear' && (f.ahead.distance === 'touching' || f.ahead.distance === 'one_step') ? `Stop. ${cap(f.ahead.name || name(f.ahead.kind))} is ${NEAR[f.ahead.distance]}.` : undefined
+}
