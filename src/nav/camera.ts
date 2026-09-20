@@ -1,6 +1,7 @@
 // Live camera mode: a frame every few seconds goes to Claude, which returns the same relation vocabulary the simulated room uses.
 // The truth for "blocked" and "bump" is the user's own report after each step; that is how the model learns on real streets.
-import Anthropic from '@anthropic-ai/sdk'
+import type Anthropic from '@anthropic-ai/sdk'
+import { anthropicClient } from '../model/proxy'
 import { jsonSchemaOutputFormat } from '@anthropic-ai/sdk/helpers/json-schema'
 import { rel, type Action, type Environment, type Question, type Relation } from '../types'
 
@@ -31,7 +32,7 @@ Be conservative: an uncertain gap is an obstacle, not clear. Name hazards plainl
 export const DEFAULT_MODEL = 'claude-haiku-4-5'
 let client: Anthropic | undefined, clientKey = ''
 export async function describeFrame(apiKey: string, base64WithoutPrefix: string, model = DEFAULT_MODEL): Promise<Frame> {
-  if (!client || clientKey !== apiKey) { client = new Anthropic({ apiKey, dangerouslyAllowBrowser: true }); clientKey = apiKey }
+  if (!client || clientKey !== apiKey) { client = anthropicClient(apiKey); clientKey = apiKey }
   const res = await client.messages.parse({
     model, max_tokens: 1024, system: SYSTEM,
     messages: [{ role: 'user', content: [
@@ -125,7 +126,7 @@ const ROUTE_SYSTEM = `You plan a short walking route for a blind pedestrian from
 Moves are things a person can do without sight, one at a time: a quarter or half turn, one to four steps forward, a stair up or down, or stop and check with the cane. Keep every forward move short and stop before anything at knee or foot height: low tables, cables, speaker cabinets, bags, steps. Route around people and furniture on the clear floor. If the goal is not visible, say so and give at most three moves toward the most likely direction, ending with stop and check. Never claim more than the photo shows; put doubt into the caution text and the confidence number.`
 
 export async function planRoute(apiKey: string, base64WithoutPrefix: string, goal: string, model = ROUTE_MODEL): Promise<Route> {
-  if (!client || clientKey !== apiKey) { client = new Anthropic({ apiKey, dangerouslyAllowBrowser: true }); clientKey = apiKey }
+  if (!client || clientKey !== apiKey) { client = anthropicClient(apiKey); clientKey = apiKey }
   const res = await client.messages.parse({
     model, max_tokens: 2048, system: ROUTE_SYSTEM,
     messages: [{ role: 'user', content: [

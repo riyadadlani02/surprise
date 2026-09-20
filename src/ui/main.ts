@@ -6,6 +6,7 @@ import { FableAccommodator } from '../model/fable'
 import { JevPredictor } from '../model/jev'
 import { RuleAccommodator, RulePredictor } from '../model/rules'
 import { createWorldModel } from '../model/worldmodel'
+import { PROXY_KEY, anthropicProxyAvailable } from '../model/proxy'
 import type { Action } from '../types'
 import { Panel } from './panel'
 import { View } from './render'
@@ -29,10 +30,13 @@ const settings = {
   predictor: localStorage.getItem('predictor') ?? 'rules',
   accommodator: localStorage.getItem('accommodator') ?? 'heuristic',
 }
+let proxyOk = false
+anthropicProxyAvailable().then(ok => { proxyOk = ok; if (ok) applyModels() })
 function applyModels() {
   // In dev the Vite server proxies Jev and adds the key itself; on static hosting the direct call fails on CORS and the loop falls back to rules.
   agent.predictor = settings.predictor === 'jev' ? new JevPredictor(settings.jevKey || 'via-proxy', import.meta.env.DEV ? { endpoint: './api/jev' } : {}) : new RulePredictor()
-  agent.accommodator = settings.accommodator === 'fable' && settings.anthropicKey ? new FableAccommodator(settings.anthropicKey, env.concepts, settings.fableModel) : new RuleAccommodator()
+  const antKey = settings.anthropicKey || (proxyOk ? PROXY_KEY : '')
+  agent.accommodator = settings.accommodator === 'fable' && antKey ? new FableAccommodator(antKey, env.concepts, settings.fableModel) : new RuleAccommodator()
 }
 applyModels()
 

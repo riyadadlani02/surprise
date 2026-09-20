@@ -6,6 +6,7 @@ import { createWorldModel } from '../model/worldmodel'
 import { ruleConfidence, ruleProb, type Action, type Environment, type Prediction, type Relation } from '../types'
 import { View } from '../ui/render'
 import { Camera, CameraEnv, DEFAULT_MODEL, describeFrame, planRoute, type Report, type Route } from './camera'
+import { PROXY_KEY, anthropicProxyAvailable } from '../model/proxy'
 import { NAMES, SAFETY, UNSURE, around, frameText, guidance, outcome, stopLine, whereIs } from './guide'
 import { NavEnv, TURN, headingName } from './navEnv'
 import { Voice, type Command } from './voice'
@@ -209,7 +210,9 @@ async function bumpedOnRoute() {
 const camera = new Camera($<HTMLVideoElement>('cam'))
 let camTimer: ReturnType<typeof setInterval> | undefined, looking = false
 let photoB64: string | undefined   // a still photo standing in for the camera
-const key = () => $<HTMLInputElement>('anthropicKey').value.trim()
+let proxyOk = false
+anthropicProxyAvailable().then(ok => { proxyOk = ok; if (ok) { $<HTMLInputElement>('anthropicKey').placeholder = 'using the dev server key from .env'; log('camera', 'dev server proxies Anthropic with the key from .env') } })
+const key = () => $<HTMLInputElement>('anthropicKey').value.trim() || (proxyOk ? PROXY_KEY : '')
 async function look() {
   if (looking) return
   if (!key()) return

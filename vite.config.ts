@@ -8,14 +8,11 @@ export default defineConfig(({ mode }) => {
   return {
     base: './',
     server: {
-      proxy: env.JEV_API_KEY ? {
-        '/api/jev': {
-          target: 'https://api.typesafe.ai',
-          changeOrigin: true,
-          rewrite: () => '/v1/systemone',
-          headers: { Authorization: `Bearer ${env.JEV_API_KEY}` },
-        },
-      } : undefined,
+      proxy: {
+        ...(env.JEV_API_KEY ? { '/api/jev': { target: 'https://api.typesafe.ai', changeOrigin: true, rewrite: () => '/v1/systemone', headers: { Authorization: `Bearer ${env.JEV_API_KEY}` } } } : {}),
+        // Same idea for Anthropic: the page sends a placeholder key, the dev server swaps in the real one. Dev only; static hosting has no proxy.
+        ...(env.ANTHROPIC_API_KEY ? { '/api/anthropic': { target: 'https://api.anthropic.com', changeOrigin: true, rewrite: (p: string) => p.replace(/^\/api\/anthropic/, ''), headers: { 'x-api-key': env.ANTHROPIC_API_KEY } } } : {}),
+      },
     },
     build: { rollupOptions: { input: { index: resolve(__dirname, 'index.html'), demo: resolve(__dirname, 'demo.html'), navigate: resolve(__dirname, 'navigate.html'), unity: resolve(__dirname, 'unity.html'), scenarios: resolve(__dirname, 'scenarios.html') } } },
     test: { include: ['tests/**/*.test.ts'], testTimeout: 30000 },

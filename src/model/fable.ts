@@ -1,5 +1,6 @@
 // Claude Fable 5.1 as the slow accommodator: reads a surprise trace and returns a patch to the world model.
-import Anthropic from '@anthropic-ai/sdk'
+import type Anthropic from '@anthropic-ai/sdk'
+import { anthropicClient } from './proxy'
 import { jsonSchemaOutputFormat } from '@anthropic-ai/sdk/helpers/json-schema'
 import { describe } from './worldmodel'
 import { relText, stateText, type Accommodator, type Patch, type Surprise, type WorldModel } from '../types'
@@ -38,7 +39,7 @@ export class FableAccommodator implements Accommodator {
   name = 'fable'
   private client: Anthropic
   constructor(apiKey: string, private concepts: { name: string; description: string }[], private model = 'claude-fable-5-1') {
-    this.client = new Anthropic({ apiKey, dangerouslyAllowBrowser: true })
+    this.client = anthropicClient(apiKey)
   }
 
   async accommodate(s: Surprise, wm: WorldModel): Promise<Patch> {
