@@ -1,2 +1,124 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>surprise · navigate</title><link rel="stylesheet" href="/src/ui/tokens.css"></head>
-<body><main id="nav"><p>voice navigation: being built</p></main><script type="module" src="/src/nav/main.ts"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>surprise · navigate</title>
+<link rel="stylesheet" href="./src/ui/tokens.css">
+<style>
+  .skip { position: absolute; left: -999px; top: 8px; background: var(--ink); color: var(--paper); padding: 8px 12px; font-family: var(--font-mono); }
+  .skip:focus { left: 8px; z-index: 10; }
+  .menu { background: var(--ink); color: var(--paper); display: flex; flex-wrap: wrap; gap: 4px 20px; align-items: center; padding: 10px var(--gutter); font: 500 13px/1 var(--font-mono); }
+  .menu a { color: var(--paper); text-decoration: none; padding: 6px 0; }
+  .menu a[aria-current] { text-decoration: underline; text-underline-offset: 4px; }
+  .menu .brand { font-weight: 700; margin-right: auto; }
+  main { padding: 20px var(--gutter) 48px; }
+  .notice { display: flex; gap: 14px; align-items: flex-start; border: 2px solid var(--ink); background: var(--paper); padding: 12px 14px; margin: 0 0 22px; font-size: 15px; line-height: 1.4; }
+  .notice b { font-family: var(--font-mono); font-weight: 700; white-space: nowrap; }
+  .grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+  .col { display: grid; gap: 24px; min-width: 0; }
+  .said { font-family: var(--font-display); font-size: clamp(30px, 4.4vw, 56px); font-weight: 600; letter-spacing: -0.03em; line-height: 0.98; text-wrap: balance; margin: 0; min-height: 3.2em; color: var(--ink); }
+  .controls { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; align-items: center; }
+  .btn { min-height: 44px; min-width: 44px; }
+  .btn.big { font-size: 16px; padding: 14px 22px; }
+  .btn[aria-pressed="true"] { border-color: var(--magenta); text-decoration: underline; text-decoration-color: var(--magenta); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+  .cmd { display: flex; gap: 8px; margin-top: 12px; }
+  .cmd input, .field input { flex: 1; min-width: 0; min-height: 44px; border: 2px solid var(--ink); background: var(--paper); padding: 8px 10px; font: 400 15px/1.2 var(--font-mono); }
+  .pad { display: grid; grid-template-columns: repeat(3, minmax(64px, 1fr)); gap: 8px; max-width: 320px; margin-top: 14px; }
+  .pad .btn { padding: 12px 8px; text-align: center; }
+  .pad .btn:first-child { grid-column: 2; }
+  #scene { aspect-ratio: 4 / 3; background: var(--grey-100); border: 2px solid var(--ink); }
+  #scene canvas { display: block; width: 100% !important; height: 100% !important; }
+  video { width: 100%; border: 2px solid var(--ink); background: #000; }
+  .mono, .believes table, .log { font-family: var(--font-mono); font-size: 13px; }
+  .chip { display: inline-block; border: 1.5px solid var(--ink); padding: 2px 8px; margin: 0 6px 6px 0; }
+  .believes table { width: 100%; border-collapse: collapse; }
+  .believes th, .believes td { text-align: left; vertical-align: top; padding: 4px 6px; border-bottom: 1px solid var(--grey-300); }
+  .believes th { font-weight: 500; color: var(--ink-soft); }
+  .muted { color: var(--ink-soft); }
+  .pred { margin: 0 0 8px; }
+  .meter { display: inline-block; width: 90px; height: 10px; border: 1.5px solid var(--ink); vertical-align: middle; position: relative; }
+  .meter i { position: absolute; left: 0; top: 0; bottom: 0; background: var(--ink); }
+  .log { max-height: 320px; overflow: auto; margin: 0; padding: 0; list-style: none; }
+  .log li { padding: 4px 0; border-bottom: 1px solid var(--grey-300); word-break: break-word; }
+  .log .k { color: var(--ink-soft); margin-right: 8px; }
+  .settings summary { cursor: pointer; font: 500 13px/1.2 var(--font-mono); min-height: 44px; display: flex; align-items: center; }
+  .field { display: grid; gap: 6px; margin: 10px 0; font-size: 14px; }
+  .field .hint { font-size: 13px; color: var(--ink-soft); }
+  .check { display: flex; align-items: center; gap: 10px; min-height: 44px; font-size: 15px; }
+  .check input { width: 22px; height: 22px; margin: 0; accent-color: var(--ink); }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } .notice { flex-direction: column; gap: 6px; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="menu" aria-label="Pages">
+  <span class="brand">surprise</span>
+  <a href="./index.html">Landing</a>
+  <a href="./demo.html">Live playroom</a>
+  <a href="./navigate.html" aria-current="page">Voice navigation</a>
+  <a href="./unity.html">Unity</a>
+</nav>
+<main id="main">
+  <p class="notice" role="note"><b>Safety</b><span>Prototype. Not a substitute for a white cane, a guide dog, or orientation and mobility training. Always keep your usual aid.</span></p>
+  <div class="grid">
+    <div class="col">
+      <section class="win" aria-labelledby="guide-title">
+        <div class="win-title"><span id="guide-title">guide 0.1</span><span class="dots">···</span></div>
+        <div class="win-body">
+          <p class="label">Last spoken</p>
+          <p id="said" class="said" role="status" aria-live="polite" aria-atomic="true">Loading the room.</p>
+          <div class="controls">
+            <button id="listen" class="btn big" type="button" aria-pressed="false">Listen</button>
+            <button id="mute" class="btn ghost" type="button" aria-pressed="false">Mute</button>
+            <button id="repeat" class="btn ghost" type="button">Repeat</button>
+            <button id="help" class="btn ghost" type="button">Help</button>
+          </div>
+          <form id="cmd" class="cmd">
+            <label for="cmdInput" class="sr-only">Type a command</label>
+            <input id="cmdInput" autocomplete="off" placeholder="Type a command, e.g. take me to the cup">
+            <button class="btn" type="submit">Send</button>
+          </form>
+          <div class="pad" role="group" aria-label="Move">
+            <button class="btn ghost" type="button" data-cmd="forward">Forward</button>
+            <button class="btn ghost" type="button" data-cmd="left">Left</button>
+            <button class="btn ghost" type="button" data-cmd="back">Back</button>
+            <button class="btn ghost" type="button" data-cmd="right">Right</button>
+            <button class="btn ghost" type="button" data-cmd="around">Around me</button>
+            <button class="btn ghost" type="button" data-cmd="where am i">Where am I</button>
+          </div>
+          <div class="controls">
+            <button id="explore" class="btn ghost" type="button">Let the agent explore</button>
+            <label class="check"><input type="checkbox" id="useCamera"> Use camera</label>
+          </div>
+          <details class="settings">
+            <summary>Camera settings</summary>
+            <div class="field"><label for="anthropicKey">Anthropic API key</label><input id="anthropicKey" type="password" autocomplete="off"><span class="hint">Stored in this browser only, shared with the playroom page.</span></div>
+            <div class="field"><label for="camModel">Frame model</label><input id="camModel"><span class="hint">Default claude-haiku-4-5: fast and cheap, one frame every 2.5 seconds.</span></div>
+          </details>
+        </div>
+      </section>
+      <section class="win" aria-labelledby="believes-title">
+        <div class="win-title"><span id="believes-title">what the agent believes</span><span class="dots">···</span></div>
+        <div id="believes" class="win-body believes paper"><span class="muted">No prediction yet.</span></div>
+      </section>
+    </div>
+    <div class="col">
+      <section class="win" aria-labelledby="room-title">
+        <div class="win-title"><span id="room-title">room</span><span id="mode" class="dots">simulated</span></div>
+        <div class="win-body">
+          <div id="scene" aria-label="Three-dimensional view of the simulated room with the avatar" role="img"></div>
+          <video id="cam" hidden playsinline muted aria-label="Live camera"></video>
+        </div>
+      </section>
+      <section class="win" aria-labelledby="log-title">
+        <div class="win-title"><span id="log-title">log</span><span class="dots">···</span></div>
+        <div class="win-body paper"><ul id="log" class="log" aria-label="Commands and spoken output"></ul></div>
+      </section>
+    </div>
+  </div>
+</main>
+<script type="module" src="./src/nav/main.ts"></script>
+</body>
+</html>
